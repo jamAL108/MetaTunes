@@ -57,6 +57,7 @@ useEffect(()=>{
     temp1.style.backgroundColor="#09090B";
     }
    }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[store.props.logincolor])
   return (
     <nav className='nav'>

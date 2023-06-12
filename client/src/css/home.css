@@ -1,0 +1,141 @@
+.home{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.home .other{
+    background-color:inherit;
+    position: absolute;
+    top: 5%;
+    left: 22.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    color: #E3E3E3;
+    width: 77.6vw;
+    height: 90%;
+    max-height: 90vh;
+}
+.home .search{
+    width: 80%;
+    height:2rem;
+}
+.home .search input{
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border: 4px solid #323234;
+    border-radius: 6px;
+    color: #E3E3E3;
+}
+.home .search input:focus{
+    outline: none !important;
+    border: 4px solid #EE4950;
+}
+.home .other .search input:focus + .home .other .search .inside{
+    color:#EE4950;
+}
+.home .other .line{
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    width: 80%;
+    margin-left: 0.7%;
+    height: 2px;
+    background-color: #323234;
+}
+.home .search .inside{
+    width: auto;
+    position: relative;
+    top: -2rem;
+    color: #323234;
+    left: 95%;
+}
+.home .allplaylist{
+    width: 80%;
+    height: 60vh;
+    background-color: white;
+    margin-left: 0.5%;
+    border-radius: 12px;
+    background-image: url("../images/playlist.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: #E3E3E3;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+.home .allplaylist .item{
+    margin-top: 16%;
+    width: 93%;
+    height: 40%;
+    margin-left: 5%;
+}
+.home .allplaylist .item h2  {
+   font-size: 1.5rem;
+   margin: 0.4rem;
+}
+.home .allplaylist .item p{
+    margin: 0.4rem;
+    font-size: 0.7rem;
+}
+.home .allplaylist .item button{
+    width: 20%;
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+   background-color: #E3E3E3;
+   color: black;
+   margin: 0.4rem;
+}
+.home .allplaylist .item button:hover{
+    cursor: pointer;
+}
+@media screen and (max-width:913px) {
+    .home .other{
+        top: 10%;
+        left: 0%;
+        width: 100vw;
+        height:auto;
+        min-height: 90%;
+    }
+    .home .other .search{
+        width: 80%;
+        height: 2.2rem;
+        margin-top: 1.5rem
+    }
+    .home .other .search .inside{
+        left: 90%;
+    }
+    .home .allplaylist{
+        width: 82%;
+        height: 45vh;
+        background-color: white;
+        margin-left: 2.7%;
+    }
+    .home .allplaylist .item button{
+       width: 40%
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home .search{
+    width: ;
+}
