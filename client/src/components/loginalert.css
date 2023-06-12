@@ -1,0 +1,53 @@
+.loginalert{
+    width: 77.7vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 22.3vw;
+    z-index: 1;
+    animation: TransitionIn 1.5s;
+}
+@keyframes TransitionIn {
+    from{
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.loginalert h2{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    color:#E3E3E3; 
+}
+.loginalert button{
+    border: none;
+    background-color: #EE4950;
+    color: #E3E3E3;
+    border-radius: 6px;
+    width: 4rem;
+    height: 5.5%;
+}
+
+@media screen and (max-width:913px) {
+    .loginalert{
+        width: 100vw;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: inherit;
+        top: 10%;
+        left: 0;
+        z-index: 1;
+    }
+}
