@@ -39,7 +39,7 @@ const Landing = () => {
       <div className="item">
       <h2>Awesome Playlists</h2>
       <p>Created by out Team and other users</p>
-      <button>Listen</button>
+      <button>Listen now</button>
       </div>
     </div>
     </div>
