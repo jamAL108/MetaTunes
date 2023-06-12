@@ -19,7 +19,7 @@
     max-height: 90vh;
 }
 .home .search{
-    width: 80%;
+    width: 90%;
     height:2rem;
 }
 .home .search input{
@@ -53,7 +53,7 @@
     left: 95%;
 }
 .home .allplaylist{
-    width: 80%;
+    width: 90%;
     height: 60vh;
     background-color: white;
     margin-left: 0.5%;
@@ -101,7 +101,7 @@
         min-height: 90%;
     }
     .home .other .search{
-        width: 80%;
+        width: 90%;
         height: 2.2rem;
         margin-top: 1.5rem
     }
@@ -109,13 +109,14 @@
         left: 90%;
     }
     .home .allplaylist{
-        width: 82%;
+        width: 90%;
+
         height: 45vh;
         background-color: white;
         margin-left: 2.7%;
     }
     .home .allplaylist .item button{
-       width: 40%
+       width: 50%
     }
 }
 
