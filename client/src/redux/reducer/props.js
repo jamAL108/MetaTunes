@@ -1,9 +1,11 @@
 import {
-    NAVCOLOR
+    NAVCOLOR,
+    LOGINCOLOR
 } from '../propsaction';
 
 const initialstate ={
-    navcolor:false
+    navcolor:false,
+    logincolor:false
 }
 
 
@@ -13,6 +15,11 @@ const props =(state=initialstate , action) =>{
             return{
                 ...state , navcolor:action.payload
             }
+        case LOGINCOLOR:
+            console.log(action.payload);
+            return{
+                ...state , logincolor:action.payload
+            }    
         default:
             return state;    
     }

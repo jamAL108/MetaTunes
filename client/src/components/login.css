@@ -127,7 +127,8 @@
     .login .other{
         background-color:#09090B ;
         position: absolute;
-        top: 15%;
+        top: 10%;
+        padding-top: 5%;
         left: 0%;
         width: 100vw;
         height: 85%;
@@ -167,14 +168,17 @@
         margin-top: 0.4rem;
         width: 100%;
         text-align: center;
+        margin-bottom: 0.4rem;
      }
      .login .submit  .continue{
         text-align: center;
         width: 100%;
         font-size: 0.91rem;
+        font-weight: 300;
      }
      .login .submit .acc{
         text-align: left;
+        font-weight: 300;
         width: 100%;
         font-size: 0.97rem;
      }

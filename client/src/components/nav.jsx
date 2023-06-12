@@ -8,9 +8,11 @@ import HeadsetIcon from '@mui/icons-material/Headset';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector , useDispatch } from 'react-redux';
+import { LOGINCOLOR } from '../redux/propsaction';
 const Nav = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const store = useSelector((state)=>state);
   const [menu , setmenu]=useState(false);
   const [home , sethome] = useState(false);
@@ -32,15 +34,30 @@ useEffect(()=>{
   }
               // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
+
 useEffect(()=>{
+  if(window.screen.width<900){
     if(store.props.navcolor===true){
       const temp = document.querySelector(".icon");
       temp.style.display="none";
+      document.body.style.backgroundColor = "#141414";
       const teemp = document.querySelector(".nav");
-      teemp.style.backgroundColor="#18181c";
+      teemp.style.backgroundColor="#272729";
     }
+  }
                 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[store.props.navcolor])
+
+useEffect(()=>{
+   if(store.props.logincolor===false){
+    if(window.screen.width<900){
+    const temp = document.querySelector(".icon");
+    temp.style.display="block";
+    const temp1 = document.querySelector(".nav");
+    temp1.style.backgroundColor="#09090B";
+    }
+   }
+},[store.props.logincolor])
   return (
     <nav className='nav'>
         <div className="header">
@@ -148,6 +165,14 @@ useEffect(()=>{
         <div className='line'></div>
         <div className="login" onClick={(e)=>{
            e.preventDefault();
+           if(window.screen.width<900){
+           dispatch({type:LOGINCOLOR , payload:true});
+           } 
+           if(window.screen.width>900){
+           const data = JSON.parse(localStorage.getItem("sidebar"));
+           data.index=-1;
+           localStorage.setItem("sidebar",JSON.stringify(data));
+           }
            navigate('/login');
           }} >
           login

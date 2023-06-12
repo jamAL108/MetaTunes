@@ -10,6 +10,13 @@ import reducers from "./redux/reducer";
 import thunk from "redux-thunk";
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const data ={
+  index:0
+}
+const datas = JSON.parse(localStorage.getItem("sidebar"));
+if(!datas){
+  localStorage.setItem("sidebar",JSON.stringify(data));
+}
 root.render(
   <BrowserRouter>
     <Provider store={store}>

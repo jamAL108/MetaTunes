@@ -1,7 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './loginalert.css';
+import { useDispatch } from 'react-redux';
+import { LOGINCOLOR } from '../redux/propsaction';
 const Loginalert = (props) => {
+  const dispatch = useDispatch();
   const {
     query
   } = props;
@@ -12,6 +15,14 @@ const Loginalert = (props) => {
         <h2>{query}</h2>
         <button onClick={(e)=>{
             e.preventDefault();
+            if(window.screen.width<900){
+              dispatch({type:LOGINCOLOR , payload:true});
+              }
+              if(window.screen.width>900){
+              const data = JSON.parse(localStorage.getItem("sidebar"));
+              data.index=-1;
+              localStorage.setItem("sidebar",JSON.stringify(data));
+              }
             navigate('/login');
         }} >Login</button>
     </div>

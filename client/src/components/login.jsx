@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { NAVCOLOR } from '../redux/propsaction';
+import { LOGINCOLOR, NAVCOLOR } from '../redux/propsaction';
 import Nav from './nav';
 import './login.css';
 const Login = () => {
     const dispatch = useDispatch();
     useEffect(()=>{
       dispatch({type:NAVCOLOR , payload:true});
+      document.body.style.backgroundColor="#09090B";
                     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     const Submit =()=>{
@@ -40,10 +41,15 @@ const Login = () => {
             <p className='or' >or</p>
             <p className='continue' onClick={(e)=>{
                e.preventDefault();
+               dispatch({type:LOGINCOLOR , payload:false});
+               const data = JSON.parse(localStorage.getItem("sidebar"));
+               data.index=0;
+               localStorage.setItem("sidebar",JSON.stringify(data));
                navigate('/');
             }} >continue without Logging in</p>
             <p className='acc'>Don't have an account yet ? <span className='inside' onClick={(e)=>{
                 e.preventDefault();
+                dispatch({type:NAVCOLOR , payload:false});
                 navigate('/register');
             }} >Register</span></p>
         </div>
