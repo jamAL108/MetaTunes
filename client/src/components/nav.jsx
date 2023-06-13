@@ -10,6 +10,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
 import { useSelector , useDispatch } from 'react-redux';
 import { LOGINCOLOR } from '../redux/propsaction';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import { logout } from '../redux/action/useraction';
+import { LOGOUT } from '../redux/actiontypes';
 const Nav = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,9 +23,51 @@ const Nav = () => {
   const [artist,setartist] = useState(false);
   const [favourites , setfavourites] = useState(false);
   const [playlist , setplaylist] = useState(false);
+  const [login,setlogin] =useState(false);
   const sidebar = JSON.parse(localStorage.getItem("sidebar"));
-  console.log(sidebar);
   const side = sidebar.index;
+  const data = JSON.parse(localStorage.getItem("user"));
+  useEffect(()=>{
+    if(data){
+      if(data.username.length!==0){
+      setlogin(true);
+      }
+   }else{
+     setlogin(false);
+   }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+  useEffect(()=>{
+    console.log("outside");
+    if(store.user.logout===true){
+      console.log("inside");
+      setlogin(false);
+      setlogin(false);
+      setlogin(false);
+      setlogin(false);
+      setlogin(false);
+      console.log(login);
+
+      console.log("nhjerhbvejsrkc");
+      console.log("nkjerhdcnufiewbjniurebjdcgbrf");
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      const sample = JSON.parse(localStorage.getItem("user"));
+    if(sample){
+      if(sample.username.length!==0){
+      setlogin(true);
+      }else{
+        setlogin(false);
+      }
+   }else{
+     setlogin(false);
+   }
+
+   dispatch({type:LOGOUT , payload:false});
+   console.log(login);
+  }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[store.user.logout])
 useEffect(()=>{
   if(side===0){
     sethome(true);
@@ -71,7 +117,7 @@ useEffect(()=>{
                const temp = document.querySelector(".nav");
                const temp1 = document.querySelector(".menu");
                const temp2 = document.querySelector(".line");
-               const temp3 = document.querySelector(".login");
+               const temp3 = document.querySelector(".lower");
                const temp4 = document.querySelector(".header");
                temp.style.height="100vh";
                temp1.style.display="flex";
@@ -90,7 +136,7 @@ useEffect(()=>{
                const temp = document.querySelector(".nav");
                const temp1 = document.querySelector(".menu");
                const temp2 = document.querySelector(".line");
-               const temp3 = document.querySelector(".login");
+               const temp3 = document.querySelector(".lower");
                const temp4 = document.querySelector(".header");               
                temp.style.height="10%";
                temp1.style.display="none";
@@ -164,6 +210,8 @@ useEffect(()=>{
           </div>
         </div>
         <div className='line'></div>
+        <div className="lower">
+        {login===false &&(
         <div className="login" onClick={(e)=>{
            e.preventDefault();
            if(window.screen.width<900){
@@ -177,6 +225,23 @@ useEffect(()=>{
            navigate('/login');
           }} >
           login
+        </div>
+        )}
+        {login===true &&(
+          <div className="user">
+            <div className="box" id='coolor' >
+            <AccountCircleOutlinedIcon className='icon' />
+             <h1>{data.username}</h1>
+            </div>
+            <div className="box" onClick={(e)=>{
+              e.preventDefault();
+              dispatch(logout(navigate));
+            }} >
+              <LogoutOutlinedIcon className='icon'/>
+              <h1>Logout</h1>
+            </div>
+            </div>
+        )}
         </div>
     </nav>
   )

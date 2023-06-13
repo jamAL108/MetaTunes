@@ -199,5 +199,13 @@
         width: 100%;
         font-size: 0.97rem;
      }
+     .login .error{
+      color: #EE4950;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0.3rem;
+      font-size: 70%;
+     }
      
 }

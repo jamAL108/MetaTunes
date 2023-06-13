@@ -36,7 +36,7 @@ const Favourities = () => {
   const [auth , setauth] = useState(false);
   const error="please login to see your favourites";
   useEffect(()=>{
-    const extrabeat_user = JSON.parse(localStorage.getItem("extrabeat_user"));
+    const extrabeat_user = JSON.parse(localStorage.getItem("user"));
     if(extrabeat_user){
       setauth(true);
     }

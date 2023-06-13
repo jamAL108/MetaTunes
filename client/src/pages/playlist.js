@@ -9,7 +9,7 @@ const Playlist = () => {
   const [auth , setauth] = useState(false);
   const error="please login to see your playlist";
   useEffect(()=>{
-    const extrabeat_user = JSON.parse(localStorage.getItem("extrabeat_user"));
+    const extrabeat_user = JSON.parse(localStorage.getItem("user"));
     if(extrabeat_user){
       setauth(true);
     }

@@ -129,30 +129,24 @@
         margin-left: 5%;
         height: auto;
     }
+    .home .allplaylist .item h2  {
+        font-size: 1.8rem;
+        margin: 0.3rem;
+        font-weight: 700;
+     }
+     .home .allplaylist .item p{
+         margin: 0.3rem;
+         font-size: 1rem;
+         font-weight: 400;
+     }
     .home .allplaylist .item button{
        width: 40%;
-       height: 2rem;
-       font-size: 0.74rem;
+       height: 2.2rem;
+       font-size: 1rem;
+       font-weight: 544;
     }
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-.home .search{
-    width: ;
-} */

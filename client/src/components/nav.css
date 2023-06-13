@@ -93,10 +93,18 @@ nav .line{
     margin-bottom: 1rem;
     background-color: #323234;
 }
+
+nav .lower{
+    width: 100%;
+    height: 20%;
+    animation: transitionIn 1.5s;
+}
 nav .login{
     min-width: 90%;
     width: 90%;
-    margin: auto;
+    /* margin: auto; */
+    margin-left: 0.7rem;
+    margin-right: 1.3rem;
     height: 2rem;
     border: 3px solid #323234;
     background-color: inherit;
@@ -113,6 +121,44 @@ nav .login{
 nav .login:hover{
     background-color: #EE4950;
     cursor: pointer;
+}
+
+nav .lower .user{
+    width: 90%;
+    height: 80%;
+    padding-top: 0rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 0.3rem;
+    border: none;
+    margin-left: 0.7rem;
+    margin-right: 1.3rem;
+}
+nav .lower .user .box{
+    width: 100%;
+    height: 2rem;
+    display: grid;
+    grid-template-columns: 20% 70%;
+    align-items: center;
+    justify-content: center;
+    font-size: 65%;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #E3E3E3;
+}
+nav .lower .user .box:hover{
+    cursor: pointer;
+}
+nav .lower .user .box .icon{
+    width: 50%;
+    height: 50%;
+    margin-left:6% ;
+}
+
+nav .lower .user #coolor{
+    color: #EE4950;
 }
 
 @keyframes transitionIn {
@@ -187,7 +233,18 @@ nav .login:hover{
     nav .line{
         display:none;
     }
-    nav .login{
+    nav .lower{
         display: none;
     }
+    nav .lower .user{
+        grid-gap: 0.4rem;
+    }
+    nav .lower .user .box .icon{
+        margin-left: 20%;
+    }
+    nav .lower .user .box h1{
+        margin-left: 0.33rem;
+    
+    }
+   
 }
