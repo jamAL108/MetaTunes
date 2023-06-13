@@ -8,8 +8,8 @@ import{
 } from '../actiontypes';
 import { LOGINCOLOR } from '../propsaction';
 
-const URL= "http://localhost:8000";
-//
+const URL= "https://meta-tunes-api.vercel.app";
+//http://localhost:8000
 
 export const login = (formdata,navigate)=>async(dispatch)=>{
     try{
