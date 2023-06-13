@@ -39,7 +39,11 @@ const Landing = () => {
       <div className="item">
       <h2>Awesome Playlists</h2>
       <p>Created by out Team and other users</p>
+<<<<<<< Updated upstream
       <button>Listen now</button>
+=======
+      <button>Listen Now</button>
+>>>>>>> Stashed changes
       </div>
     </div>
     </div>
