@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { LOGINCOLOR, NAVCOLOR } from '../redux/propsaction';
+import Spinner from './spinner';
 import Nav from './nav';
 import './login.css';
 const Login = () => {
     const dispatch = useDispatch();
+    const [spin, setspin] = useState(false);
     useEffect(()=>{
       dispatch({type:NAVCOLOR , payload:true});
       document.body.style.backgroundColor="#09090B";
@@ -16,6 +18,10 @@ const Login = () => {
     }
     const navigate = useNavigate();
   return (
+    <>
+    {spin===true &&(
+        <Spinner className="spin" />
+        )}
     <div className="login">
         <Nav/>
         <div className="other">
@@ -37,6 +43,9 @@ const Login = () => {
             <button onClick={(e)=>{
                 e.preventDefault();
                 Submit();
+                const temp = document.querySelector(".login");
+                temp.style.opacity="0.4";
+                setspin(true);
             }}>LOGIN</button>
             <p className='or' >or</p>
             <p className='continue' onClick={(e)=>{
@@ -55,6 +64,7 @@ const Login = () => {
         </div>
     </div>
     </div>
+    </>
   )
 }
 

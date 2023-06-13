@@ -120,7 +120,7 @@
     }
     .home .allplaylist{
         width: 90%;
-margin-right:0.5rem;
+        margin-right:0.5rem;
         height: 45vh;
         background-color: white;
         margin-left: 2.7%;
@@ -130,12 +130,9 @@ margin-right:0.5rem;
         height: auto;
     }
     .home .allplaylist .item button{
-<<<<<<< Updated upstream
-       width: 50%
-=======
-       width: 50%;
+       width: 40%;
        height: 2rem;
->>>>>>> Stashed changes
+       font-size: 0.74rem;
     }
 }
 
@@ -155,7 +152,7 @@ margin-right:0.5rem;
 
 
 
-
+/* 
 .home .search{
     width: ;
-}
+} */
