@@ -70,15 +70,36 @@ height: 100%;
     .artists .items{
         margin-top: 0.5rem;
     }
+    .artists .items{
+
+    width: 100%;
+
+    height: 60%;
+
+    margin-top: 1.5rem;
+
+    display: flex;
+
+    justify-content:flex-start;
+
+    align-items: center;
+
+    overflow-x:scroll;
+
+    grid-gap: 2rem;
+
+    scroll-behavior: smooth;
+
+} 
     .artists .items h1{
-        font-size: 0.77rem;
+        font-size: 0.87rem;
         text-align: center;
     }
     .artists .heading{
         align-items: center;
     }
     .artists .heading h1{
-        font-size: 90%;
+        font-size: 110%;
          margin-left: 0.5rem;
         }
         .artists .heading p{
