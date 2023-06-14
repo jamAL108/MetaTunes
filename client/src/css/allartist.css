@@ -106,8 +106,8 @@ transition: 1s ease;
         scroll-behavior: smooth;
     }
     .artistes .heading h1{
-        font-size: 1.2rem;
-        margin-top: 1rem;
+        font-size: 1.4rem;
+        margin-top: 3rem;
         margin-bottom:0rem ;
         }
         .artistes .heading p{
@@ -150,15 +150,15 @@ transition: 1s ease;
             cursor: pointer;
         }
         .artistes .items img{
-            width: 4.4rem;
-            height: 4.4rem;
+            width: 5.5rem;
+            height: 5.5rem;
             border-radius: 50%;
             object-fit:cover;
         }
         
         .artistes .items h1{
             margin-top: 1rem;
-            font-size: 0.7rem;
+            font-size: 0.9rem;
             text-align: center;
             text-transform: capitalize;
         }
