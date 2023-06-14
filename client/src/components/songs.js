@@ -25,8 +25,10 @@ const Song = () => {
             <div className="items">
             {songs.map((item,idx)=>(
               <div className="boxzzy" key={idx}>
-                                <img src={item.imageURL} style={{backgroundSize:"cover",
-  backgroundPosition:"center"}} alt={item.name} />
+              <div className="image">
+                                <img src={item.imageURL}
+ alt={item.name} />
+   </div>
                 <h2>{item.name}</h2>
                 <p className="ppp">
                     {item.artist.map((name,ix)=>(
