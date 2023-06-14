@@ -69,17 +69,19 @@
  
     }
 .songs .items .boxzzy h2{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 0;
+    margin-top:0.3rem;
     text-transform: capitalize;
-    font-weight: 200;
+    font-weight: 500;
     text-align: left;
     margin-left: 0.3rem;
 
 }
 .songs .items .boxzzy .ppp{
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0;
+    margin-top:0.3rem;
     width: auto;
     height: auto;
     font-weight: 200;
