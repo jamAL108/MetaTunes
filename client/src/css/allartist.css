@@ -1,0 +1,166 @@
+html {
+    scroll-behavior: smooth;
+  }
+.artistes{
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.artistes .other{
+    background-color:inherit;
+    position: absolute;
+    left: 22.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    color: #E3E3E3;
+    width: 77.6vw;
+    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* overflow-y: scroll; */
+}
+.artistes .heading{
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.artistes .heading h1{
+font-size: 1.8rem;
+margin-bottom:0rem ;
+}
+.artistes .heading p{
+    font-size: 1.2rem;
+    font-weight: 200;
+    opacity: 0.7;
+}
+.artistes .heading p:hover{
+    cursor: pointer;
+    text-decoration: dashed;
+}
+.artistes .items{
+    width: 100%;
+    height: 80%;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;
+    grid-row-gap: 10%;
+    scroll-behavior: smooth;
+}
+
+.artistes .items .boxbuzz:first-child{
+    width: 100%;
+    height: 100%;
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+.artistes .items .boxbuzz{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: 1s ease;
+}
+
+.artistes .items .boxbuzz:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.artistes .items img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+.artistes .items h1{
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width:913px) {
+    .artistes .other{
+        top: 10%;
+        left: 0%;
+        width: 100vw;
+        height:auto;
+        min-height: 90%;
+        display: flex;
+        overflow-y: scroll;
+        flex-direction: column;
+        align-items: center;
+        scroll-behavior: smooth;
+    }
+    .artistes .heading h1{
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom:0rem ;
+        }
+        .artistes .heading p{
+            margin-top: 0.3rem;
+            font-size: 1rem;
+            font-weight: 100;
+            opacity: 0.5;
+        }
+    .artistes .items{
+        width: 100%;
+        height: 78%;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        grid-row-gap: 5%;
+
+        scroll-behavior: smooth;
+    }
+    .artistes .items .boxbuzz:first-child{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+    }
+    .artistes .items .boxbuzz{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s ease;
+        }
+        
+        .artistes .items .boxbuzz:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .artistes .items img{
+            width: 4.4rem;
+            height: 4.4rem;
+            border-radius: 50%;
+            object-fit:cover;
+        }
+        
+        .artistes .items h1{
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+}

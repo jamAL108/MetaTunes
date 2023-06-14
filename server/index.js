@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from 'cors';
 import dotenv from "dotenv";
 dotenv.config({path:"./config.env"});
+import Commonrouter from './router/common.js';
 import Userrouter from "./router/userrouter.js";
 import bodyParser from "body-parser";
 app.use(bodyParser.json());
@@ -16,6 +17,7 @@ mongoose.connect(db).then(()=>{
 }).catch((err)=>{
     console.log(err)
 });
+app.use('/common',Commonrouter);
 app.use("/user" , Userrouter);
 app.get('/',(req,res)=>{
     res.send("hello");

@@ -4,6 +4,8 @@ import { LOGINCOLOR } from '../redux/propsaction';
 import { useDispatch, useSelector } from 'react-redux';
 import '../css/home.css';
 import SearchIcon from '@mui/icons-material/Search';
+import { getallartist , getallsong } from '../redux/action/useraction';
+import Allartist from '../components/allartist';
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
@@ -12,6 +14,11 @@ const Landing = () => {
     data.index=0;
     localStorage.setItem("sidebar",JSON.stringify(data));
       // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+  useEffect(()=>{
+    dispatch(getallartist());
+    dispatch(getallsong());
+          // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   useEffect(()=>{
     if(store.props.logincolor===true){
@@ -42,6 +49,9 @@ const Landing = () => {
       <button>Listen now</button>
       </div>
     </div>
+    <div className="lineyy"></div>
+    <Allartist/>
+    <div className="lineyy"></div>
     </div>
     </div>
   )

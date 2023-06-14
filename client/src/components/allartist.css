@@ -1,0 +1,89 @@
+.lineyy{
+    width: 100%;
+    height: 4vh;
+}
+.artists{
+    /* margin-top: 2rem; */
+    width: 90%;
+    height: 35vh;
+    max-height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+    grid-gap: 0.6rem;
+}
+
+.artists .heading{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content:space-between;
+}
+.artists .heading h1{
+font-size: 130%;
+ margin-left: 0.5rem;
+}
+.artists .heading p{
+    font-size: 1rem;
+    color:  #EE4950;
+    margin-right: 1rem;
+}
+.artists .heading p:hover{
+    cursor: pointer;
+    text-decoration: dashed;
+}
+.artists .items{
+    width: 100%;
+    height: 80%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    overflow-x:scroll;
+    grid-gap: 2rem;
+    scroll-behavior: smooth;
+}
+
+.artists .items .boxbuzz:first-child{
+    width: 50%;
+    height: 100%;
+    margin-left: 1rem;
+}
+.artists .items .boxbuzz{
+width: 50%;
+height: 100%;
+}
+.artists .items img{
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+.artists .items h1{
+    font-size: 0.77rem;
+    text-align: center;
+}
+
+@media screen and (max-width:913px) {
+    .artists .items{
+        margin-top: 0.5rem;
+    }
+    .artists .items h1{
+        font-size: 0.77rem;
+        text-align: center;
+    }
+    .artists .heading{
+        align-items: center;
+    }
+    .artists .heading h1{
+        font-size: 90%;
+         margin-left: 0.5rem;
+        }
+        .artists .heading p{
+            font-size: 0.8rem;
+            color:  #EE4950;
+            margin-right: 1rem;
+        }
+}

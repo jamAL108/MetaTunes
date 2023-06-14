@@ -11,6 +11,50 @@ import { LOGINCOLOR } from '../propsaction';
 const URL= "https://meta-tunes.onrender.com";
 //http://localhost:8000
 
+export const getallartist = ()=>async(dispatch)=>{
+  try{
+    const api =`${URL}/common/getallartist`;
+    const res = await fetch(api,{
+     method: "GET",
+     headers: {
+       "Content-Type":"application/json"
+      }
+     });
+    const msg = await res.json();
+    console.log(msg);
+    if(res.status === 200 ){
+      const dat = msg.response;
+      console.log(dat);
+        localStorage.setItem("artist",JSON.stringify(dat));
+    }
+ }catch(err){
+   console.log(err);
+ }
+}
+
+export const getallsong = ()=>async(dispatch)=>{
+  try{
+    const api =`${URL}/common/getallsong`;
+    const res = await fetch(api,{
+     method: "GET",
+     headers: {
+       "Content-Type":"application/json"
+      }
+     });
+    const msg = await res.json();
+    console.log(msg);
+    if(res.status === 200 ){
+      const data = msg.response;
+      console.log(data);
+        localStorage.setItem("song",JSON.stringify(data));
+    }
+ }catch(err){
+   console.log(err);
+ }
+}
+
+
+
 export const login = (formdata,navigate)=>async(dispatch)=>{
     try{
        const api =`${URL}/user/login`;

@@ -1,5 +1,6 @@
 .home{
     width: 100%;
+    min-height: 100vh;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -15,8 +16,9 @@
     justify-content:flex-start;
     color: #E3E3E3;
     width: 77.6vw;
-    height: 90%;
-    max-height: 90vh;
+    height: 100vh;
+    min-height: 100vh;
+    /* overflow-y: scroll; */
 }
 .home .search{
     width: 90%;
@@ -74,6 +76,7 @@
     position: absolute;
     bottom: 0;
     margin-left: 3%;
+    margin-bottom: 1rem;
 }
 .home .allplaylist .item h2  {
    font-size: 1.5rem;
@@ -84,7 +87,7 @@
     font-size: 0.7rem;
 }
 .home .allplaylist .item button{
-    width: 20%;
+    width: 15%;
     height: 2rem;
     border-radius: 10px;
     border: none;
@@ -100,13 +103,12 @@
         top: 10%;
         left: 0%;
         width: 100vw;
-        height:100%;
+        height:auto;
         min-height: 90%;
         display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
+        overflow-y: scroll;
+        flex-direction: column;
+        align-items: center;
     }
     .home .other .search{
         width: 90%;

@@ -3,7 +3,7 @@ nav{
    width: 22.3vw;
    height: 100vh;
    max-height: 100%;
-   position: sticky;
+   position: fixed;
    background-color: #18181c;
    border-right: 3px solid #323234 ;
    z-index: 5;
