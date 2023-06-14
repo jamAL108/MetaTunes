@@ -41,23 +41,31 @@
     overflow-y: hidden;
     scroll-behavior: smooth;
 }
-
+.songs .items .boxzzy:first-child{
+    margin-left:0.5rem;
+    }
 .songs .items .boxzzy{
-    min-width: 60%;
+    min-width: 50%;
     width: auto;
     max-height: 100%;
     height:100% ;
     border-radius: 20px !important;
     background-color: #18181a;
 }
-.songs .items .boxzzy img{
+.songs .items .boxzzy .image{
     width: 100%;
     max-height: 75%;
-    height: auto;
+    height: 75%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    object-fit:cover;
+    overflow:hidden;
 }
+.songs .items .boxzzy .image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+ 
+    }
 .songs .items .boxzzy h2{
     font-size: 1.1rem;
     margin: 0;
