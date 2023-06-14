@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Nav from '../components/nav';
 import { LOGINCOLOR } from '../redux/propsaction';
 import { useDispatch, useSelector } from 'react-redux';
+import Song from '../components/songs';
 import '../css/home.css';
 import SearchIcon from '@mui/icons-material/Search';
 import { getallartist , getallsong } from '../redux/action/useraction';
@@ -51,7 +52,9 @@ const Landing = () => {
     </div>
     <div className="lineyy"></div>
     <Allartist/>
-    <div className="lineyy"></div>
+    <div className="liney"></div>
+    <Song/>
+    <div className="liney"></div>
     </div>
     </div>
   )

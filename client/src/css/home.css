@@ -5,6 +5,10 @@
     margin: 0;
     padding: 0;
 }
+.liney{
+    width: 100%;
+    height: 5vh;
+}
 .home .other{
     background-color:inherit;
     position: absolute;
@@ -16,7 +20,7 @@
     justify-content:flex-start;
     color: #E3E3E3;
     width: 77.6vw;
-    height: 100vh;
+    height: auto;
     min-height: 100vh;
     /* overflow-y: scroll; */
 }
@@ -143,7 +147,7 @@
          font-weight: 400;
      }
     .home .allplaylist .item button{
-       width: 40%;
+       width: 45%;
        height: 2.2rem;
        font-size: 1.15rem;
        font-weight: 544;
