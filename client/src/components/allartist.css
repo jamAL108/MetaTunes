@@ -112,8 +112,11 @@ align-items: center;
 
 
 .artists .items .boxbuzz .image{
-    width: 111%;
-    height: 58%;
+ 
+    
+    width:7.04rem;
+    height:7.04rem;
+   
     display: flex;
 justify-content: center;
 align-items: center;
