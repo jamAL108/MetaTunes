@@ -4,12 +4,19 @@ import Loading from '../components/loading';
 import Nav from '../components/nav';
 import { useDispatch, useSelector } from 'react-redux';
 import { ARTISTDETAIL } from '../redux/actiontypes';
+import {getartist} from '../redux/action/useraction'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 const Artistdetail = () => {
   const dispatch = useDispatch();
   const store = useSelector((state)=>state)
     const [artist,setartist]=useState({});
     const [show,setshow]=useState(false);
+  useEffect(()=>{
+    dispatch(getartist(store.props.artistid);
+             // eslint-disable-next-line react-hooks/exhaustive-deps
+
+
+    },[])
     useEffect(()=>{
    if(Object.keys(store.user.artistdetail).length!==0){
        setartist(store.user.artistdetail);
