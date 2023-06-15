@@ -12,7 +12,7 @@ const Artistdetail = () => {
     const [artist,setartist]=useState({});
     const [show,setshow]=useState(false);
   useEffect(()=>{
-    dispatch(getartist(store.props.artistid);
+    dispatch(getartist(store.props.artistid));
              // eslint-disable-next-line react-hooks/exhaustive-deps
 
 
