@@ -130,7 +130,7 @@ align-items: center;
     width: 6.85rem;
     height: 6.85rem;
     border-radius: 50%;
-    object-fit:cover;
+    object-fit:contain;
 }
 
     .artists .items h1{
