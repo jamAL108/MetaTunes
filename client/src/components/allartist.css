@@ -112,7 +112,7 @@ align-items: center;
 
 
 .artists .items .boxbuzz .image{
-    width: 105%;
+    width: 110%;
     height: 60%;
     display: flex;
 justify-content: center;
@@ -121,8 +121,8 @@ align-items: center;
       border-radius: 50%;
 }
 .artists .items img{
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 6.7rem;
+    height: 6.7rem;
     border-radius: 50%;
     object-fit:cover;
 }
