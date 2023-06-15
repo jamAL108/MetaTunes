@@ -1,5 +1,6 @@
 import React, { useEffect , useState } from 'react'
 import '../css/artistdetail.css';
+
 import Loading from '../components/loading';
 import Nav from '../components/nav';
 import { useDispatch, useSelector } from 'react-redux';
