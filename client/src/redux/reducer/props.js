@@ -1,11 +1,14 @@
 import {
     NAVCOLOR,
-    LOGINCOLOR
+    LOGINCOLOR,
+    ARTISTID
+    
 } from '../propsaction';
 
 const initialstate ={
     navcolor:false,
-    logincolor:false
+    logincolor:false,
+    artistid:""
 }
 
 
@@ -20,6 +23,10 @@ const props =(state=initialstate , action) =>{
             return{
                 ...state , logincolor:action.payload
             }    
+            case ARTISTID:
+            return{
+                ...state , artistid:action.payload
+                }
         default:
             return state;    
     }
