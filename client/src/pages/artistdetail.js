@@ -13,9 +13,14 @@ const Artistdetail = () => {
     const [show,setshow]=useState(false);
   useEffect(()=>{
     dispatch(getartist(store.props.artistid));
-             // eslint-disable-next-line react-hooks/exhaustive-deps
+    
+     // eslint-disable-next-line react-hooks/exhaustive-deps
 
 
+    },[])
+  useEffect(()=>{
+    dispatch(getartist(store.props.artistid));
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     useEffect(()=>{
    if(Object.keys(store.user.artistdetail).length!==0){
