@@ -3,7 +3,7 @@ import './allartist.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getallartist } from '../redux/action/useraction';
- import { ARTISTID  } from '../redux/propstypes';
+ import { ARTISTID  } from '../redux/propsaction';
 import {getartist} from '../redux/action/useraction';
 import { ColorRing } from 'react-loader-spinner';
 const Allartist = () => {
