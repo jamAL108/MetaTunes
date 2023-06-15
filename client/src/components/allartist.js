@@ -25,7 +25,9 @@ const Allartist = () => {
             <div className="items">
             {artist.map((item,idx)=>(
               <div className="boxbuzz" key={idx}>
+                <div className="image">
                 <img src={item.imageURL} alt={item.name} />
+                </div>
                 <h1>{item.name}</h1>
                 </div>
             ))}
