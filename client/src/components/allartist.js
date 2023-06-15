@@ -3,7 +3,7 @@ import './allartist.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getallartist } from '../redux/action/useraction';
-// import { ALLARTIST, ARTISTDETAIL } from '../redux/actiontypes';
+ import { ARTISTID  } from '../redux/propstypes';
 import {getartist} from '../redux/action/useraction';
 import { ColorRing } from 'react-loader-spinner';
 const Allartist = () => {
@@ -66,7 +66,7 @@ const Allartist = () => {
             {artist.map((item,idx)=>(
               <div className="boxbuzz" onClick={(e)=>{
                 e.preventDefault();
-                dispatch(getartist(item));
+                dispatch({type:ARTISTID , payload:item._id});
                 navigate(`/artist/${item._id}`);
               }} key={idx}>
                 <div className="image">
