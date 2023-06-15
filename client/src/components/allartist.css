@@ -18,6 +18,7 @@
 .artists .heading{
     width: 100%;
     height: 10%;
+    margin-top: 0rem !important;
     display: flex;
     justify-content:space-between;
 }
@@ -58,14 +59,25 @@ width: 60%;
 height: 100%;
 transition: 1.5s ease;
 margin-top: 1.5rem;
-
+}
+.artists .spin{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artists .spinny{
+    width: 2rem;
+    height: 2rem;
+    color: #EE4950;
 }
 .artists .items .boxbuzz:hover{
     transform: scale(1.03);
 }
 .artists .items .boxbuzz .image{
     width: 107%;
-    height: 58%;
+    height: 55%;
     display: flex;
 justify-content: center;
 align-items: center;
@@ -86,7 +98,7 @@ align-items: center;
 
 @media screen and (max-width:913px) {
     .liney{
-        height:0vh;
+        height:4vh;
         }
     .artists{
         /* margin-top: 2rem; */
@@ -99,7 +111,18 @@ align-items: center;
         flex-direction:column ;
         grid-gap: 0.6rem;
     }
-    
+    .artists .spin{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .artists .spinny{
+        width: 2rem;
+        height: 2rem;
+        color: #EE4950;
+    }
     .artists .items{
     width: 100%;
     height: 85%;

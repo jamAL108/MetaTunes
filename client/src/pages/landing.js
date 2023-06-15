@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Song from '../components/songs';
 import '../css/home.css';
 import SearchIcon from '@mui/icons-material/Search';
-import { getallartist , getallsong } from '../redux/action/useraction';
+import {  getallsong } from '../redux/action/useraction';
 import Allartist from '../components/allartist';
 const Landing = () => {
   const store= useSelector((state)=>state);
@@ -17,7 +17,7 @@ const Landing = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   useEffect(()=>{
-    dispatch(getallartist());
+    // dispatch(getallartist());
     dispatch(getallsong());
           // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])

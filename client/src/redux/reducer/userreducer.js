@@ -5,7 +5,9 @@ import{
  SIGNUP ,
  LOGINERROR ,
  SIGNUPERROR ,
- USERDATA
+ USERDATA,
+ ALLARTIST,
+ ARTISTDETAIL
 } from '../actiontypes.js';
 const initialstate={
     authordata:null,
@@ -13,7 +15,9 @@ const initialstate={
     signup:false,
     loginerror:"",
     signuperror:"",
-    logout:false
+    logout:false,
+    allartist:[],
+    artistdetail:{}
 }  
 
 const User =(state=initialstate , action) =>{
@@ -50,6 +54,14 @@ const User =(state=initialstate , action) =>{
             return{
                  ...state , signuperror:action.payload
             }
+        case ALLARTIST:
+            return{
+                ...state , allartist:action.payload
+            }
+        case ARTISTDETAIL:
+            return{
+                ...state , artistdetail:action.payload
+            }       
         default:
             return state;    
         }

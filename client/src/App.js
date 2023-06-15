@@ -6,6 +6,7 @@ import Favourite from './pages/favourites';
 import Login from './components/login';
 import Register from './components/register';
 import Allartist from './pages/artist';
+import Artist from './pages/artistdetail';
 function App() {
   return (
      <Routes>
@@ -15,6 +16,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/Register' element={<Register/>}/>
       <Route path='/artists' element={<Allartist/>}/>
+      <Route path='/artist/:id' element={<Artist/>}/>
      </Routes>
   );
 }

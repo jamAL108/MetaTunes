@@ -3,13 +3,37 @@ import './songs.css';
 import { useNavigate } from 'react-router-dom';
 const Song = () => {
   const navigate = useNavigate();
-  const songs = JSON.parse(localStorage.getItem("song"));
+  const song = JSON.parse(localStorage.getItem("song"));
+  const [songs,setsongs]=useState(song);
     const [show,setshow]=useState(false);
     useEffect(()=>{
       if(songs.length!==0){
          setshow(true);
       }
             // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+    useEffect(()=>{
+      let temp = [...songs];
+       for(var i=0;i<temp.length;i++){
+        if(temp[i].name.length>14){
+           temp[i].dummytitle=temp[i].name.substring(0,12)+"...";
+        }else{
+          temp[i].dummytitle=temp[i].name;
+        }
+        let artistss="";
+        for(var k=0;k<temp[i].artist.length;k++){
+           artistss+=temp[i].artist[k]+",";
+        }
+        var temp1 = artistss.substring(0,artistss.length-1);
+        if(temp1.length>13){
+          temp[i].dummyartist=temp1.substring(0,12)+"...";
+          console.log(temp1);
+       }else{
+         temp[i].dummyartist=temp1;
+       }
+      }
+      setsongs(temp);
+                // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
   return (
     <div className="songs">
@@ -28,13 +52,13 @@ const Song = () => {
               <div className="image">
                                 <img src={item.imageURL}
  alt={item.name} />
-   </div>
-                <h2>{item.name}</h2>
+   </div>       
+   <div className="below">
+                <h2>{item.dummytitle}</h2>
                 <p className="ppp">
-                    {item.artist.map((name,ix)=>(
-                        <span key={ix} >{name},</span>
-                    ))}
+                  {item.dummyartist}
                 </p>
+                </div>
                 </div>
             ))}
            </div>
