@@ -51,13 +51,13 @@ font-size: 130%;
     width: 60%;
     height: 100%;
     margin-left: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 .artists .items .boxbuzz{
 width: 60%;
 height: 100%;
 transition: 1.5s ease;
-margin-top: 1rem;
+margin-top: 1.5rem;
 
 }
 .artists .items .boxbuzz:hover{
