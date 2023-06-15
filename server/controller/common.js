@@ -42,7 +42,7 @@ export const getallartist = async(req,res)=>{
 
 export const getallsong = async(req,res)=>{
   try{
-    const songs = await song.find({});
+    const songs = await song.find({language:"english"});
     console.log(songs);
     return res.status(200).send({response:songs});
   }catch(err){
