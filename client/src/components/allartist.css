@@ -130,6 +130,7 @@ align-items: center;
     .artists .items h1{
         font-size: 0.87rem;
         text-align: center;
+        text-transform: capitalise;
     }
     .artists .heading{
         align-items: center;
