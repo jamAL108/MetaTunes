@@ -52,7 +52,7 @@ const Landing = () => {
     </div>
     <div className="lineyy"></div>
     <Allartist/>
-    <div className="liney"></div>
+  
     <Song/>
     <div className="liney"></div>
     </div>
