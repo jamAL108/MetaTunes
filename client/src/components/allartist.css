@@ -88,7 +88,7 @@ align-items: center;
     .artists{
         /* margin-top: 2rem; */
         width: 90%;
-        height: 33vh;
+        height: 35vh;
         max-height: 35vh;
         display: flex;
         justify-content: center;
@@ -99,7 +99,7 @@ align-items: center;
     
     .artists .items{
     width: 100%;
-    height: 80%;
+    height: 85%;
     margin-top: 0.7rem;
     display: flex;
     justify-content:flex-start;
