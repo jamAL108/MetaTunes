@@ -37,7 +37,7 @@ export const getallsong=(username)=>async()=>{
         const obj={
           username:username
         }
-       const res = await fetch("http://localhost:8000/common/getsongs",{
+       const res = await fetch("https://meta-tunes.onrender.com/common/getsongs",{
         method: "POST",
         headers: {
           "Content-Type":"application/json"
