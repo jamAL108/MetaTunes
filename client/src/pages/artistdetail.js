@@ -13,7 +13,7 @@ const Artistdetail = () => {
   const store = useSelector((state)=>state)
     const [artist,setartist]=useState({});
     const [show,setshow]=useState(false);
-    const URL= "http://localhost:8000";
+    const URL= "https://meta-tunes.onrender.com";
     const func =async()=>{
     try{
      const api =`${URL}/common/artist/${id}`;
