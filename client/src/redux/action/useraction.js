@@ -10,8 +10,6 @@ import{
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
 const URL= "https://meta-tunes.onrender.com";
-//http://localhost:8000
-
 export const getallartist = ()=>async(dispatch)=>{
   try{
     const api =`${URL}/common/getallartist`;
