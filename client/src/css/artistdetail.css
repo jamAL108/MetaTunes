@@ -20,6 +20,78 @@
     height: auto;
     min-height: 100vh;
 }
+.art .others .headery{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+.art .others .headery .imagee{
+    width: 50%;
+    height: 18rem;
+    border-radius: 14px;
+}
+.art .others .headery .imagee img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+} 
+.art .others .headery .info{
+    width: 50%;
+    height: 21rem;
+    overflow: hidden;
+}
+.art .others .headery .info h1{
+    font-size: 1.25rem;
+    color: #EE4950;
+    margin-top: 0rem;
+    text-transform: capitalize;
+}
+.art .others .headery .info p{
+    font-size: 1rem;
+    color: #E3E3E3;
+    line-height: 1.3rem;
+    font-family: 'Roboto' , sans-serif;
+}
+.art .others .down{
+    width: 90%;
+    height: auto;
+    min-height: 9rem;
+}
+.art .others .down .up{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+    width: 100%;
+    height: 3rem;
+}
+.art .others .down .up h1{
+    font-size: 1.3rem;
+}
+.art .others .down .dash{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 3px;
+    background-color: #323234;
+}
+.art .others .down .up .play{
+    background-color: #EE4950;
+    display: flex;
+    width: 20%;
+    max-height: 80%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+.art .others .down .up .play h1{
+    font-size: 1.1rem;
+    margin-left: -0.2rem;
+}
+
 
 @media screen and (max-width:913px) {
     .art{
@@ -52,7 +124,7 @@
         width: 100%;
         max-height: 20%;
         min-height:20%;
-        height:20;
+        height:20%;
         border-radius: 14px;
     }
     .art .others .headery .imagee img{
@@ -69,6 +141,8 @@
         font-size: 1.2rem;
         color: #EE4950;;
         text-transform: capitalize;
+        margin-top: 1rem;
+        margin-bottom: 0.2rem;
     }
     .art .others .headery .info p{
         font-size: 1rem;
@@ -95,7 +169,7 @@
     .art .others .down .up .play{
         background-color: #EE4950;
         display: flex;
-        width: 40%;
+        width: 42%;
         max-height: 80%;
         justify-content: center;
         align-items: center;
@@ -104,5 +178,94 @@
     .art .others .down .up .play h1{
         font-size: 1.1rem;
         margin-left: -0.2rem;
+    }
+    .art .others .down .dash{
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        height: 3px;
+        background-color: #323234;
+    }
+    .art .others .down .songlist{
+        width: 100%;
+        min-height: 20vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0.7rem;
+        margin-top: 1rem;
+    }
+    .art .others .down .songlist .box{
+        width: 100%;
+        height: 4.1rem;
+        background-color: #18181a;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        border-radius: 15px;
+        font-family: 'Roboto' , sans-serif;
+    }
+    .art .others .down .songlist .box .left{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+
+    .art .others .down .songlist .box .left .image{
+        min-width: 34% !important;
+        height: 80%;
+        margin-left: 0.4rem;
+        border-radius: 20px;
+    }
+    .art .others .down .songlist .box .left .image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .art .others .down .songlist .box .left .names{
+         height: 70%;
+         min-width: 60%;
+    }
+    .art .others .down .songlist .box .left .names h2{
+        font-size: 0.79rem;
+        margin-left: 0.4rem;
+        font-weight: 610;
+        margin-top: 0rem;
+        overflow: hidden;
+        text-transform: capitalize;
+    }
+    .art .others .down .songlist .box .left .names p{
+        font-size: 0.79rem;
+        margin-left: 0.4rem;
+        font-weight: 200;
+        margin-top: 0rem;
+    }
+    .art .others .down .songlist .box .right{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+    .art .others .down .songlist .box .right .play{
+        color: #EE4950;
+        width: 30%;
+        height: 30%;
+    }
+    .art .others .down .songlist .box .right .nolike{
+        color: #E3E3E3;
+        width: 30%;
+        height: 30%;
+    }
+    .art .others .down .songlist .box .right .like{
+        color: #EE4950;
+        width: 30%;
+        height: 30%;
     }
 }

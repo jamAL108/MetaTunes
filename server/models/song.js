@@ -24,6 +24,10 @@ const Song = new mongoose.Schema({
 			ref: "artists",
 		},
     ],
+    like:{
+        type:Boolean,
+        default:false
+    }
 });
 
 export default mongoose.model("songs",Song);

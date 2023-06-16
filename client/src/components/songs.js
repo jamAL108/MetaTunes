@@ -1,13 +1,27 @@
 import React, { useEffect , useState } from 'react'
 import './songs.css';
 import { useNavigate } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useDispatch } from 'react-redux';
+import { ColorRing } from 'react-loader-spinner';
+import { addfavourites , removefavourites } from '../redux/action/useraction';
 const Song = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("user"));
   const song = JSON.parse(localStorage.getItem("song"));
   const [songs,setsongs]=useState(song);
     const [show,setshow]=useState(false);
+    const [array , setarray]=useState([]);
+    // const user = JSON.parse(localStorage.getItem("user"));
     useEffect(()=>{
       if(songs.length!==0){
+         let iddx =[];
+         for(var i=0;i<songs.length;i++){
+          iddx[i]=songs[i].like;
+         }
+         setarray(iddx);
          setshow(true);
       }
             // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,15 +51,28 @@ const Song = () => {
     },[])
   return (
     <div className="songs">
-       {show===true &&(
-        <>
-            <div className="heading">
-            <h1>Popular Songs</h1>
-            <p onClick={(e)=>{
-              e.preventDefault();
-              navigate('/artists');
+       <div className="heading">
+          <h1>Popular Songs</h1>
+         <p onClick={(e)=>{
+            e.preventDefault();
+           navigate('/artists');
             }} >see more</p>
             </div>
+            {show===false &&(
+                    <div className='spin'>
+                    <ColorRing
+                      visible={true}
+                      height="90"
+                      width="90"
+                      ariaLabel="blocks-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="blocks-wrapper"
+                      colors={['#EE4950','#EE4950','#EE4950','#EE4950','#EE4950']}
+                    />
+                          </div>
+            )}
+       {show===true &&(
+        <>
             <div className="items">
             {songs.map((item,idx)=>(
               <div className="boxzzy" key={idx}>
@@ -54,10 +81,46 @@ const Song = () => {
  alt={item.name} />
    </div>       
    <div className="below">
+    <div className="left">
                 <h2>{item.dummytitle}</h2>
                 <p className="ppp">
                   {item.dummyartist}
                 </p>
+                </div>
+                <div className="right">
+                  {array[idx]===false && user &&(
+                  <FavoriteBorderIcon className='nolike' onClick={(e)=>{
+                     e.preventDefault();
+                     let arr = [...array];
+                     arr[idx]=true;
+                     setarray(arr);            
+                     const temp = JSON.parse(localStorage.getItem("song"));
+                     temp[item.idx].like=true;
+                     localStorage.setItem("song",JSON.stringify(temp));
+                     const obj={
+                        person:user.username,
+                        id:item._id
+                     }
+                     dispatch(addfavourites(obj))
+                  }} />
+                  )}
+                  {array[idx]===true && user &&(
+                    <FavoriteIcon className='like'  onClick={(e)=>{
+                    e.preventDefault();
+                    let arr = [...array];
+                     arr[idx]=false;
+                     setarray(arr); 
+                    const temp = JSON.parse(localStorage.getItem("song"));
+                    temp[item.idx].like=false;
+                    localStorage.setItem("song",JSON.stringify(temp));
+                    const obj={
+                      person:user.username,
+                      id:item._id
+                   }
+                   dispatch(removefavourites(obj))
+                    }}/>
+                  )}
+                </div>
                 </div>
                 </div>
             ))}

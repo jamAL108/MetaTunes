@@ -1,5 +1,6 @@
 import artist from "../models/artist.js";
 import song from '../models/song.js';
+import User from "../models/user.js";
 
 export const Addsong = async(req,res)=>{
     try{
@@ -18,7 +19,8 @@ export const Addsong = async(req,res)=>{
            songURL:body.songURL,
            artist:body.artist,
            language:body.language,
-           artistId:artistId
+           artistId:artistId,
+           like:false
        })
        await newsong.save();
        return res.status(200).send({response:newsong});
@@ -44,7 +46,33 @@ export const getartist = async(req,res)=>{
     console.log(req.params);
     const { id } = req.params;
     const getartist = await artist.findOne({_id:id});
-    const songs = await song.find({artistId: {$in:id}});
+    const {username} = req.body;
+    let songs=[];
+    console.log(username);
+    if(!username){
+     songs = await song.find({artistId: {$in:id}});
+     for(var k=0;k<songs.length;k++){
+      songs[k].like=false;
+    }
+    }else{
+      const user=await User.findOne({username: username});
+      songs = await song.find({artistId: {$in:id}});
+      if(user.favourites.length!==0){
+          for(var i=0;i<user.favourites.length;i++){
+            for(var j=0;j<songs.length;j++){
+                if(user.favourites[i].equals(songs[j]._id)){
+                  songs[j].like=true;
+                  console.log("heeey");
+                }
+            }
+          }
+      }else{
+        songs = await song.find({artistId: {$in:id}});
+        for(var k=0;k<songs.length;k++){
+          songs[k].like=false;
+        }
+      }
+    }
     const artiste={
       artist:getartist,
       songs:songs
@@ -57,9 +85,37 @@ export const getartist = async(req,res)=>{
   }
 };
 
+
 export const getallsong = async(req,res)=>{
   try{
-    const songs = await song.find({language:"english"});
+    console.log(req.body);
+    const {username} = req.body;
+    let songs=[];
+    console.log(username);
+    if(!username){
+     songs = await song.find({});
+     for(var k=0;k<songs.length;k++){
+      songs[k].like=false;
+    }
+    }else{
+      const user=await User.findOne({username: username});
+      songs = await song.find({});
+      if(user.favourites.length!==0){
+          for(var i=0;i<user.favourites.length;i++){
+            for(var j=0;j<songs.length;j++){
+                if(user.favourites[i].equals(songs[j]._id)){
+                  songs[j].like=true;
+                  console.log("heeey");
+                }
+            }
+          }
+      }else{
+        songs = await song.find({});
+        for(var k=0;k<songs.length;k++){
+          songs[k].like=false;
+        }
+      }
+    }
     return res.status(200).send({response:songs});
   }catch(err){
    console.log(err);

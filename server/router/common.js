@@ -4,7 +4,7 @@ import { Addsong, getallartist, getallsong , getartist
 
 const router = express.Router();
 router.post('/addsong',Addsong);
+router.post("/getsongs",getallsong);
 router.get('/getallartist',getallartist);
-router.get('/artist/:id',getartist);
-router.get("/getallsong",getallsong);
+router.post('/artist/:id',getartist);
 export default router;

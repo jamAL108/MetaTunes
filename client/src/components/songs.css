@@ -75,25 +75,59 @@
 }
 
 .songs .items .boxzzy .below{
-    width: 90%;
+    width: 100%;
     min-height: 25%;
     height: 25%;
     display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: flex-start;
+    justify-content:space-around;
+    /* align-items: flex-start; */
     margin-left: 0.3rem;
 }
-.songs .items .boxzzy h2{
-    width: 100%;
+
+.songs .items .boxzzy .below .left{
+   width: 68%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.songs .items .boxzzy .below .right{
+    width: 32%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.songs .items .boxzzy .below .right .like{
+    width: 40%;
+    height: 40%;
+    color: #EE4950;
+}
+.songs .items .boxzzy .below .right .nolike{
+    height: 40%;
+    height: 40%;
+}
+
+.songs .items .boxzzy .below .right .like:hover , .songs .items .boxzzy .below .right .nolike:hover{
+    cursor: pointer;
+}
+.songs .items .boxzzy .below .left h2{
+    width: 110%;
     height: 50%;
-    font-size: 100%; 
+    font-size: 90%; 
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: 500;
     margin: 0;
 }
-.songs .items .boxzzy .ppp{
-    font-size: 0.8rem;
+.songs .spin{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.songs .items .boxzzy .below .left  .ppp{
+    font-size: 0.7rem;
     opacity: 0.5;
     font-weight: 300;
     margin: 0;
@@ -156,17 +190,17 @@
 }
 .songs .items .boxzzy:first-child{
     margin-left:0.5rem;
-    min-width: 44%;
+    min-width: 46%;
 
-    width: 44%;
+    width: 46%;
 
     max-height: 90%;
 
     height:90% 
     }
 .songs .items .boxzzy{
-    min-width: 44%;
-    width: 44%;
+    min-width: 46%;
+    width: 46%;
     max-height: 90%;
     height:90% ;
     border-radius: 10px !important;
@@ -188,7 +222,65 @@
     object-fit:cover;
  
     }
+
     .songs .items .boxzzy .below{
+        width: 100%;
+        min-height: 25%;
+        height: 25%;
+        display: flex;
+        justify-content:space-around;
+        /* align-items: flex-start; */
+        margin-left: 0.3rem;
+    }
+    
+    .songs .items .boxzzy .below .left{
+       width: 68%;
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+    }
+    .songs .items .boxzzy .below .right{
+        width: 32%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .songs .items .boxzzy .below .right .like{
+        width: 50%;
+        height: 50%;
+        color: #EE4950;
+    }
+    .songs .items .boxzzy .below .right .nolike{
+        height: 50%;
+        height: 50%;
+    }
+    .songs .items .boxzzy .below .left h2{
+        width: 110%;
+        height: 50%;
+        font-size: 68%; 
+        text-transform: capitalize;
+        font-weight: 400;
+        margin: 0;
+    }
+    .songs .spin{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .songs .items .boxzzy .below .left  .ppp{
+        font-size: 0.64rem;
+        opacity: 0.5;
+        font-weight: 300;
+        margin: 0;
+        text-transform: capitalize;
+    
+    }
+    
+    /* .songs .items .boxzzy .below{
         width: 90%;
         min-height: 25%;
         height: 25%;
@@ -213,5 +305,5 @@
         margin: 0;
         text-transform: capitalize;
     
-    }
+    } */
 }

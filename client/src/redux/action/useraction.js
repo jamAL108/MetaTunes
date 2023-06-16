@@ -7,7 +7,7 @@ import{
  LOGOUT,
  ALLARTIST
 } from '../actiontypes';
-import { LOGINCOLOR } from '../propsaction';
+import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
 const URL= "https://meta-tunes.onrender.com";
 //http://localhost:8000
@@ -34,25 +34,31 @@ export const getallartist = ()=>async(dispatch)=>{
 }
 
 
-export const getallsong = ()=>async(dispatch)=>{
-  try{
-    const api =`${URL}/common/getallsong`;
-    const res = await fetch(api,{
-     method: "GET",
-     headers: {
-       "Content-Type":"application/json"
-      }
-     });
-    const msg = await res.json();
-    console.log(msg);
-    if(res.status === 200 ){
-      const data = msg.response;
-      console.log(data);
-        localStorage.setItem("song",JSON.stringify(data));
+export const getallsong=(username)=>async()=>{
+   try{
+        const obj={
+          username:username
+        }
+       const res = await fetch("http://localhost:8000/common/getsongs",{
+        method: "POST",
+        headers: {
+          "Content-Type":"application/json"
+         },
+        body: JSON.stringify(obj)
+        });
+       const msg = await res.json();
+       console.log(msg);
+       if(res.status === 200 ){
+            let data = msg.response;
+            for(var i=0;i<data.length;i++){
+              data[i].idx=i;
+           }
+           const songs = data;
+            localStorage.setItem("song",JSON.stringify(songs));
     }
- }catch(err){
-   console.log(err);
- }
+    }catch(err){
+      console.log(err);
+    }
 }
 
 
@@ -85,6 +91,7 @@ export const login = (formdata,navigate)=>async(dispatch)=>{
 export const logout = (navigate)=>async(dispatch)=>{
   try{
     dispatch({type:LOGOUT , payload:true});
+    dispatch({type:USEREXIT , payload:false});
     navigate("/");
   }catch(err){
     console.log(err);
@@ -113,3 +120,44 @@ export const signup = (formdata,navigate)=>async(dispatch)=>{
     console.log(err);
   }
 }
+
+export const addfavourites = (formdata)=>async()=>{
+  try{
+     const api =`${URL}/user/addfavourites`;
+     const res = await fetch(api,{
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+       },
+      body: JSON.stringify(formdata)
+      });
+     const msg = await res.json();
+     console.log(msg);
+     if(res.status === 200 ){
+        console.log("good");
+     }
+  }catch(err){
+    console.log(err);
+  }
+}
+
+export const removefavourites = (formdata)=>async()=>{
+  try{
+     const api =`${URL}/user/removefavourites`;
+     const res = await fetch(api,{
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+       },
+      body: JSON.stringify(formdata)
+      });
+     const msg = await res.json();
+     console.log(msg);
+     if(res.status === 200 ){
+        console.log("good");
+     }
+  }catch(err){
+    console.log(err);
+  }
+}
+

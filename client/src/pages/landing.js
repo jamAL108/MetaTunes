@@ -10,6 +10,7 @@ import Allartist from '../components/allartist';
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
+  
   useEffect(()=>{
     const data = JSON.parse(localStorage.getItem("sidebar"));
     data.index=0;
@@ -17,8 +18,25 @@ const Landing = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   useEffect(()=>{
-    dispatch(getallsong());
+    const user = JSON.parse(localStorage.getItem("user"));
+    let username="";
+    if(!user){
+       username="";
+    }else{
+       username=user.username
+    }
+    dispatch(getallsong(username));
           // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+  useEffect(()=>{
+     const user = JSON.parse(localStorage.getItem("user"));
+     const token = JSON.parse(localStorage.getItem("token"));
+     if(user && token){
+     if( new Date(token.expirationDate) < new Date()){
+         localStorage.removeItem("user");
+         localStorage.removeItem("token");
+     }
+    }
   },[])
   useEffect(()=>{
     if(store.props.logincolor===true){

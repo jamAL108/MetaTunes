@@ -45,3 +45,33 @@ export const Register = async(req,res)=>{
         return res.status(404).send({error:backenderror})
     }
 };
+
+
+export const addfavourites = async(req,res)=>{
+    try{
+       const {person,id} = req.body;
+       const data = await User.findOne({username:person});
+       data.favourites.push(id);
+       await data.save();
+       return res.status(200).send({message:"done"});
+    }catch(err){
+     console.log(err);
+     return res.status(404).send({error:err});
+    }
+ };
+
+ export const removefavourites = async(req,res)=>{
+    try{
+       const {person,id} = req.body;
+       const data = await User.findOne({username:person});
+       const index = data.favourites.indexOf(id);
+       if(index>-1){
+        data.favourites.splice(index,1);
+       }
+       await data.save();
+       return res.status(200).send({message:"done"});
+    }catch(err){
+     console.log(err);
+     return res.status(404).send({error:err});
+    }
+ };

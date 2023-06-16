@@ -9,9 +9,12 @@ const User = new mongoose.Schema({
         type:String,
         required:true
     },
-    favourites:{
-        type:[]
-    },
+    favourites:[
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "songs",
+		},
+    ],
     playlist:{
         type:[]
     }
