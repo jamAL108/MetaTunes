@@ -5,8 +5,7 @@ import{
  SIGNUPERROR, 
  USERDATA,
  LOGOUT,
- ALLARTIST,
- ARTISTDETAIL
+ ALLARTIST
 } from '../actiontypes';
 import { LOGINCOLOR } from '../propsaction';
 
@@ -33,28 +32,6 @@ export const getallartist = ()=>async(dispatch)=>{
    console.log(err);
  }
 }
-
-export const getartist = (formdata)=>async(dispatch)=>{
-  try{
-    const api =`${URL}/common/artist/${formdata._id}`;
-    const res = await fetch(api,{
-     method: "GET",
-     headers: {
-       "Content-Type":"application/json"
-      }
-     });
-    const msg = await res.json();
-    console.log(msg);
-    if(res.status === 200 ){
-      const dat = msg.response;
-      console.log(dat);
-      dispatch({type:ARTISTDETAIL,payload:msg.response});
-    }
- }catch(err){
-   console.log(err);
- }
-}
-
 
 
 export const getallsong = ()=>async(dispatch)=>{

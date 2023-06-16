@@ -8,7 +8,7 @@ import {
 const initialstate ={
     navcolor:false,
     logincolor:false,
-    artistid:""
+    artistid:{}
 }
 
 
@@ -24,6 +24,7 @@ const props =(state=initialstate , action) =>{
                 ...state , logincolor:action.payload
             }    
             case ARTISTID:
+                console.log(action.payload);
             return{
                 ...state , artistid:action.payload
                 }

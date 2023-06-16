@@ -14,7 +14,6 @@ const Allartist = () => {
     const [show,setshow]=useState(false);
     const [artist,setartist]=useState([]);
     const data = JSON.parse(localStorage.getItem("artist"));
-    console.log(data);
     useEffect(()=>{
        if(data){
         setartist(data);
@@ -67,7 +66,8 @@ const Allartist = () => {
             {artist.map((item,idx)=>(
               <div className="boxbuzz" onClick={(e)=>{
                 e.preventDefault();
-                dispatch({type:ARTISTID , payload:item._id});
+                dispatch({type:ARTISTID , payload:item});
+                console.log(item);
                 navigate(`/artist/${item._id}`);
               }} key={idx}>
                 <div className="image">

@@ -5,24 +5,43 @@ import Loading from '../components/loading';
 import Nav from '../components/nav';
 import { useDispatch, useSelector } from 'react-redux';
 import { ARTISTDETAIL } from '../redux/actiontypes';
-import {getartist} from '../redux/action/useraction'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { useParams } from 'react-router-dom';
 const Artistdetail = () => {
+  const {id} = useParams();
   const dispatch = useDispatch();
   const store = useSelector((state)=>state)
     const [artist,setartist]=useState({});
     const [show,setshow]=useState(false);
- 
-  
-    
-
-
-
-
-  useEffect(()=>{
-    dispatch(getartist(store.props.artistid));
+    const URL= "http://localhost:8000";
+    const func =async()=>{
+    try{
+     const api =`${URL}/common/artist/${id}`;
+     const res = await fetch(api,{
+      method: "GET",
+      headers: {
+        "Content-Type":"application/json"
+       }
+      });
+     const msg = await res.json();
+     console.log(msg);
+     if(res.status === 200 ){
+       const dat = msg.response;
+       console.log(dat);
+       dispatch({type:ARTISTDETAIL,payload:msg.response});
+     }
+  }catch(err){
+    console.log(err);
+  }
+}
+useEffect(()=>{
+  setshow(false); 
+  func();
      // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+  },[])
+    useEffect(()=>{
+   console.log(store.props.artistid);
+    },[store.props.artistid])
     useEffect(()=>{
    if(Object.keys(store.user.artistdetail).length!==0){
        setartist(store.user.artistdetail);
@@ -40,8 +59,8 @@ const Artistdetail = () => {
       )}
       {show===true && Object.keys(artist).length!==0 && (
         <div className="others">
-          <div className="header">
-            <div className="image">
+          <div className="headery">
+            <div className="imagee">
               <img src={artist.artist.imageURL} alt="hey" />
             </div>
             <div className="info">

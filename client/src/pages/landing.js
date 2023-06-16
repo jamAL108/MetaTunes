@@ -17,7 +17,6 @@ const Landing = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   useEffect(()=>{
-    // dispatch(getallartist());
     dispatch(getallsong());
           // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])

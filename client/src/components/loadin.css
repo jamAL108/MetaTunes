@@ -79,10 +79,9 @@ background-image:linear-gradient( to bottom , #27272a, #18181b) ;
     .loader{
         top: 10%;
         left: 0%;
-        height: 90%;
         width: 100vw;
         height:auto;
-        min-height: 90%;
+        min-height: 90vh;
         display: flex;
         overflow-y: scroll;
         flex-direction: column;
@@ -91,8 +90,9 @@ background-image:linear-gradient( to bottom , #27272a, #18181b) ;
     }
     .loader .header{
         margin-top: 1rem;
-        height: 100%;
+        min-height: 70vh;
         width: 90%;
+        height: 70vh;
         display: flex;
         flex-direction: column;
         grid-column-gap: 4rem;
@@ -101,13 +101,14 @@ background-image:linear-gradient( to bottom , #27272a, #18181b) ;
     
     .loader .header .image{
         width: 100%;
-        height: 45%;
+        height: 55%;
+        border-radius: 25px;
 background-image:linear-gradient( to bottom , #27272a, #18181b) ;
         /* background-color: #E3E3E3; */
     }
     .loader .header .text{
         width: 100%;
-        height: 60%;
+        height: 40%;
         display: flex;
         grid-gap: 1rem;
         flex-direction: column;
@@ -138,15 +139,16 @@ background-image:linear-gradient( to bottom , #27272a, #18181b) ;
         height: 9%;
         background-image:linear-gradient( to bottom , #27272a, #18181b) ;
     }
+
     .loader .songwala{
         margin-left: -7rem;
-        height: 9%;
+        height: 7vh;
         width: 40%;
-        background-image:linear-gradient( to bottom , #27272a, #18181b) ;  
+        background-image:linear-gradient( to bottom , #27272a, #18181b) ;
     }
     .loader .bigtext{
-        margin-top: 1rem;
-        height: 5%;
+        margin-top: 0.4rem;
+        height: 4vh;
         width: 80%;
         background-image:linear-gradient( to bottom , #27272a, #18181b) ; 
     }
