@@ -4,3 +4,160 @@
     margin: 0;
     padding: 0;
 }
+.playlist .others{
+    background-color:inherit;
+    position: absolute;
+    top: 5%;
+    left: 22.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    color: #E3E3E3;
+    width: 77.6vw;
+    height: auto;
+    min-height: 100vh;
+}
+.playlist .others .spin{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist .others .heading{
+    width: 90%;
+    height:20vh;
+}
+.playlist .others .lineyyyyyyy{
+    width: 90%;
+    height: 3px;
+    background-color: #343434;
+}
+.playlist .others .sub{
+    width: 90%;
+    height: 40vh;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    grid-gap: 1rem;
+}
+.playlist .others .sub .noplay{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}    
+.playlist .others .sub .addplay{
+    width: 17%;
+    height: 80%;
+    background-color: #272729;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 6px;
+}
+.playlist .others .sub .addplay .adddd{
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    color: #E3E3E3;
+}
+.playlist .others .sub .addplay:hover{
+    cursor: pointer;
+}
+.playlist .others .sub .addplay .adddd  .css-i4bv87-MuiSvgIcon-root{
+    width: 100%;
+    height: 100%;
+}
+.playlist .others .sub .addplay p{
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+}
+@media screen and (max-width:913px) {
+    .playlist .others{
+        top: 10%;
+        left: 0%;
+        width: 100vw;
+        height:auto;
+        min-height: 90vh;
+        display: flex;
+        overflow-y: scroll;
+        flex-direction: column;
+        align-items: center;
+    }
+    .playlist .others .spin{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        /* position: absolute; */
+        justify-content: center;
+        align-items: center;
+    }
+    .playlist .others .heading{
+        width: 90%;
+        height:16vh;
+    }
+    .playlist .others .heading h1{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .playlist .others .heading p{
+        font-size: 1.4rem;
+        opacity: 0.5;
+        font-weight: 400;
+    }
+    .playlist .others .lineyyyyyyy{
+        width: 90%;
+        height: 3px;
+        background-color: #343434;
+    }
+    .playlist .others .sub{
+        width: 90%;
+        height: 40vh;
+        min-height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items:flex-start;
+        grid-gap: 1rem;
+    }
+    .playlist .others .sub .noplay{
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }    
+    .playlist .others .sub .addplay{
+        width: 47%;
+        height: 58%;
+        background-color: #272729;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 6px;
+    }
+    .playlist .others .sub .addplay:hover{
+        cursor: pointer;
+    }
+    .playlist .others .sub .addplay .adddd{
+        min-width: 3.5rem;
+        min-height: 3.5rem;
+        color: #E3E3E3;
+    }
+    .playlist .others .sub .addplay .adddd  .css-i4bv87-MuiSvgIcon-root{
+        width: 100%;
+        height: 100%;
+    }
+    .playlist .others .sub .addplay p{
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-align: center;
+    }
+}

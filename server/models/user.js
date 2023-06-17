@@ -15,9 +15,12 @@ const User = new mongoose.Schema({
 			ref: "songs",
 		},
     ],
-    playlist:{
-        type:[]
-    }
+    playlist:[
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "playlists",
+		},
+    ]
 })
 
 const user = mongoose.model("user",User);

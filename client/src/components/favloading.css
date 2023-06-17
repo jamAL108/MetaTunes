@@ -2,8 +2,50 @@
     width: 100%;
     height: 100vh;
 }
-
-
+.favourites .others .favloading .header{
+    width: 90%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    margin-left: 2rem;
+    grid-gap: 1rem;
+}
+.favourites .others .favloading .header .text1{
+    width: 50%;
+    height: 26%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
+.favourites .others .favloading .header  .p{
+    width: 55%;
+    height: 20%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
+.favourites .others .lineyyyyy{
+    width: 95%;
+    margin: auto;
+    height: 3px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-color: #343434;
+}
+.favourites .others .songlist{
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1rem;
+}
+.favourites .others .songlist .items{
+    width: 100%;
+    height: 9vh;
+    margin: auto;
+    border-radius: 10px;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
 
 
 
@@ -46,6 +88,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    grid-gap: 1rem;
 }
 .favourites .others .songlist .items{
     width: 100%;

@@ -9,7 +9,9 @@ import{
  ALLARTIST,
  ARTISTDETAIL,
  FAVOURITES,
- EMPTYFAVS
+ EMPTYFAVS,
+ PLAYLISTS,
+ EMPTYPLAYS
 } from '../actiontypes.js';
 const initialstate={
     authordata:null,
@@ -21,7 +23,9 @@ const initialstate={
     allartist:[],
     artistdetail:{},
     favourites:[],
-    emptyfav:false
+    emptyfav:false,
+    playlists:[],
+    emptyplay:false
 }  
 
 const User =(state=initialstate , action) =>{
@@ -73,7 +77,16 @@ const User =(state=initialstate , action) =>{
         case EMPTYFAVS:
             return{
                 ...state , emptyfav:action.payload
-            }               
+            }
+        case PLAYLISTS:
+            return{
+                ...state , playlists:action.payload
+            }
+        case EMPTYPLAYS:
+            return{
+                ...state , emptyplay:action.payload
+            }    
+
         default:
             return state;    
         }

@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { addfavourites , removefavourites } from '../redux/action/useraction';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const Song = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -52,6 +54,7 @@ const Song = () => {
     },[])
   return (
     <div className="songs">
+       <ToastContainer />
        <div className="heading">
           <h1>Popular Songs <PlayCircleIcon className='play' /></h1>
          <p onClick={(e)=>{
@@ -92,6 +95,12 @@ const Song = () => {
                   {array[idx]===false && user &&(
                   <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                      e.preventDefault();
+                     toast.success("Your favourites updated", {
+                      position: toast.POSITION.TOP_CENTER,
+                      draggablePercent: 60,
+                      autoClose:500,
+                      hideProgressBar:true
+                    });
                      let arr = [...array];
                      arr[idx]=true;
                      setarray(arr);            
@@ -108,6 +117,12 @@ const Song = () => {
                   {array[idx]===true && user &&(
                     <FavoriteIcon className='like'  onClick={(e)=>{
                     e.preventDefault();
+                    toast.success("Your favourites updated", {
+                      position: toast.POSITION.TOP_CENTER,
+                      draggablePercent: 60,
+                      autoClose:500,
+                      hideProgressBar:true
+                    });
                     let arr = [...array];
                      arr[idx]=false;
                      setarray(arr); 

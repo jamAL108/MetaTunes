@@ -8,3 +8,5 @@ export const ALLARTIST = "ALLARTIST";
 export const ARTISTDETAIL = "ARTISTDETAIL";
 export const FAVOURITES = "FAVOURITES";
 export const EMPTYFAVS = "EMPTYFAVS";
+export const PLAYLISTS = "PLAYLISTS";
+export const EMPTYPLAYS = "EMPTYPLAYS";

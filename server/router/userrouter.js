@@ -3,7 +3,8 @@ import { Login ,
          Register,
          addfavourites,
          getfavourites,
-         removefavourites
+         removefavourites,
+         getplaylists 
         } from "../controller/usercontroller.js";
 
 
@@ -13,5 +14,6 @@ router.post("/register",Register);
 router.post("/addfavourites",addfavourites);
 router.post("/removefavourites",removefavourites);
 router.post("/getfavourites",getfavourites);
+router.post("/getplaylists",getplaylists);
 
 export default router;

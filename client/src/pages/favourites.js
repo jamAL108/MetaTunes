@@ -10,6 +10,8 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FAVLOADING from '../components/favloading';
 import { EMPTYFAVS, FAVOURITES } from '../redux/actiontypes';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const Favourities = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
@@ -40,7 +42,6 @@ const Favourities = () => {
   }
     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
-
   const [auth , setauth] = useState(false);
   const error="please login to see your favourites";
   useEffect(()=>{
@@ -94,6 +95,7 @@ const Favourities = () => {
   return (
      <div className="favourites">
          <Nav/>
+         <ToastContainer />
          {auth===false &&(
           <Loginalert query={error} />
          )}
@@ -130,6 +132,13 @@ const Favourities = () => {
         { user &&(
         <FavoriteIcon className='like' onClick={(e)=>{
           e.preventDefault();
+          toast.success("Your favourites have been updated", {
+            position: toast.POSITION.TOP_CENTER,
+            draggablePercent: 60,
+            autoClose:500,
+            theme:"dark",
+            hideProgressBar:true
+          });
           const temp = JSON.parse(localStorage.getItem("song"));
           temp[item.idx].like=false;
           let small = [...favourite];

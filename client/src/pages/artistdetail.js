@@ -11,6 +11,8 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import {removefavourites , addfavourites} from '../redux/action/useraction';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const Artistdetail = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -86,6 +88,7 @@ useEffect(()=>{
       return (
 <div className="art">
   <Nav/>
+  <ToastContainer />
       {show===false && Object.keys(artist).length===0 && (
         <Loading/>
       )}
@@ -127,6 +130,12 @@ useEffect(()=>{
                       {array[idx]===false && user && (
                       <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                         e.preventDefault();
+                        toast.success("Your favourites updated", {
+                          position: toast.POSITION.TOP_CENTER,
+                          draggablePercent: 60,
+                          autoClose:500,
+                          hideProgressBar:true
+                        });
                         let arr = [...array];
                         arr[idx]=true;
                         setarray(arr);            
@@ -143,6 +152,12 @@ useEffect(()=>{
                       {array[idx]=== true && user &&(
                       <FavoriteIcon className='like' onClick={(e)=>{
                         e.preventDefault();
+                        toast.success("Your favourites updated", {
+                          position: toast.POSITION.TOP_CENTER,
+                          draggablePercent: 60,
+                          autoClose:500,
+                          hideProgressBar:true
+                        });
                         let arr = [...array];
                          arr[idx]=false;
                          setarray(arr); 

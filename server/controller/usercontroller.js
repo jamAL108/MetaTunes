@@ -1,6 +1,7 @@
 import song from '../models/song.js';
 import User from '../models/user.js';
 import bcrypt from 'bcryptjs';
+import playlist from '../models/playlist.js';
 
 export const Login = async(req,res)=>{
     try{
@@ -95,3 +96,22 @@ export const addfavourites = async(req,res)=>{
      return res.status(404).send({error:err});
     }
  };
+
+ export const getplaylists = async(req,res)=>{
+   try{
+      const {person} = req.body;
+      const data = await User.findOne({username:person});
+      let array=[];
+      console.log(data.playlist);
+      for(var i=0;i<data.playlist.length;i++){
+         const playlisty = await playlist.findOne({_id:data.playlist[i]});
+         console.log("heyy");
+         array.push(playlisty);
+      }
+      console.log(array);
+      return res.status(200).send({response:array});
+   }catch(err){
+    console.log(err);
+    return res.status(404).send({error:err});
+   }
+};

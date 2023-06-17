@@ -7,7 +7,9 @@ import{
  LOGOUT,
  ALLARTIST,
  FAVOURITES,
- EMPTYFAVS
+ EMPTYFAVS,
+ EMPTYPLAYS,
+ PLAYLISTS
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
@@ -61,7 +63,30 @@ export const getallsong=(username)=>async()=>{
     }
 }
 
-
+export const getplaylists = (formdata) =>async(dispatch)=>{
+  try{
+    const api =`${URL}/user/getplaylists`;
+    const res = await fetch(api,{
+     method: "POST",
+     headers: {
+       "Content-Type":"application/json"
+      },
+     body: JSON.stringify(formdata)
+     });
+    const msg = await res.json();
+    console.log(msg);
+    if(res.status === 200 ){
+      if(msg.response.length===0){
+        console.log("heeloo");
+          dispatch({type:EMPTYPLAYS,payload:true});
+      }else{
+        dispatch({type:PLAYLISTS , payload:msg.response});
+    }
+ }
+ }catch(err){
+   console.log(err);
+ }
+}
 
 export const getfavourites = (formdata) =>async(dispatch)=>{
   try{
