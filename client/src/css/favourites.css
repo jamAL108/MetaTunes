@@ -4,3 +4,151 @@
     margin: 0;
     padding: 0;
 }
+ 
+.favourites .others{
+    background-color:inherit;
+    position: absolute;
+    top: 5%;
+    left: 22.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    color: #E3E3E3;
+    width: 77.6vw;
+    height: auto;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:913px) {
+    .favourites .others{
+        top: 10%;
+        left: 0%;
+        width: 100vw;
+        height:auto;
+        min-height: 90%;
+        display: flex;
+        overflow-y: scroll;
+        flex-direction: column;
+        align-items: center;
+    }
+    .favourites .others .heading{
+        width: 90%;
+        height: 12vh;
+        /* display: flex;
+        flex-direction: column;
+        justify-content:center;
+        grid-gap: 1rem; */
+        margin-top: 2rem;
+        font-family: 'Roboto' , sans-serif;
+    }
+    .favourites .others  .heading h1{
+        font-size: 1.8rem;
+    }
+    .favourites .others  .heading  p{
+        font-size: 1.2rem;
+        opacity: 0.5;
+    }
+    .favourites .others .lineyyyyyyy{
+        width: 95%;
+        height: 3px;
+        max-height: 3px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        /* padding: 0; */
+        background-color: #343434;
+    }
+    .favourites .others .nosong{
+        width: 100%;
+        font-size: 1.2rem;
+        margin-left: 2rem;
+        font-weight: 500;
+        font-family: 'Roboto' , sans-serif;
+    }
+    .favourites .others .songlistyy{
+        width: 96%;
+        height: auto;
+        min-height: 20vh;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1rem;
+    }
+    .favourites .others .songlistyy .box{
+        width: 100%;
+        height: 5.5rem;
+        background-color: #18181a;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        border-radius: 15px;
+        font-family: 'Roboto' , sans-serif;
+    }
+    .favourites .others .songlistyy .box .left{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+
+    .favourites .others .songlistyy .box .left .image{
+        min-width: 28% !important;
+        height: 80%;
+        margin-left: 0.4rem;
+        border-radius: 8px;
+    }
+    .favourites .others .songlistyy .box .left .image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .favourites .others .songlistyy .box .left .names{
+         height: 70%;
+         min-width: 60%;
+         margin-top: 0.4rem;
+         display: flex;
+         flex-direction: column;
+         justify-content:center;
+         align-items:flex-start;
+         margin-left: 0.6rem;
+    }
+    .favourites .others .songlistyy .box .left .names h2{
+        font-size: 0.95rem;
+        font-weight: 610;
+        margin-top: 0rem;
+        overflow: hidden;
+        text-transform: capitalize;
+    }
+    .favourites .others .songlistyy .box .left .names p{
+        font-size: 0.85rem;
+        font-weight: 200;
+        margin-top: 0rem;
+    }
+    .favourites .others .songlistyy .box .right{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+    .favourites .others .songlistyy .box .right .play{
+        color: #EE4950;
+        width: 30%;
+        height: 30%;
+    }
+    .favourites .others .songlistyy .box .right .like{
+        color: #EE4950;
+        width: 30%;
+        height: 30%;
+    }
+
+}

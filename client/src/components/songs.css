@@ -136,9 +136,20 @@
 }
 
 
+.songs .heading h1{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
 
-
-
+.songs .heading h1{
+    width: 18%;
+}
+.songs .heading .play{
+    color: #EE4950;
+    width: 12%;
+    height: 12%;
+}
 
 
 
@@ -170,6 +181,7 @@
 }
 .songs .heading h1{
     font-size: 120%;
+    width: 50%;
 }
 .songs .heading p{
     font-size: 0.78rem;

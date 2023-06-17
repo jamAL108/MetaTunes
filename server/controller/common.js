@@ -34,6 +34,7 @@ export const Addsong = async(req,res)=>{
 export const getallartist = async(req,res)=>{
    try{
      const artists = await artist.find({});
+     console.log("heryyy");
      return res.status(200).send({response:artists});
    }catch(err){
     console.log(err);

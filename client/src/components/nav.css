@@ -236,14 +236,28 @@ nav .lower .user #coolor{
     nav .lower{
         display: none;
     }
+    nav .lower{
+        width: 100%;
+        height: 24vh;
+    }
     nav .lower .user{
-        grid-gap: 0.4rem;
+        grid-gap: 0.8rem;
+        width: 100%;
+        height: 100%;
+        margin-top: 0rem;
+    }
+    nav .lower .user .box {
+        width: 100%;
+        height: 30%;
     }
     nav .lower .user .box .icon{
         margin-left: 20%;
+        width: 40%;
+        height: 40%;
     }
     nav .lower .user .box h1{
         margin-left: 0.33rem;
+        font-size: 1rem;
     
     }
    

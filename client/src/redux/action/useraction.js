@@ -5,7 +5,9 @@ import{
  SIGNUPERROR, 
  USERDATA,
  LOGOUT,
- ALLARTIST
+ ALLARTIST,
+ FAVOURITES,
+ EMPTYFAVS
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
@@ -57,6 +59,33 @@ export const getallsong=(username)=>async()=>{
     }catch(err){
       console.log(err);
     }
+}
+
+
+
+export const getfavourites = (formdata) =>async(dispatch)=>{
+  try{
+    const api =`${URL}/user/getfavourites`;
+    const res = await fetch(api,{
+     method: "POST",
+     headers: {
+       "Content-Type":"application/json"
+      },
+     body: JSON.stringify(formdata)
+     });
+    const msg = await res.json();
+    console.log(msg);
+    if(res.status === 200 ){
+      if(msg.response.length===0){
+        console.log("heeloo");
+          dispatch({type:EMPTYFAVS,payload:true});
+      }else{
+        dispatch({type:FAVOURITES , payload:msg.response});
+    }
+ }
+ }catch(err){
+   console.log(err);
+ }
 }
 
 

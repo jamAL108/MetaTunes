@@ -6,6 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useDispatch } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { addfavourites , removefavourites } from '../redux/action/useraction';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 const Song = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ const Song = () => {
   return (
     <div className="songs">
        <div className="heading">
-          <h1>Popular Songs</h1>
+          <h1>Popular Songs <PlayCircleIcon className='play' /></h1>
          <p onClick={(e)=>{
             e.preventDefault();
            navigate('/artists');

@@ -1,0 +1,57 @@
+.favourites .others .favloading{
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+
+
+@media screen and (max-width:913px) {
+.favourites .others .favloading{
+    width: 100%;
+    height: 90vh;
+}
+.favourites .others .favloading .header{
+    width: 90%;
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    margin-left: 2rem;
+    grid-gap: 1rem;
+}
+
+.favourites .others .favloading .header .text1{
+    width: 50%;
+    height: 20%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
+.favourites .others .favloading .header  .p{
+    width: 70%;
+    height: 10%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
+.favourites .others .lineyyyyy{
+    width: 95%;
+    margin: auto;
+    height: 3px;
+    background-color: #343434;
+}
+.favourites .others .songlist{
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.favourites .others .songlist .items{
+    width: 100%;
+    height: 9vh;
+    margin: auto;
+    border-radius: 10px;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
+}

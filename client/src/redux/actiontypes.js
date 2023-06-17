@@ -6,3 +6,5 @@ export const SIGNUPERROR = 'SIGNUPERROR';
 export const USERDATA = "USERDATA";
 export const ALLARTIST = "ALLARTIST";
 export const ARTISTDETAIL = "ARTISTDETAIL";
+export const FAVOURITES = "FAVOURITES";
+export const EMPTYFAVS = "EMPTYFAVS";

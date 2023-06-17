@@ -7,7 +7,9 @@ import{
  SIGNUPERROR ,
  USERDATA,
  ALLARTIST,
- ARTISTDETAIL
+ ARTISTDETAIL,
+ FAVOURITES,
+ EMPTYFAVS
 } from '../actiontypes.js';
 const initialstate={
     authordata:null,
@@ -17,7 +19,9 @@ const initialstate={
     signuperror:"",
     logout:false,
     allartist:[],
-    artistdetail:{}
+    artistdetail:{},
+    favourites:[],
+    emptyfav:false
 }  
 
 const User =(state=initialstate , action) =>{
@@ -61,7 +65,15 @@ const User =(state=initialstate , action) =>{
         case ARTISTDETAIL:
             return{
                 ...state , artistdetail:action.payload
-            }       
+            }
+        case FAVOURITES:
+            return{
+                ...state , favourites:action.payload
+            }
+        case EMPTYFAVS:
+            return{
+                ...state , emptyfav:action.payload
+            }               
         default:
             return state;    
         }
