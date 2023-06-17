@@ -23,7 +23,12 @@ const Artistdetail = () => {
     const func =async()=>{
     try{
       const obj={
-        username:user.username
+        username:""
+      }
+      if(!user){
+         obj.username="";
+      }else{
+         obj.username=user.username
       }
      const api =`${URL}/common/artist/${id}`;
      const res = await fetch(api,{
