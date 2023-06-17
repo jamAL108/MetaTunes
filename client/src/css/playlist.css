@@ -106,11 +106,11 @@ margin-top:8vh;
 
     }
     .playlist .others .heading h1{
-        font-size: 1.rem;
+        font-size: 1.2rem;
         font-weight: 600;
     }
     .playlist .others .heading p{
-        font-size: 1.1rem;
+        font-size:0.9rem;
         opacity: 0.5;
         font-weight: 300;
     }
