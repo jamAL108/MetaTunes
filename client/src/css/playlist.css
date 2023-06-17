@@ -102,6 +102,8 @@
     .playlist .others .heading{
         width: 90%;
         height:25vh;
+margin-top:8vh;
+
     }
     .playlist .others .heading h1{
         font-size: 1.rem;
@@ -119,8 +121,8 @@
     }
     .playlist .others .sub{
         width: 90%;
-        height: 50vh;
-        min-height: 50vh;
+        height: 40vh;
+        min-height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content:flex-start;
