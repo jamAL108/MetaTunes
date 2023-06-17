@@ -101,16 +101,16 @@
     }
     .playlist .others .heading{
         width: 90%;
-        height:16vh;
+        height:25vh;
     }
     .playlist .others .heading h1{
-        font-size: 2rem;
+        font-size: 1.rem;
         font-weight: 600;
     }
     .playlist .others .heading p{
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         opacity: 0.5;
-        font-weight: 400;
+        font-weight: 300;
     }
     .playlist .others .lineyyyyyyy{
         width: 90%;
@@ -119,17 +119,17 @@
     }
     .playlist .others .sub{
         width: 90%;
-        height: 40vh;
-        min-height: 40vh;
+        height: 50vh;
+        min-height: 50vh;
         display: flex;
         flex-direction: column;
         justify-content:flex-start;
         align-items:flex-start;
-        grid-gap: 1rem;
+        grid-gap: 2rem;
     }
     .playlist .others .sub .noplay{
         font-size: 1.2rem;
-        font-weight: 600;
+        font-weight: 500;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }    
@@ -156,7 +156,7 @@
         height: 100%;
     }
     .playlist .others .sub .addplay p{
-        font-size: 1.4rem;
+        font-size: 1rem;
         font-weight: 500;
         text-align: center;
     }
