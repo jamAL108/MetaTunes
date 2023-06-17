@@ -16,7 +16,7 @@
 }
 .songs .heading{
     display: flex;
-    width: 95%;
+    width: 100%;
     height: 10%;
     justify-content:space-between;
     align-items: center;
@@ -26,8 +26,9 @@
     margin: 0;
 }
 .songs .heading p{
-    font-size: 0.78rem;
+    font-size: 1.1rem;
     color:  #EE4950;
+    cursor: pointer;
 }
 
 .songs .items{
@@ -52,11 +53,14 @@
 }
 .songs .items .boxzzy{
     min-width: 22%;
-    width: 22%;
+    width: 25%;
     max-height: 100%;
     height:100% ;
     border-radius: 10px !important;
     background-color: #18181a;
+}
+.songs .items .boxzzy:hover{
+    cursor: pointer;
 }
 .songs .items .boxzzy .image{
     width: 100%;
@@ -174,7 +178,7 @@
 
 .songs .heading{
     display: flex;
-    width: 95%;
+    width: 100%;
     height: 10%;
     justify-content:space-between;
     align-items: center;

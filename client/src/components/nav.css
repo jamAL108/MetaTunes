@@ -7,6 +7,9 @@ nav{
    background-color: #18181c;
    border-right: 3px solid #323234 ;
    z-index: 5;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 nav .header{
     margin-left: 10%;
@@ -131,7 +134,7 @@ nav .lower .user{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    grid-gap: 0.3rem;
+    grid-gap: 0.5rem;
     border: none;
     margin-left: 0.7rem;
     margin-right: 1.3rem;
@@ -154,9 +157,12 @@ nav .lower .user .box:hover{
 nav .lower .user .box .icon{
     width: 50%;
     height: 50%;
-    margin-left:6% ;
+    margin-left:7% ;
 }
-
+nav .lower .user .box h1{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
 nav .lower .user #coolor{
     color: #EE4950;
 }

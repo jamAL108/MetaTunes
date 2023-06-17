@@ -27,7 +27,7 @@ font-size: 130%;
  margin-left: 0.5rem;
 }
 .artists .heading p{
-    font-size: 1rem;
+    font-size: 1.1rem;
     color:  #EE4950;
     margin-right: 1rem;
 }
@@ -79,8 +79,8 @@ margin-top: 1.5rem;
     transform: scale(1.03);
 }
 .artists .items .boxbuzz .image{
-    width: 107%;
-    height: 55%;
+    width: 110%;
+    height: 60%;
     display: flex;
 justify-content: center;
 align-items: center;
@@ -88,8 +88,8 @@ align-items: center;
       border-radius: 50%;
 }
 .artists .items img{
-    width: 6.7rem;
-    height: 6.7rem;
+    width: 7.5rem;
+    height: 7.5rem;
     border-radius: 50%;
     object-fit:cover;
 }

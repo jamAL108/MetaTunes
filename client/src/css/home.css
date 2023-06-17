@@ -4,6 +4,9 @@
     height: 100vh;
     margin: 0;
     padding: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .liney{
     width: 100%;
@@ -44,8 +47,8 @@
     color:#EE4950;
 }
 .home .other .line{
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     width: 90%;
     margin-left: 0.7%;
     height: 2px;

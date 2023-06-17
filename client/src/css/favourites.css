@@ -19,10 +19,133 @@
     height: auto;
     min-height: 100vh;
 }
+.favourites .others .heading{
+    width: 90%;
+    height: 12vh;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    font-family: 'Roboto' , sans-serif;
+}
+.favourites .others  .heading h1{
+    font-size: 1.8rem;
+}
+.favourites .others  .heading  p{
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+.favourites .others .lineyyyyyyy{
+    width: 95%;
+    height: 3px;
+    max-height: 3px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    /* padding: 0; */
+    background-color: #343434;
+}
+.favourites .others .lineyyyyyyy{
+    width: 95%;
+    height: 3px;
+    max-height: 3px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* padding: 0; */
+    background-color: #343434;
+}
+.favourites .others .nosong{
+    width: 100%;
+    font-size: 1.5rem;
+    margin-left: 4rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: 'Roboto' , sans-serif;
+}
+.favourites .others .songlistyy{
+    width: 95%;
+    height: auto;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+.favourites .others .songlistyy .box{
+    width: 100%;
+    height: 6.7rem;
+    background-color: #18181a;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    grid-gap: 1rem;
+    border-radius: 15px;
+    font-family: 'Roboto' , sans-serif;
+}
+.favourites .others .songlistyy .box .left{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
 
+.favourites .others .songlistyy .box .left .image{
+    min-width: 18% !important;
+    width: 18%;
+    height: 78%;
+    margin-left: 1rem;
+    border-radius: 8px;
+}
+.favourites .others .songlistyy .box .left .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.favourites .others .songlistyy .box .left .names{
+     height: 70%;
+     min-width: 60%;
+     margin-top: 0.4rem;
+     display: flex;
+     flex-direction: column;
+     justify-content:center;
+     align-items:flex-start;
+     margin-left: 0.6rem;
+     -webkit-user-select: none; /* Safari */
+     -ms-user-select: none; /* IE 10 and IE 11 */
+     user-select: none; /* Standard syntax */
+}
+.favourites .others .songlistyy .box .left .names h2{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 0rem;
+    text-transform: capitalize;
+}
+.favourites .others .songlistyy .box .left .names p{
+    font-size: 1rem;
+    opacity: 0.5;
+    margin-top: 0rem;
+}
+.favourites .others .songlistyy .box .right{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+.favourites .others .songlistyy .box .right .play{
+    color: #EE4950;
+    width: 30%;
+    height: 30%;
+}
+.favourites .others .songlistyy .box .right .like{
+    color: #EE4950;
+    width: 30%;
+    height: 30%;
+}
 
-
-
+.favourites .others .songlistyy .box .right .play , .favourites .others .songlistyy .box .right .like{
+    cursor: pointer;
+}
 
 
 
