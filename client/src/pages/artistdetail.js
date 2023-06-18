@@ -122,7 +122,7 @@ useEffect(()=>{
                       </div>
                       <div className="names">
                         <h2>{item.name}</h2>
-                        <p>{item.artist}</p>
+                        <p>{item.stream}</p>
                       </div>
                     </div>
                     <div className="right">
@@ -130,7 +130,7 @@ useEffect(()=>{
                       {array[idx]===false && user && (
                       <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                         e.preventDefault();
-                        toast.success("Your favourites updated", {
+                        toast.success("Your favourites have been updated", {
                           position: toast.POSITION.TOP_CENTER,
                           draggablePercent: 60,
                           autoClose:500,
@@ -152,7 +152,7 @@ useEffect(()=>{
                       {array[idx]=== true && user &&(
                       <FavoriteIcon className='like' onClick={(e)=>{
                         e.preventDefault();
-                        toast.success("Your favourites updated", {
+                        toast.success("Your favourites have been updated", {
                           position: toast.POSITION.TOP_CENTER,
                           draggablePercent: 60,
                           autoClose:500,

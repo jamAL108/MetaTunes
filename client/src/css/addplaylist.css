@@ -90,14 +90,14 @@
         font-family: 'Roboto' , sans-serif;
     }
     .addplaylist .others .header h1{
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 300;
         text-transform: capitalize;
         font-family: 'Roboto',sans-serif;
     }
     .addplaylist .others .header button{
         width: 40%;
-        height: 2.7rem;
+        height: 2.4rem;
         border-radius: 10px;
         margin-bottom: 0.9rem;
         border: none;
@@ -106,7 +106,7 @@
         display: flex;
         justify-content: center;
         align-items:center;
-        font-size: 1.33rem;
+        font-size: 1.2rem;
         grid-gap: 0.3rem;
     }
     .addplaylist .others .header button .add{
@@ -150,6 +150,7 @@
       }
       .addplaylist .others form .private h1{
         font-size: 1.2rem;
+        font-weight: 400;
       }
 
 

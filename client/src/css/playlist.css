@@ -116,12 +116,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     }
     .playlist .others .heading h1{
         font-size: 1.34rem;
-        font-weight: 600;
+        font-weight: 400;
+        margin-bottom: 0rem;
     }
     .playlist .others .heading p{
         font-size:1.13rem;
         opacity: 0.6;
-        font-weight: 500;
+        font-weight: 400;
         text-transform: capitalize;
     }
     .playlist .others .lineyyyyyyy{
@@ -141,7 +142,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         grid-gap: 2rem;
     }
     .playlist .others .sub .noplay{
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 500;
         margin-top: 1rem;
         margin-bottom: 1rem;
