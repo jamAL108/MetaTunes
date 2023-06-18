@@ -71,7 +71,7 @@ const Login = () => {
         <div className="other">
         <div className="upper">
         <h1>Login</h1>
-        <p>To continue enjoying ExtraBeat</p>
+        <p>To continue enjoying MetaTunes</p>
         </div>
         <form action="POSt">
             <div className="forminput">
