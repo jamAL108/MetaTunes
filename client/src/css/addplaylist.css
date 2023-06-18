@@ -362,6 +362,7 @@ textarea {
       .addplaylist .others form p{
         font-size: 1rem;
         margin-bottom: 0;
+       font-weight:500;
       }
       .addplaylist .others form .profile-pic input {
         display: none;
