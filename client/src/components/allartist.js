@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getallartist } from '../redux/action/useraction';
  import { ARTISTID  } from '../redux/propsaction';
-
+import { ALLARTIST } from '../redux/actiontypes';
 import { ColorRing } from 'react-loader-spinner';
 const Allartist = () => {
   const navigate = useNavigate();
@@ -13,14 +13,12 @@ const Allartist = () => {
   const store = useSelector((state)=>state);
     const [show,setshow]=useState(false);
     const [artist,setartist]=useState([]);
-    const data = JSON.parse(localStorage.getItem("artist"));
+    
     useEffect(()=>{
-       if(data){
-        setartist(data);
-        setshow(true);
-       }else{
+      
+    
         dispatch(getallartist());
-       }
+       
                    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     useEffect(()=>{
@@ -33,8 +31,7 @@ const Allartist = () => {
        if(store.user.allartist.length!==0){
         setartist(store.user.allartist);
         setshow(true);
-        localStorage.setItem("artist",JSON.stringify(store.user.allartist));
-
+         dispatch({type:ALLARTIST , payload:[]})
        }
                  // eslint-disable-next-line react-hooks/exhaustive-deps
     },[store.user.allartist])
