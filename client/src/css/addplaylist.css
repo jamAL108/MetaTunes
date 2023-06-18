@@ -269,7 +269,7 @@ textarea {
         display: flex;
         justify-content: center;
         align-items:center;
-        font-size: 1.2rem;
+        font-size: 1rem;
         grid-gap: 0.3rem;
     }
     .addplaylist .others .header button .add{
@@ -314,7 +314,8 @@ textarea {
       }
       .addplaylist .others form .private h1{
         font-size: 1.02rem;
-        font-weight: 400;
+        font-weight: 500;
+       font-family: 'Roboto' , sans-serif;
       }
 
 
