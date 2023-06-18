@@ -204,15 +204,15 @@
      .addplaylist .others form .profile-pic img {
         position: absolute;
         object-fit: cover;
-        width: 95%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         border-radius: 20px;
         z-index: 0;
       }
      .addplaylist .others form .profile-pic .-label {
         cursor: pointer;
-        height: 95%;
-        width: 100%;
+        height: 90%;
+        width: 90%;
         border-radius: 20px !important;
       }
       .addplaylist .others form .profile-pic:active .-label {
