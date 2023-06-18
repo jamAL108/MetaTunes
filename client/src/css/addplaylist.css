@@ -253,8 +253,8 @@ textarea {
         font-family: 'Roboto' , sans-serif;
     }
     .addplaylist .others .header h1{
-        font-size: 1.34rem;
-        font-weight: 300;
+        font-size: 1.24rem;
+        font-weight: 400;
         text-transform: capitalize;
         font-family: 'Roboto',sans-serif;
     }
@@ -313,7 +313,7 @@ textarea {
         grid-gap: 0.5rem;
       }
       .addplaylist .others form .private h1{
-        font-size: 1.2rem;
+        font-size: 1.02rem;
         font-weight: 400;
       }
 
@@ -404,7 +404,7 @@ textarea {
         max-height: 45%;
       }
       .addplaylist .others form .input label{
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 300;
       }
       .addplaylist .others form .input label span{
@@ -429,14 +429,14 @@ textarea {
         border-bottom: 2px solid #EE4950;
         color: #E3E3E3;
         caret-color: white;
-        font-size: 1.1rem;
+        font-size: 1rem;
         outline: none;
       }
       .addplaylist .others form .input .item1 .para{
         margin-top: 0.5rem;
         outline: none;
         border: none;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 300;
         caret-color: white;
         color:#E3E3E3;
