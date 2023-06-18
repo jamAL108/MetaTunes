@@ -338,7 +338,7 @@
          flex-direction: column;
          justify-content:center;
          align-items:flex-start;
-         margin-left: 0.6rem;
+         margin-left: 0.2rem;
     }
     .art .others .down .songlist .box .left .names h2{
         font-size: 0.95rem;

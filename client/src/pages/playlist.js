@@ -9,10 +9,13 @@ import { getplaylists } from '../redux/action/useraction';
 import { EMPTYPLAYS, PLAYLISTS } from '../redux/actiontypes';
 import { ColorRing } from 'react-loader-spinner';
 import AddIcon from '@mui/icons-material/Add';
+import ErrorIcon from '@mui/icons-material/Error';
+import { useNavigate } from 'react-router-dom';
 const Playlist = () => {
   const [auth , setauth] = useState(false);
   const error="please login to see your playlist";
   const [spin,setspin] = useState(false);
+  const navigate = useNavigate();
   useEffect(()=>{
     const extrabeat_user = JSON.parse(localStorage.getItem("user"));
     if(extrabeat_user){
@@ -93,8 +96,11 @@ useEffect(()=>{
               <div className="lineyyyyyyy"></div>
                 {playlists.length===0 && (
                   <div className="sub">
-                    <h1 className='noplay'>You Have'nt made any playlists yet...</h1>
-                    <div className="addplay">
+                    <h1 className='noplay'><ErrorIcon/>You Haven't made any playlists yet...</h1>
+                    <div className="addplay" onClick={(e)=>{
+                      e.preventDefault();
+                           navigate('/addplaylist');
+                    }} >
                         <AddIcon className="adddd"/>
                         <p>Create new Playlist</p>
                     </div>

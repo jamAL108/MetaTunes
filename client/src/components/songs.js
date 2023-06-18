@@ -95,7 +95,7 @@ const Song = () => {
                   {array[idx]===false && user &&(
                   <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                      e.preventDefault();
-                     toast.success("Your favourites updated", {
+                     toast.success("Your favourites have been updated", {
                       position: toast.POSITION.TOP_CENTER,
                       draggablePercent: 60,
                       autoClose:500,

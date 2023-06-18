@@ -61,6 +61,12 @@
     align-items: center;
     flex-direction: column;
     border-radius: 6px;
+    background: rgba(255, 255, 255, 0.17);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .playlist .others .sub .addplay .adddd{
     min-width: 3.5rem;
@@ -102,17 +108,21 @@
     .playlist .others .heading{
         width: 90%;
         max-height:15vh;
-margin-top:3vh;
+        height: 15vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
     }
     .playlist .others .heading h1{
-        font-size: 1.2rem;
+        font-size: 1.34rem;
         font-weight: 600;
     }
     .playlist .others .heading p{
-        font-size:0.9rem;
-        opacity: 0.5;
-        font-weight: 300;
+        font-size:1.13rem;
+        opacity: 0.6;
+        font-weight: 500;
+        text-transform: capitalize;
     }
     .playlist .others .lineyyyyyyy{
         width: 90%;
@@ -135,17 +145,32 @@ margin-top:3vh;
         font-weight: 500;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0.2rem;
+        color: #EE4950;
+        text-transform: capitalize;
     }    
     .playlist .others .sub .addplay{
         width: 47%;
-        height: 58%;
+        height: 60%;
         background-color: #272729;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         border-radius: 6px;
+        /* From https://css.glass */
+background: rgba(255, 255, 255, 0.17);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+text-transform: capitalize;
     }
+
     .playlist .others .sub .addplay:hover{
         cursor: pointer;
     }
@@ -159,7 +184,7 @@ margin-top:3vh;
         height: 100%;
     }
     .playlist .others .sub .addplay p{
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 500;
         text-align: center;
     }

@@ -136,7 +136,6 @@ const Favourities = () => {
             position: toast.POSITION.TOP_CENTER,
             draggablePercent: 60,
             autoClose:500,
-            theme:"dark",
             hideProgressBar:true
           });
           const temp = JSON.parse(localStorage.getItem("song"));

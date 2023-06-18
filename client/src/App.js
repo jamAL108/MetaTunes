@@ -7,6 +7,7 @@ import Login from './components/login';
 import Register from './components/register';
 import Allartist from './pages/artist';
 import Artist from './pages/artistdetail';
+import Addplaylist from './pages/addplaylist';
 function App() {
   return (
      <Routes>
@@ -17,6 +18,7 @@ function App() {
       <Route path='/Register' element={<Register/>}/>
       <Route path='/artists' element={<Allartist/>}/>
       <Route path='/artist/:id' element={<Artist/>}/>
+      <Route path='/addplaylist' element={<Addplaylist/>}/>
      </Routes>
   );
 }
