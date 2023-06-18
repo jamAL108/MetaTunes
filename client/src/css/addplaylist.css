@@ -19,52 +19,214 @@
     height: auto;
     min-height: 100vh;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 .addplaylist .others .header{
+  width: 90%;
+  height: 10vh;
+  display: flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  font-family: 'Roboto' , sans-serif;
+}
+.addplaylist .others .header h1{
+  font-size: 1.34rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  font-family: 'Roboto',sans-serif;
+}
+.addplaylist .others .header button{
+  width: 15%;
+  height: 2.2rem;
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+  border: none;
+  background-color: #EE4950;
+  color: #E3E3E3;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-size: 1.2rem;
+  grid-gap: 0.3rem;
+  cursor: pointer;
+}
+.addplaylist .others .header button .add{
+  width: 25%;
+  height: 90%;
+}
+.addplaylist .others .lineeyy{
+  width: 98%;
+  height: 3px;
+  background-color: #343434;
+}
+.addplaylist .others form {
+  width: 90%;
+  min-height: 70vh;
+  height: 70vh;
+  margin-left: 0rem;
+}
+.addplaylist .others form .profile-pic {
+  width: 45%;
+  height: 60%;
+  color: transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+} 
 
+.addplaylist .others form .private{
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  grid-gap: 0.5rem;
+}
+.addplaylist .others form .private h1{
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
-.addplaylist .others form .profile-pic {
-    color: transparent;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transition: all 0.3s ease;
-  } 
-  .addplaylist .others form .profile-pic input {
-    display: none;
-  }
- .addplaylist .others form .profile-pic img {
-    position: absolute;
-    object-fit: cover;
-    width: 165px;
-    height: 165px;
-    border-radius: 100px;
-    z-index: 0;
-  }
- .addplaylist .others form .profile-pic .-label {
-    cursor: pointer;
-    height: 165px;
-    width: 165px;
-  }
-  .addplaylist .others form .profile-pic:hover .-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10000;
-    color: #fafafa;
-    transition: background-color 0.2s ease-in-out;
-    /* border-radius: 100px; */
-    margin-bottom: 0;
-  }
-  .addplaylist .others form .profile-pic span {
-    display: inline-flex;
-    padding: 0.2em;
-    height: 2em;
-  }
+
+.addplaylist .others form .private .toggle-container {
+  display: inline-block;
+  position: relative;
+  width: 55px;
+  height: 27px;
+}
+
+.addplaylist .others form .private  .toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 34px;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addplaylist .others form .private  .toggle-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.addplaylist .others form .private #toggle:checked + .toggle {
+  background-color: #EE4950;
+}
+
+.addplaylist .others form .private  #toggle:checked + .toggle .toggle-handle {
+  transform: translateX(26px);
+}
+
+
+.addplaylist .others form p{
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+.addplaylist .others form .profile-pic input {
+  display: none;
+}
+.addplaylist .others form .profile-pic img {
+  position: absolute;
+  object-fit: cover;
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+  z-index: 0;
+}
+.addplaylist .others form .profile-pic .-label {
+  cursor: pointer;
+  height: 90%;
+  width: 90%;
+  border-radius: 20px !important;
+}
+.addplaylist .others form .profile-pic:hover .-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  color: #fafafa;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom: 0;
+  border-radius: 20px !important;
+}
+.addplaylist .others form .profile-pic span {
+  display: inline-flex;
+  padding: 0.2rem;
+  height: 1.5rem;
+}
+.addplaylist .others form .input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 57vh;
+}
+.addplaylist .others form .input label{
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.addplaylist .others form .input label span{
+  color: #EE4950;
+}
+.addplaylist .others form .input .item1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  grid-gap: 1rem;
+}
+.addplaylist .others form .input #team{
+  height: 40%;
+}
+.addplaylist .others form .input .item1 .name{
+  width: 95%;
+  height: 30%;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #EE4950;
+  color: #E3E3E3;
+  caret-color: white;
+  font-size: 1.2rem;
+  outline: none;
+}
+.addplaylist .others form .input .item1 .para{
+  margin-top: 0.5rem;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+  caret-color: white;
+  color:#E3E3E3;
+  font-family: "Roboto" , sans-serif;
+  border-bottom: 2px solid #EE4950;
+  background-color: inherit;
+}
+
+
+
+textarea {
+  resize: none;
+}
 
 
 
@@ -80,6 +242,7 @@
         overflow-y: scroll;
         flex-direction: column;
         align-items: center;
+        scroll-behavior: smooth;
     }
     .addplaylist .others .header{
         width: 90%;
@@ -96,10 +259,10 @@
         font-family: 'Roboto',sans-serif;
     }
     .addplaylist .others .header button{
-        width: 36%;
+        width: 30%;
         height: 2.2rem;
         border-radius: 10px;
-        margin-bottom: 0.9rem;
+        margin-bottom: 0.7rem;
         border: none;
         background-color: #EE4950;
         color: #E3E3E3;
@@ -120,9 +283,10 @@
     }
     .addplaylist .others form {
         width: 95%;
-        min-height: 70vh;
-        height: 70vh;
+        min-height: 80vh;
+        height: 80vh;
         margin-left: 1rem;
+        color: #a1a1a9;
     }
     .addplaylist .others form .profile-pic {
         width: 95%;
@@ -195,7 +359,7 @@
 
 
       .addplaylist .others form p{
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 0;
       }
       .addplaylist .others form .profile-pic input {
@@ -237,10 +401,10 @@
         align-items: center;
         flex-direction: column;
         width: 90%;
-        height: 57%;
+        max-height: 45%;
       }
       .addplaylist .others form .input label{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 300;
       }
       .addplaylist .others form .input label span{
@@ -265,14 +429,14 @@
         border-bottom: 2px solid #EE4950;
         color: #E3E3E3;
         caret-color: white;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         outline: none;
       }
       .addplaylist .others form .input .item1 .para{
         margin-top: 0.5rem;
         outline: none;
         border: none;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 300;
         caret-color: white;
         color:#E3E3E3;
@@ -280,7 +444,138 @@
         border-bottom: 2px solid #EE4950;
         background-color: inherit;
       }
+      .addplaylist .others .songadd{
+        margin-top: 2rem;
+        width: 90%;
+        min-height: 50vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .addplaylist .others .songadd .head{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+      }
+      .addplaylist .others .songadd .head h1{
+        font-size: 1.5rem;
+        font-weight: 450;
+        margin-right: 1rem;
+      }
+      .addplaylist .others .songadd .head button{
+        width: 30%;
+        height: 2.4rem;
+        color: #E3E3E3;
+        background-color: #EE4950;
+        border: none;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        justify-content: space-evenly;
+      }
+      .addplaylist .others .songadd .lineeeeey{
+        width: 98%;
+        height: 3px;
+        background-color: #343434;
+      }
+      .addplaylist .others .songadd .songlist{
+        width: 100%;
+        min-height: 16vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        overflow: hidden;
+        position: relative;
+    }
+    .addplaylist .others .songadd  .songlist .box{
+        width: 100%;
+        height: 4.6rem;
+        background-color: #18181a;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        border-radius: 15px;
+        opacity: 0;
+        font-family: 'Roboto' , sans-serif;
+        margin-bottom:0.6rem;
+        animation: slide-in 1s ease forwards;
+    }
+    @keyframes slide-in {
+      0% {
+        transform: translateX(100%); /* Start position */
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0); /* End position */
+        opacity: 1;
+      }
+    }
 
+    .addplaylist .others .songadd  .songlist .box .left{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+
+    .addplaylist .others .songadd  .songlist .box .left .image{
+        min-width: 28% !important;
+        height: 80%;
+        margin-left: 0.4rem;
+        border-radius: 8px;
+    }
+    .addplaylist .others .songadd  .songlist .box .left .image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .addplaylist .others .songadd .songlist .box .left .names{
+         height: 70%;
+         min-width: 60%;
+         margin-top: 0.4rem;
+         display: flex;
+         flex-direction: column;
+         justify-content:center;
+         align-items:flex-start;
+         margin-left: 0.7rem;
+    }
+    .addplaylist .others .songadd  .songlist .box .left .names h2{
+        font-size: 0.95rem;
+        font-weight: 400;
+        margin-top: 0rem;
+    
+        text-transform: capitalize;
+    }
+    .addplaylist .others .songadd  .songlist .box .left .names p{
+        font-size: 0.85rem;
+        font-weight: 300;
+        margin-top: 0rem;
+        opacity: 0.5;
+        text-transform: capitalize;
+    }
+    .addplaylist .others .songadd .songlist .box .right{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+    .addplaylist .others .songadd .songlist .box .right .add{
+        color: #EE4950;
+        width: 30%;
+        height: 30%;
+    }
 }
 
 

@@ -47,10 +47,16 @@
     grid-gap: 1rem;
 }
 .playlist .others .sub .noplay{
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0.2rem;
+    color: #EE4950;
+    text-transform: capitalize;
 }    
 .playlist .others .sub .addplay{
     width: 17%;
@@ -189,4 +195,5 @@ text-transform: capitalize;
         font-weight: 500;
         text-align: center;
     }
+
 }
