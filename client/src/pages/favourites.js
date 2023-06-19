@@ -140,6 +140,7 @@ const Favourities = () => {
           });
           const temp = JSON.parse(localStorage.getItem("song"));
           temp[item.idx].like=false;
+          temp[item.idx].totallikes--;
           let small = [...favourite];
           small.splice(idx,1);
           setfavourite(small);

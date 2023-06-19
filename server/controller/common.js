@@ -20,7 +20,9 @@ export const Addsong = async(req,res)=>{
            artist:body.artist,
            language:body.language,
            artistId:artistId,
-           like:false
+           like:false,
+           totallikes:0,
+           totalstream:0
        })
        await newsong.save();
        return res.status(200).send({response:newsong});

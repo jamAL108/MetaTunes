@@ -13,6 +13,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import {removefavourites , addfavourites} from '../redux/action/useraction';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 const Artistdetail = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -120,9 +122,18 @@ useEffect(()=>{
                       <div className="image">
                       <img src={item.imageURL} alt="pic" />
                       </div>
+                      <div className="main">
                       <div className="names">
                         <h2>{item.name}</h2>
-                        <p>{item.stream}</p>
+                        </div>
+                        <div className="downery">
+                          <div className="items">
+                            <HeadphonesRoundedIcon/> {item.totalstream}
+                          </div>
+                          <div className="items">
+                            <FavoriteRoundedIcon/> {item.totallikes}
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div className="right">
@@ -138,9 +149,11 @@ useEffect(()=>{
                         });
                         let arr = [...array];
                         arr[idx]=true;
-                        setarray(arr);            
+                        setarray(arr); 
+                        item.totallikes++;   
                         const temp = JSON.parse(localStorage.getItem("song"));
                         temp[item.idx].like=true;
+                        temp[item.idx].totallikes++;
                         localStorage.setItem("song",JSON.stringify(temp));
                         const obj={
                            person:user.username,
@@ -161,8 +174,10 @@ useEffect(()=>{
                         let arr = [...array];
                          arr[idx]=false;
                          setarray(arr); 
+                         item.totallikes--;
                         const temp = JSON.parse(localStorage.getItem("song"));
                         temp[item.idx].like=false;
+                        temp[item.idx].totallikes--;
                         localStorage.setItem("song",JSON.stringify(temp));
                         const obj={
                           person:user.username,

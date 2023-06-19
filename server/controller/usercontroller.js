@@ -53,6 +53,9 @@ export const addfavourites = async(req,res)=>{
     try{
        const {person,id} = req.body;
        const data = await User.findOne({username:person});
+       const thatsong = await song.findOne({_id:id});
+       thatsong.totallikes++;
+       await thatsong.save();
        data.favourites.push(id);
        await data.save();
        return res.status(200).send({message:"done"});
@@ -93,6 +96,9 @@ export const addfavourites = async(req,res)=>{
     try{
        const {person,id} = req.body;
        const data = await User.findOne({username:person});
+       const thatsong = await song.findOne({_id:id});
+       thatsong.totallikes--;
+       await thatsong.save();
        const index = data.favourites.indexOf(id);
        if(index>-1){
         data.favourites.splice(index,1);

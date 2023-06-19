@@ -106,6 +106,7 @@ const Song = () => {
                      setarray(arr);            
                      const temp = JSON.parse(localStorage.getItem("song"));
                      temp[item.idx].like=true;
+                     temp[item.idx].totallikes++;
                      localStorage.setItem("song",JSON.stringify(temp));
                      const obj={
                         person:user.username,
@@ -128,6 +129,7 @@ const Song = () => {
                      setarray(arr); 
                     const temp = JSON.parse(localStorage.getItem("song"));
                     temp[item.idx].like=false;
+                    temp[item.idx].totallikes--;
                     localStorage.setItem("song",JSON.stringify(temp));
                     const obj={
                       person:user.username,

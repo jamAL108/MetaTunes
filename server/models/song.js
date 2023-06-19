@@ -27,6 +27,12 @@ const Song = new mongoose.Schema({
     like:{
         type:Boolean,
         default:false
+    },
+    totalstream:{
+        type:Number
+    },
+    totallikes:{
+        type:Number
     }
 });
 
