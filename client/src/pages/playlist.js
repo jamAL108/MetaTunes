@@ -108,15 +108,22 @@ useEffect(()=>{
                 )}
                 {playlists.length!==0 &&(
                    <div className="playlistsss">
-                      <div className="addplay">
+                      <div className="addplay" onClick={(e)=>{
+                      e.preventDefault();
+                           navigate('/addplaylist');
+                    }}>
                       <AddIcon className="adddd"/>
                       <p>Create new Playlist</p>
                     </div>
                     {playlists.map((item,idx)=>(
-                      <div className="box">
-                        <img src={item.myfile} alt='piic'/>
+                      <div className="box" key={idx}>
+                        <div className="image">
+                        <img src={item.image.myfile} alt='piic'/>
+                        </div>
+                        <div className="names">
                         <h1>{item.name}</h1>
-                        <h1>{item.author}</h1>
+                        <p>{item.author}</p>
+                        </div>
                       </div>
                     ))}
                    </div>

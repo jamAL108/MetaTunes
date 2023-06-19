@@ -62,6 +62,33 @@ export const addfavourites = async(req,res)=>{
     }
  };
 
+ export const createplaylist = async(req,res)=>{
+   try{
+      const data = req.body;
+      const usser = await User.findOne({username:data.username});
+      let array=[];
+      for(var i=0;i<data.songs.length;i++){
+         array.push(data.songs[i]._id);
+      }
+      const newplaylist = new playlist({
+         Type:data.info.toggle,
+         author:data.username,
+         name:data.info.name,
+         description:data.info.description,
+         image:data.coverpic,
+         likes:0,
+         songs:array
+      })
+      await newplaylist.save();
+      usser.playlist.push(newplaylist._id);
+      await usser.save();
+      return res.status(200).send({message:"done"});
+   }catch(err){
+    console.log(err);
+    return res.status(404).send({error:err});
+   }
+};
+
  export const removefavourites = async(req,res)=>{
     try{
        const {person,id} = req.body;

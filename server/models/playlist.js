@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
-
+const { Schema } = mongoose;
 const playlists = new mongoose.Schema({
     Type:{
-        type:String
+        type:Boolean
     },
     author:{
         type:String
@@ -16,8 +16,14 @@ const playlists = new mongoose.Schema({
     description:{
         type:String
     },
-    songs:{
-        type:[]
+    songs:[
+		{
+			type: Schema.Types.ObjectId,
+			ref: "songs",
+		},
+    ],
+    likes:{
+        type:Number
     }
 });
 

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-
+const { Schema } = mongoose;
 const User = new mongoose.Schema({
     username:{
         type:String,
@@ -11,13 +11,13 @@ const User = new mongoose.Schema({
     },
     favourites:[
 		{
-			type: mongoose.Schema.Types.ObjectId,
+			type: Schema.Types.ObjectId,
 			ref: "songs",
 		},
     ],
     playlist:[
 		{
-			type: mongoose.Schema.Types.ObjectId,
+			type: Schema.Types.ObjectId,
 			ref: "playlists",
 		},
     ]

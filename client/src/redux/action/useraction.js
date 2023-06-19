@@ -213,3 +213,24 @@ export const removefavourites = (formdata)=>async()=>{
   }
 }
 
+
+export const createplaylist = (formdata,navigate)=>async()=>{
+  try{
+    const api =`${URL}/user/createplaylist`;
+    const res = await fetch(api,{
+     method: "POST",
+     headers: {
+       "Content-Type":"application/json"
+      },
+     body: JSON.stringify(formdata)
+     });
+    const msg = await res.json();
+    console.log(msg);
+    if(res.status === 200 ){
+       console.log("good");
+       navigate(-1);
+    }
+ }catch(err){
+   console.log(err);
+ }
+}

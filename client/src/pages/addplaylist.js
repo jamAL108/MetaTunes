@@ -11,19 +11,20 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import BeatLoader from "react-spinners/BeatLoader";
 import SearchIcon from '@mui/icons-material/Search';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { createplaylist } from '../redux/action/useraction';
 const Addplaylist = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     const navigate = useNavigate();
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [coverpic,setcoverpic] = useState({
         name:"",
-        myfile:"",
-        toggle:false
+        myfile:""
     })
     const [info , setinfo] = useState({
       name:"",
-      description:""
+      description:"",
+      toggle:false
     })
     const song = JSON.parse(localStorage.getItem("song"));
     const [selected , setselected]=useState([]);
@@ -186,8 +187,20 @@ const create =()=>{
       hideProgressBar:false
     });
   }else{
-    // dispatch(createplaylist());
-    console.log("heylo");
+    const obj ={
+      username:user.username,
+      info:info,
+      coverpic:coverpic,
+      songs:selected
+    }
+    console.log(obj);
+    dispatch(createplaylist(obj,navigate));
+    toast.success("Playlist Created", {
+      position: toast.POSITION.TOP_CENTER,
+      draggablePercent: 60,
+      autoClose:4000,
+      hideProgressBar:true
+    });
   }
 }
 const handlesearch =(e)=>{
