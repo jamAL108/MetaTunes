@@ -362,12 +362,13 @@
          margin-left: 0.2rem;
     }
     .art .others .down .songlist .box .left .main .names h2{
-        font-size: 0.90rem;
+        font-size: 1rem;
         font-weight: 370;
         margin-top: 0rem;
     
         text-transform: capitalize;
     }
+    
     .art .others .down .songlist .box .left .names p{
         font-size: 0.85rem;
         font-weight: 200;
