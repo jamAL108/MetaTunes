@@ -9,6 +9,8 @@ import $ from 'jquery';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import BeatLoader from "react-spinners/BeatLoader";
+import SearchIcon from '@mui/icons-material/Search';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 // import { useDispatch } from 'react-redux';
 const Addplaylist = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -26,10 +28,19 @@ const Addplaylist = () => {
     const song = JSON.parse(localStorage.getItem("song"));
     const [selected , setselected]=useState([]);
     const [songs,setsongs]=useState([]);
+    const [mainsongs,setmainsongs]=useState([]);
     useEffect(()=>{
-     setsongs(song);
+     let arr=[...song];
+     for(var i=0;i<song.length;i++){
+         arr[i].added=false;
+     }
+     setsongs(arr);
+     setmainsongs(arr);
                // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
+    useEffect(()=>{
+      console.log(selected)
+    },[selected])
     useEffect(()=>{
        if(!user){
         toast.warn("PLease login to create playlists", {
@@ -48,8 +59,6 @@ const Addplaylist = () => {
         setcoverpic({...coverpic , myfile:"https://firebasestorage.googleapis.com/v0/b/metatunes-2195e.appspot.com/o/musiccoverpic%2Fdefault_cover.jpg?alt=media&token=19ea7923-6e55-41b7-887c-3467f056aadf" , name:"default"});
       }
     const handlecoverpic=async(e)=>{
-        console.log(e.target.files[0]);
-        console.log("heeeloo");
         const file= e.target.files[0];
         const base64 = await convertbase64(file);
         setcoverpic({...coverpic , myfile:base64 , name:file.name});
@@ -74,11 +83,10 @@ const Addplaylist = () => {
 
   const [songlist,setsonglist]=useState([]);
   useEffect(()=>{
-     const song = JSON.parse(localStorage.getItem("song"));
-     if(song){
+     if(songs.length!==0){
       let array=[];
       for(var i=1;i<=5;i++){
-      const randomsong = song[(Math.floor(Math.random() * (song.length)))];
+      const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
          array.push(randomsong);
          console.log("hey");
       }
@@ -86,7 +94,11 @@ const Addplaylist = () => {
       showBoxes();
      }
           // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  },[songs])
+
+
+
+
   function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -96,7 +108,6 @@ const Addplaylist = () => {
     setsonglist(arr);
     await delay(1400); // 3000 milliseconds = 3 seconds
     if(songs){
-      console.log("nkerj");
       let array=[];
       while(array.length!==5){
       const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
@@ -108,13 +119,14 @@ const Addplaylist = () => {
       }
       const boxes = document.getElementsByClassName(".box");
       for(var i=0;i<boxes.length;i++){
-        console.log("heyy");
         boxes[i].style.opacity="0";
       }
       setsonglist(array);
       showBoxes();
     }
   }
+
+
   const boxes = document.getElementsByClassName(".box");
   // console.log(boxes);
   function showBoxes() {
@@ -139,11 +151,8 @@ useEffect(()=>{
 },[songlist])
 const newrefresh =async()=>{
   if(songs){
-    console.log("nkerj");
     let array=[...songlist];
-    console.log(array);
     while(array.length!==5){
-      console.log(array);
     const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
     if(array.indexOf(randomsong) === -1 && selected.indexOf(randomsong) === -1 && songlist.indexOf(randomsong) === -1){
        array.push(randomsong);
@@ -153,7 +162,6 @@ const newrefresh =async()=>{
     }
     const boxes = document.getElementsByClassName(".box");
     for(var i=0;i<boxes.length;i++){
-      console.log("heyy");
       boxes[i].style.opacity="0";
     }
     setsonglist(array);
@@ -182,6 +190,32 @@ const create =()=>{
     console.log("heylo");
   }
 }
+const handlesearch =(e)=>{
+    if(!e.target.value){
+      refresh();
+    }else{
+      const temp = mainsongs.filter(item=>item.name.includes(e.target.value));
+      setsonglist(temp);
+    }
+}
+
+// const blurb =async(e)=>{
+//   let arr =[];
+//   setsonglist(arr);
+//   await delay(1400); // 3000 milliseconds = 3 seconds
+//     if(songs){
+//       let array=[];
+//       while(array.length!==5){
+//       const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
+//       if((selected.indexOf(randomsong) === -1) && (array.indexOf(randomsong) === -1)){
+//          array.push(randomsong);
+//       }else{
+//         continue;
+//        }
+//       }
+//       setsonglist(array);
+//     }
+// }
   return (
     <div className="addplaylist">
         <ToastContainer/>
@@ -253,6 +287,10 @@ const create =()=>{
                  </div>
                  <div className="lineeeeey"></div>
                  <div className="songlist">
+                 <div className="search">
+                   <input type="text" placeholder='Search Songs'  onChange={handlesearch}  />
+                      <SearchIcon className='inside' />
+                    </div>
                   {songlist.length===0 &&(
                       <div className="spin">
                         <BeatLoader color="#EE4950" />
@@ -267,13 +305,18 @@ const create =()=>{
                            <img src={item.imageURL} alt="pic" />
                            </div>
                            <div className="names">
-                             <h2>{item.name}</h2>
+                             <h2>{item.name}</h2> 
                              <p>{item.artist}</p>
                            </div>
                          </div>
                          <div className="right">
+                          {item.added===false &&(
                            <AddCircleOutlineOutlinedIcon className='add' onClick={(e)=>{
                             e.preventDefault();
+                            let idddx = mainsongs.indexOf(item);
+                            let ar =[...mainsongs];
+                            ar[idddx].added=true;
+                            setmainsongs(ar);
                             let arr = [...songlist];
                             arr.splice(idx,1);
                             setsonglist(arr);
@@ -283,6 +326,19 @@ const create =()=>{
                             array.push(item);
                             setselected(array);
                            }}/>
+                           )}
+                           {item.added===true &&(
+                             <CheckCircleOutlineIcon className='added' onClick={(e)=>{
+                              e.preventDefault();
+                              console.log("hkerbve");
+                              toast.warn("This Song Is Already In Your Playlist", {
+                                position: toast.POSITION.TOP_CENTER,
+                                draggablePercent: 60,
+                                autoClose:4000,
+                                hideProgressBar:false
+                              });
+                             }}/>
+                            )} 
                          </div>
                          </div>
                 ))}

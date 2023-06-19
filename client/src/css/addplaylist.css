@@ -276,7 +276,7 @@
 }
 .addplaylist .others .songadd  .songlist .box{
   width: 100%;
-  height: 4.8rem;
+  height: 4.3rem;
   background-color: #18181a;
   display: flex;
   justify-content:space-between;
@@ -285,6 +285,7 @@
   opacity: 0;
   font-family: 'Roboto' , sans-serif;
   margin-bottom:0.6rem;
+  animation: slide-in 1s ease forwards; 
 }
 @keyframes slide-in {
 0% {
@@ -297,6 +298,43 @@
 }
 }
 
+
+.addplaylist .others .songadd  .songlist  .search{
+  width: 90%;
+  height:3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+.addplaylist .others .songadd  .songlist  .search input{
+  width: 100%;
+  height: 90%;
+  background-color: inherit;
+  border: 2px solid #323234;
+  border-radius: 6px;
+  color: #E3E3E3;
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+}
+.addplaylist .others .songadd  .songlist .search input:focus{
+  outline: none !important;
+  border: 2px solid #EE4950;
+}
+.addplaylist .others .songadd  .songlist  .search input:focus + .addplaylist .others .songadd  .songlist  .search .inside{
+  color:#EE4950;
+}
+.addplaylist .others .songadd  .songlist .search .inside{
+  width: auto;
+  position: relative;
+  top: -2rem;
+  color: #323234;
+  left: 95%;
+}
+
 .addplaylist .others .songadd  .songlist .box .left{
   width: 50%;
   height: 100%;
@@ -306,8 +344,8 @@
 }
 
 .addplaylist .others .songadd  .songlist .box .left .image{
-  min-width: 25% !important;
-  height: 80%;
+  min-width: 17% !important;
+  height: 76%;
   margin-left: 0.4rem;
   border-radius: 4px;
 }
@@ -353,6 +391,9 @@
   color: #EE4950;
   width: 30%;
   height: 30%;
+}
+.addplaylist .others .songadd .songlist .box .right .add:hover{
+  cursor: pointer;
 }
 .addplaylist .others .songadd .songlist .spin{
   width: 100%;
@@ -624,6 +665,18 @@ textarea {
         height: 3px;
         background-color: #343434;
       }
+
+      .addplaylist .others .songadd .songlist .search{
+        width: 100%;
+        height: 2.2rem;
+        margin-top: 0.3rem;
+        margin-left: 1.5rem;
+        margin-bottom:1.5rem;
+       }
+    .addplaylist .others .songadd .songlist .search .inside{
+        left: 90%;
+       }
+
       .addplaylist .others .songadd .songlist{
         width: 100%;
         min-height: 16vh;
@@ -647,7 +700,7 @@ textarea {
         opacity: 0;
         font-family: 'Roboto' , sans-serif;
         margin-bottom:0.6rem;
-         animation: slide-in 1s ease forwards; 
+        animation: slide-in 1s ease forwards; 
     }
      @keyframes slide-in {
       0% {
@@ -717,6 +770,11 @@ textarea {
         width: 30%;
         height: 30%;
     }
+    .addplaylist .others .songadd .songlist .box .right .added{
+      color: #00FF00;
+      width: 30%;
+      height: 30%;
+  }
     .addplaylist .others .songadd .songlist .spin{
       width: 100%;
       height: 100%;
