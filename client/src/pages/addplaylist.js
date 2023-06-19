@@ -11,8 +11,9 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import BeatLoader from "react-spinners/BeatLoader";
 import SearchIcon from '@mui/icons-material/Search';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createplaylist } from '../redux/action/useraction';
+import { PLAYLISTCREATED } from '../redux/actiontypes';
 const Addplaylist = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     const navigate = useNavigate();
@@ -126,7 +127,7 @@ const Addplaylist = () => {
       showBoxes();
     }
   }
-
+   
 
   const boxes = document.getElementsByClassName(".box");
   // console.log(boxes);
@@ -195,14 +196,28 @@ const create =()=>{
     }
     console.log(obj);
     dispatch(createplaylist(obj,navigate));
-    toast.success("Playlist Created", {
-      position: toast.POSITION.TOP_CENTER,
-      draggablePercent: 60,
-      autoClose:4000,
-      hideProgressBar:true
-    });
   }
 }
+
+const store = useSelector((state)=>state);
+useEffect(()=>{
+  if(store.user.playlistcreated===true){
+  toast.success("Playlist Created", {
+    position: toast.POSITION.TOP_CENTER,
+    draggablePercent: 60,
+    autoClose:4000,
+    hideProgressBar:true
+  });
+  dispatch({type:PLAYLISTCREATED , payload:false});
+  navigate("/playlist");
+}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+},[store.user.playlistcreated])
+
+
+
+
+
 const handlesearch =(e)=>{
     if(!e.target.value){
       refresh();
@@ -212,23 +227,7 @@ const handlesearch =(e)=>{
     }
 }
 
-// const blurb =async(e)=>{
-//   let arr =[];
-//   setsonglist(arr);
-//   await delay(1400); // 3000 milliseconds = 3 seconds
-//     if(songs){
-//       let array=[];
-//       while(array.length!==5){
-//       const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
-//       if((selected.indexOf(randomsong) === -1) && (array.indexOf(randomsong) === -1)){
-//          array.push(randomsong);
-//       }else{
-//         continue;
-//        }
-//       }
-//       setsonglist(array);
-//     }
-// }
+
   return (
     <div className="addplaylist">
         <ToastContainer/>

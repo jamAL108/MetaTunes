@@ -9,7 +9,7 @@ import{
  FAVOURITES,
  EMPTYFAVS,
  EMPTYPLAYS,
- PLAYLISTS
+ PLAYLISTS,PLAYLISTCREATED
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
@@ -214,7 +214,7 @@ export const removefavourites = (formdata)=>async()=>{
 }
 
 
-export const createplaylist = (formdata,navigate)=>async()=>{
+export const createplaylist = (formdata)=>async(dispatch)=>{
   try{
     const api =`${URL}/user/createplaylist`;
     const res = await fetch(api,{
@@ -228,7 +228,7 @@ export const createplaylist = (formdata,navigate)=>async()=>{
     console.log(msg);
     if(res.status === 200 ){
        console.log("good");
-       navigate(-1);
+       dispatch({type:PLAYLISTCREATED  , payload:true});
     }
  }catch(err){
    console.log(err);
