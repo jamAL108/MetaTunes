@@ -29,9 +29,18 @@ const Allartist = () => {
     },[])
     useEffect(()=>{
        if(store.user.allartist.length!==0){
-        setartist(store.user.allartist);
+        localStorage.setItem("artist",JSON.stringify(store.user.allartist));
+        const array = store.user.allartist;
+        let artistsey=[];
+        dispatch({type:ALLARTIST , payload:[]})
+        while(artistsey.length!==8){
+        const randomartist = array[(Math.floor(Math.random() * (array.length)))];
+        if(artistsey.indexOf(randomartist)===-1){
+        artistsey.push(randomartist);
+        }
+        }
+        setartist(artistsey);
         setshow(true);
-         dispatch({type:ALLARTIST , payload:[]})
        }
                  // eslint-disable-next-line react-hooks/exhaustive-deps
     },[store.user.allartist])
@@ -68,7 +77,7 @@ const Allartist = () => {
                 navigate(`/artist/${item._id}`);
               }} key={idx}>
                 <div className="image">
-                <img src={item.imageURL} alt={item.name} />
+                <img src={item.imageURL} loading='lazy' alt={item.name} />
                 </div>
                 <h1>{item.name}</h1>
                 </div>

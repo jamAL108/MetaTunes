@@ -8,9 +8,12 @@ import '../css/addplaylist.css';
 import $ from 'jquery';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import BeatLoader from "react-spinners/BeatLoader";
+// import { useDispatch } from 'react-redux';
 const Addplaylist = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     const navigate = useNavigate();
+    // const dispatch = useDispatch();
     const [coverpic,setcoverpic] = useState({
         name:"",
         myfile:"",
@@ -20,7 +23,13 @@ const Addplaylist = () => {
       name:"",
       description:""
     })
+    const song = JSON.parse(localStorage.getItem("song"));
     const [selected , setselected]=useState([]);
+    const [songs,setsongs]=useState([]);
+    useEffect(()=>{
+     setsongs(song);
+               // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     useEffect(()=>{
        if(!user){
         toast.warn("PLease login to create playlists", {
@@ -78,15 +87,24 @@ const Addplaylist = () => {
      }
           // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
-  const refresh =()=>{
-    const song = JSON.parse(localStorage.getItem("song"));
-    if(song){
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  const refresh =async()=>{
+   
+    let arr=[];
+    setsonglist(arr);
+    await delay(1400); // 3000 milliseconds = 3 seconds
+    if(songs){
+      console.log("nkerj");
       let array=[];
       while(array.length!==5){
-      const randomsong = song[(Math.floor(Math.random() * (song.length)))];
-      if(!selected.includes(randomsong)){
+      const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
+      if((selected.indexOf(randomsong) === -1) && (array.indexOf(randomsong) === -1)){
          array.push(randomsong);
-      }
+      }else{
+        continue;
+       }
       }
       const boxes = document.getElementsByClassName(".box");
       for(var i=0;i<boxes.length;i++){
@@ -107,6 +125,63 @@ const Addplaylist = () => {
   }
 showBoxes();
 
+
+
+
+
+
+
+useEffect(()=>{
+    if(songlist.length===2 && selected.length!==0){
+      newrefresh();
+    }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+},[songlist])
+const newrefresh =async()=>{
+  if(songs){
+    console.log("nkerj");
+    let array=[...songlist];
+    console.log(array);
+    while(array.length!==5){
+      console.log(array);
+    const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
+    if(array.indexOf(randomsong) === -1 && selected.indexOf(randomsong) === -1 && songlist.indexOf(randomsong) === -1){
+       array.push(randomsong);
+     }else{
+      continue;
+     }
+    }
+    const boxes = document.getElementsByClassName(".box");
+    for(var i=0;i<boxes.length;i++){
+      console.log("heyy");
+      boxes[i].style.opacity="0";
+    }
+    setsonglist(array);
+    showBoxes();
+  }
+}
+   
+
+const create =()=>{
+  if(info.name===""){
+    toast.warn("please enter playlist name", {
+      position: toast.POSITION.TOP_CENTER,
+      draggablePercent: 60,
+      autoClose:4000,
+      hideProgressBar:false
+    });
+  }else if(selected.length===0){
+    toast.warn("empty playlist cannot be created please add some songs", {
+      position: toast.POSITION.TOP_CENTER,
+      draggablePercent: 60,
+      autoClose:5000,
+      hideProgressBar:false
+    });
+  }else{
+    // dispatch(createplaylist());
+    console.log("heylo");
+  }
+}
   return (
     <div className="addplaylist">
         <ToastContainer/>
@@ -114,7 +189,7 @@ showBoxes();
         <div className="others">
             <div className="header">
                 <h1>create Playlist</h1>
-                <button>Create <AddIcon className='add' /></button>
+                <button onClick={create} >Create <AddIcon className='add' /></button>
             </div>
             <div className="lineeyy"></div>
             <form action="POST">
@@ -178,8 +253,15 @@ showBoxes();
                  </div>
                  <div className="lineeeeey"></div>
                  <div className="songlist">
+                  {songlist.length===0 &&(
+                      <div className="spin">
+                        <BeatLoader color="#EE4950" />
+                      </div>
+                  )}
+                  {songlist.length!==0 && (
+                    <>
                  {songlist.map((item,idx)=>(
-                           <div className="box" key={idx} >
+                           <div className="box"   key={idx} >
                            <div className="left">
                            <div className="image">
                            <img src={item.imageURL} alt="pic" />
@@ -192,14 +274,20 @@ showBoxes();
                          <div className="right">
                            <AddCircleOutlineOutlinedIcon className='add' onClick={(e)=>{
                             e.preventDefault();
+                            let arr = [...songlist];
+                            arr.splice(idx,1);
+                            setsonglist(arr);
+                            let idxx= songs.indexOf(item);
+                            songs.splice(idxx,1);
                             let array = [...selected];
                             array.push(item);
                             setselected(array);
-
                            }}/>
                          </div>
                          </div>
                 ))}
+                </>
+                )}
                  </div>
             </div>
         </div>
