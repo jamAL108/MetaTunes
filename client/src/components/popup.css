@@ -94,6 +94,8 @@
 @media screen and (max-width:913px) {
 
     .popup .model{
+        position: absolute;
+        left: 8vw;
         width: 85%;
         height: 26vh;
         opacity: 1;

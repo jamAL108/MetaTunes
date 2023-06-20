@@ -152,8 +152,8 @@
 }
 .songs .heading .play{
     color: #EE4950;
-    width: 12%;
-    height: 12%;
+    width: 15%;
+    height: 15%;
 }
 
 
@@ -188,7 +188,7 @@
 }
 .songs .heading h1{
     font-size: 120%;
-    width: 50%;
+    width: 45%;
 }
 .songs .heading p{
     font-size: 0.78rem;

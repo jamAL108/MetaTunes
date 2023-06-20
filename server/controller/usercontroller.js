@@ -97,7 +97,9 @@ export const addfavourites = async(req,res)=>{
        const {person,id} = req.body;
        const data = await User.findOne({username:person});
        const thatsong = await song.findOne({_id:id});
+       if(thatsong.totallikes!==0){
        thatsong.totallikes--;
+       }
        await thatsong.save();
        const index = data.favourites.indexOf(id);
        if(index>-1){

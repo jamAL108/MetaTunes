@@ -128,10 +128,10 @@ useEffect(()=>{
                         </div>
                         <div className="downery">
                           <div className="items">
-                            <HeadphonesRoundedIcon/> {item.totalstream}
+                            <HeadphonesRoundedIcon className='icon'/> {item.totalstream}
                           </div>
                           <div className="items">
-                            <FavoriteRoundedIcon/> {item.totallikes}
+                            <FavoriteRoundedIcon className='icon'/> {item.totallikes}
                           </div>
                         </div>
                       </div>

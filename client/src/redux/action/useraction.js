@@ -9,7 +9,7 @@ import{
  FAVOURITES,
  EMPTYFAVS,
  EMPTYPLAYS,
- PLAYLISTS,PLAYLISTCREATED,COMMONPLAYLIST
+ PLAYLISTS,PLAYLISTCREATED,COMMONPLAYLIST , ALLSONG
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
@@ -36,7 +36,7 @@ export const getallartist = ()=>async(dispatch)=>{
 }
 
 
-export const getallsong=(username)=>async()=>{
+export const getallsong=(username)=>async(dispatch)=>{
    try{
         const obj={
           username:username
@@ -52,13 +52,9 @@ export const getallsong=(username)=>async()=>{
        console.log(msg);
        if(res.status === 200 ){
             let data = msg.response;
-            for(var i=0;i<data.length;i++){
-              data[i].idx=i;
-           }
-           const songs = data;
-            localStorage.setItem("song",JSON.stringify(songs));
+            dispatch({type:ALLSONG , payload:data});
     }
-    }catch(err){
+  }catch(err){
       console.log(err);
     }
 }

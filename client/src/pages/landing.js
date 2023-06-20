@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Song from '../components/songs';
 import '../css/home.css';
 import SearchIcon from '@mui/icons-material/Search';
-import {  getallsong } from '../redux/action/useraction';
 import Allartist from '../components/allartist';
 import { useNavigate } from 'react-router-dom';
 const Landing = () => {
@@ -18,17 +17,6 @@ const Landing = () => {
     data.index=0;
     localStorage.setItem("sidebar",JSON.stringify(data));
       // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
-  useEffect(()=>{
-    const user = JSON.parse(localStorage.getItem("user"));
-    let username="";
-    if(!user){
-       username="";
-    }else{
-       username=user.username
-    }
-    dispatch(getallsong(username));
-          // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   useEffect(()=>{
      const user = JSON.parse(localStorage.getItem("user"));

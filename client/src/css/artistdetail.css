@@ -397,4 +397,25 @@
         width: 30%;
         height: 30%;
     }
+    .art .others .down .songlist .box .left .main .downery{
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        max-height: 30%;
+        grid-gap: 1rem;
+        margin-left: 0.5rem;
+        opacity: 0.8;
+    }
+    .art .others .down .songlist .box .left .main .downery .items{
+        width: 25%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:0.4rem ;
+    }
+    .art .others .down .songlist .box .left .main .downery .items .icon{
+        width: 55%;
+        height: 55%;
+    }
 }

@@ -3,34 +3,67 @@ import './songs.css';
 import { useNavigate } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ColorRing } from 'react-loader-spinner';
 import { addfavourites , removefavourites } from '../redux/action/useraction';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { getallsong } from '../redux/action/useraction';
 const Song = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("user"));
-  const song = JSON.parse(localStorage.getItem("song"));
-  const [songs,setsongs]=useState(song);
+  const store = useSelector((state)=>state);
+  const [songs,setsongs]=useState([]);
     const [show,setshow]=useState(false);
     const [array , setarray]=useState([]);
-    // const user = JSON.parse(localStorage.getItem("user"));
+    const [random , setrandom]=useState([]);
+
     useEffect(()=>{
-      if(songs.length!==0){
-         let iddx =[];
-         for(var i=0;i<songs.length;i++){
-          iddx[i]=songs[i].like;
-         }
-         setarray(iddx);
-         setshow(true);
+      const user = JSON.parse(localStorage.getItem("user"));
+      let username="";
+      if(!user){
+         username="";
+      }else{
+         username=user.username
       }
+      dispatch(getallsong(username));
             // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     useEffect(()=>{
-      let temp = [...songs];
+      if(store.user.allsong.length!==0){
+        let dat = store.user.allsong;
+        for(var i=0;i<dat.length;i++){
+          dat[i].idx=i;
+        }
+        const data = dat;
+        localStorage.setItem("song",JSON.stringify(data));
+
+        let iddx =[];
+        let randoms=[];
+        let j=0;
+        while(randoms.length!==8){
+         console.log("eiobv");
+         const randomsong = data[(Math.floor(Math.random() * (data.length)))];
+         console.log(randomsong);
+         if(randoms.indexOf(randomsong) === -1){
+           randoms.push(randomsong);
+         iddx[j]=randomsong.like;
+         j++;
+         console.log("heyeyeye");
+         }
+        }
+        setrandom(randoms);
+        setarray(iddx);
+      }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[store.user.allsong])
+
+    useEffect(()=>{
+      if(random.length!==0){
+        console.log("heyyy");
+      let temp = [...random];
        for(var i=0;i<temp.length;i++){
         if(temp[i].name.length>14){
            temp[i].dummytitle=temp[i].name.substring(0,12)+"...";
@@ -50,16 +83,18 @@ const Song = () => {
        }
       }
       setsongs(temp);
+      setshow(true);
+    }
                 // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    },[random])
   return (
     <div className="songs">
        <ToastContainer />
        <div className="heading">
-          <h1>Popular Songs <PlayCircleIcon className='play' /></h1>
+          <h1>You may like <PlayCircleIcon className='play' /></h1>
          <p onClick={(e)=>{
             e.preventDefault();
-           navigate('/artists');
+           navigate('/artist');
             }} >see more</p>
             </div>
             {show===false &&(

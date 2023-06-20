@@ -12,3 +12,4 @@ export const PLAYLISTS = "PLAYLISTS";
 export const EMPTYPLAYS = "EMPTYPLAYS";
 export const PLAYLISTCREATED = " PLAYLISTCREATED";
 export const COMMONPLAYLIST = "COMMONPLAYLIST";
+export const ALLSONG = "ALLSONG";

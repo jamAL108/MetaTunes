@@ -10,6 +10,7 @@ import Artist from './pages/artistdetail';
 import Addplaylist from './pages/addplaylist';
 import Commonplaylist from './pages/commonplaylist';
 import Viewplaylist from './pages/viewplaylist';
+import Song from './pages/allsongs';
 function App() {
   return (
      <Routes>
@@ -23,6 +24,7 @@ function App() {
       <Route path='/addplaylist' element={<Addplaylist/>}/>
       <Route path='/commonplaylist' element={<Commonplaylist/>}/>
       <Route path='/playlist/:id' element={<Viewplaylist/>}/>
+      <Route path='Songs' element={<Song/>}/>
      </Routes>
   );
 }

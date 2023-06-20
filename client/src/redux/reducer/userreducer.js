@@ -11,7 +11,7 @@ import{
  FAVOURITES,
  EMPTYFAVS,
  PLAYLISTS,
- EMPTYPLAYS,PLAYLISTCREATED,COMMONPLAYLIST 
+ EMPTYPLAYS,PLAYLISTCREATED,COMMONPLAYLIST , ALLSONG
 } from '../actiontypes.js';
 const initialstate={
     authordata:null,
@@ -27,7 +27,8 @@ const initialstate={
     playlists:[],
     emptyplay:false,
     playlistcreated:false,
-    commonplaylist:[]
+    commonplaylist:[],
+    allsong:[]
 }  
 
 const User =(state=initialstate , action) =>{
@@ -95,7 +96,11 @@ const User =(state=initialstate , action) =>{
         case COMMONPLAYLIST:
             return{
                 ...state , commonplaylist:action.payload
-            }           
+            }
+        case ALLSONG:
+            return{
+                ...state , allsong:action.payload
+            }               
 
         default:
             return state;    

@@ -64,7 +64,9 @@ const CreatePlaylist = () => {
                            navigate('/addplaylist');
                            }
                     }}>
+                      <div className="icon">
                       <AddIcon className="adddd"/>
+                      </div>
                       <p>Create new Playlist</p>
                     </div>
                     {playlists.map((item,idx)=>(
