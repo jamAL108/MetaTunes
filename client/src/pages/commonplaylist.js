@@ -78,12 +78,11 @@ const CreatePlaylist = () => {
                         </div>
                         <div className="names">
                         <h1>{item.name}</h1>
-                        {user && user.username===item.author &&(
+                        {(user && user.username===item.author) ?
                           <p>You</p>
-                        )}
-                        {user ? user.username!==item.author : true && (
-                        <p>{item.author}</p>
-                        )}
+                         : 
+                         <p>{item.author}</p>
+                        }
                         </div>
                       </div>
                     ))}
