@@ -2,7 +2,8 @@ import {
     NAVCOLOR,
     LOGINCOLOR,
     ARTISTID,
-    USEREXIT
+    USEREXIT,
+    CANCEL
     
 } from '../propsaction';
 
@@ -10,7 +11,8 @@ const initialstate ={
     navcolor:false,
     logincolor:false,
     artistid:{},
-    userexit:false
+    userexit:false,
+    cancel:false
 }
 
 
@@ -33,7 +35,11 @@ const props =(state=initialstate , action) =>{
             case USEREXIT:
                 return{
                     ...state , userexit:action.payload
-                }    
+                }
+            case CANCEL:
+                return{
+                    ...state , cancel:action.payload
+                }        
         default:
             return state;    
     }

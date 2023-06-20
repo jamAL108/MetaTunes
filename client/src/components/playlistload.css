@@ -1,4 +1,141 @@
-.load{
+.loado{
     width: 100%;
+    min-height: 100vh;
     height: 100%;
+}
+.loado .header{
+    width: 96%;
+    height: 60vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.loado .header .image{
+    margin-top:1rem ;
+    width: 40%;
+    height: 70%;
+    margin-bottom:1.3rem ;
+    border-radius: 20px;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
+.loado .header .text1{
+    width: 50%;
+    height: 6.4%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+}
+.loado .header .p{
+    width: 45%;
+    height: 5.6%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+    margin-bottom: 0.4rem;
+}
+.loado .songbox{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 3rem;
+    grid-gap: 0.5rem;
+    margin-top: 2rem;
+}
+.loado .songbox .b1{
+    width: 12%;
+    height: 60%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+    border-radius: 10px;
+}
+.loado .line{
+    width: 90%;
+    height: 3px;
+    margin: auto;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+}
+.loado .boxes{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.loado .boxes .box{
+    margin-top: 1rem;
+    width: 80%;
+    height: 27%;
+    background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+    border-radius: 10px;
+}
+
+
+
+@media screen and (max-width:913px) {
+    .loado .header{
+        width: 96%;
+        height: 50vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .loado .header .image{
+        margin-top:1rem ;
+        width: 90%;
+        height: 60%;
+        margin-bottom:2rem ;
+        border-radius: 20px;
+        background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+    }
+    .loado .header .text1{
+        width: 80%;
+        height: 6%;
+        background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+        border-radius: 2px;
+        margin-bottom: 1rem;
+    }
+    .loado .header .p{
+        width: 60%;
+        height: 5%;
+        background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+        border-radius: 10px;
+        margin-bottom: 0.4rem;
+    }
+    .loado .songbox{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 1rem;
+        grid-gap: 0.5rem;
+    }
+    .loado .songbox .b1{
+        width: 35%;
+        height: 60%;
+        background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+        border-radius: 10px;
+    }
+    .loado .line{
+        width: 90%;
+        height: 3px;
+        margin: auto;
+        background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+    }
+    .loado .boxes{
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        grid-gap: 1rem;
+    }
+    .loado .boxes .box{
+        width: 90%;
+        height: 23%;
+        background-image:linear-gradient( to bottom , #27272a, #18181b) ;
+        border-radius: 10px;
+    }
+
 }

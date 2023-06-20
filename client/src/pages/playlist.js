@@ -7,10 +7,10 @@ import { useSelector } from 'react-redux';
 import { LOGINCOLOR } from '../redux/propsaction';
 import { getplaylists } from '../redux/action/useraction';
 import { EMPTYPLAYS, PLAYLISTS } from '../redux/actiontypes';
-import { ColorRing } from 'react-loader-spinner';
 import AddIcon from '@mui/icons-material/Add';
 import ErrorIcon from '@mui/icons-material/Error';
 import { useNavigate } from 'react-router-dom';
+import BeatLoader from "react-spinners/BeatLoader";
 const Playlist = () => {
   const [auth , setauth] = useState(false);
   const error="please login to see your playlist";
@@ -30,7 +30,6 @@ const Playlist = () => {
   },[])
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
-
   useEffect(()=>{
     if(store.props.logincolor===true){
       if(window.screen.width<900){
@@ -76,15 +75,7 @@ useEffect(()=>{
           <div className="others">
                {spin===true &&(
                      <div className='spin'>
-                     <ColorRing
-                       visible={true}
-                       height="90"
-                       width="90"
-                       ariaLabel="blocks-loading"
-                       wrapperStyle={{}}
-                       wrapperClass="blocks-wrapper"
-                       colors={['#EE4950','#EE4950','#EE4950','#EE4950','#EE4950']}
-                     />
+                      <BeatLoader color="#EE4950" />
                            </div>
             )}
             {spin===false &&(
@@ -98,7 +89,7 @@ useEffect(()=>{
                   <div className="sub">
                     <h1 className='noplay'><ErrorIcon/>You Haven't made any playlists yet...</h1>
                     <div className="addplay" onClick={(e)=>{
-                      e.preventDefault();
+                           e.preventDefault();
                            navigate('/addplaylist');
                     }} >
                         <AddIcon className="adddd"/>
@@ -109,14 +100,18 @@ useEffect(()=>{
                 {playlists.length!==0 &&(
                    <div className="playlistsss">
                       <div className="addplay" onClick={(e)=>{
-                      e.preventDefault();
+                           e.preventDefault();
                            navigate('/addplaylist');
                     }}>
                       <AddIcon className="adddd"/>
                       <p>Create new Playlist</p>
                     </div>
                     {playlists.map((item,idx)=>(
-                      <div className="box" key={idx}>
+                      <div className="box" onClick={(e)=>{
+                        e.preventDefault();
+                        console.log(item);
+                        navigate(`/playlist/${item._id}`);
+                      }} key={idx}>
                         <div className="image">
                         <img src={item.image.myfile} alt='piic'/>
                         </div>

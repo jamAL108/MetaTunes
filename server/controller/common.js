@@ -1,6 +1,7 @@
 import artist from "../models/artist.js";
 import song from '../models/song.js';
 import User from "../models/user.js";
+import playlist from "../models/playlist.js";
 
 export const Addsong = async(req,res)=>{
     try{
@@ -43,6 +44,18 @@ export const getallartist = async(req,res)=>{
     return res.status(404).send({error:err});
    }
 };
+
+export const commonplaylist = async(req,res)=>{
+  try{
+    const playlists = await playlist.find({Type:false});
+    console.log("heryyy");
+    return res.status(200).send({response:playlists});
+  }catch(err){
+   console.log(err);
+   return res.status(404).send({error:err});
+  }
+};
+
 
 export const getartist = async(req,res)=>{
   try{
@@ -123,5 +136,19 @@ export const getallsong = async(req,res)=>{
   }catch(err){
    console.log(err);
    return res.status(404).send({error:err});
+  }
+}
+
+
+
+
+export const getplaylist = async(req,res)=>{
+  try{
+      const { id } = req.params;
+      const playlistey = await playlist.findOne({_id:id});
+      return res.status(200).send({response:playlistey});
+  }catch{
+    console.log(err);
+    return res.status(404).send({error:err});
   }
 }

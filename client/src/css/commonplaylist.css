@@ -1,10 +1,21 @@
-.playlist{
+.createplaylist{
     width: 100%;
     height: 100vh;
     margin: 0;
     padding: 0;
 }
-.playlist .others{
+
+.createplaylist .spin{
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.createplaylist .others{
     background-color:inherit;
     position: absolute;
     top: 5%;
@@ -18,81 +29,17 @@
     height: auto;
     min-height: 100vh;
 }
-.playlist .others .spin{
-    width: 100%;
-    min-height: 90vh;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-}
-
-.playlist .others .heading{
+.createplaylist .others .heading{
     width: 90%;
     height:20vh;
 }
-.playlist .others .lineyyyyyyy{
+.createplaylist .others .lineey{
     width: 90%;
     height: 3px;
     background-color: #343434;
 }
-.playlist .others .sub{
-    width: 90%;
-    height: 40vh;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items:flex-start;
-    grid-gap: 1rem;
-}
-.playlist .others .sub .noplay{
-    font-size: 1rem;
-    font-weight: 500;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-gap: 0.2rem;
-    color: #EE4950;
-    text-transform: capitalize;
-}    
-.playlist .others .sub .addplay{
-    width: 17%;
-    height: 80%;
-    background-color: #272729;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.17);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.playlist .others .sub .addplay .adddd{
-    min-width: 3.5rem;
-    min-height: 3.5rem;
-    color: #E3E3E3;
-}
-.playlist .others .sub .addplay:hover{
-    cursor: pointer;
-}
-.playlist .others .sub .addplay .adddd  .css-i4bv87-MuiSvgIcon-root{
-    width: 100%;
-    height: 100%;
-}
-.playlist .others .sub .addplay p{
-    font-size: 1.3rem;
-    font-weight: 500;
-    text-align: center;
-}
 
-.playlist .others .playlistsss{
+.createplaylist .others .playlistsss{
     width: 94%;
     height: auto;
     min-height: 40vh;
@@ -102,7 +49,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     grid-column-gap: 3%;
     margin-left: 0.52rem;
 }
-.playlist .others .playlistsss .addplay{
+.createplaylist .others .playlistsss .addplay{
     width: 20%;
     height: 37vh;
     background-color: #272729;
@@ -120,41 +67,41 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     text-transform: capitalize;
     margin-top: 1rem;
 } 
-.playlist .others .playlistsss .addplay:hover , .playlist .others .playlistsss .box:hover{
+.createplaylist .others .playlistsss .addplay:hover ,     .createplaylist .others .playlistsss .box:hover{
     cursor: pointer;
 }
-.playlist .others .playlistsss .addplay .adddd{
+.createplaylist .others .playlistsss .addplay .adddd{
     width: 40%;
     height: 40%;
 }
-.playlist .others .playlistsss .addplay p{
+.createplaylist .others .playlistsss .addplay p{
     font-size: 1.2rem;
     font-weight: 400;
     text-transform: capitalize;
     text-align: center;
     margin-top: 0rem;
 }
-.playlist .others .playlistsss .box{
+.createplaylist .others .playlistsss .box{
     width: 18%;
     height: 37vh;
     background-color: #18181a;
     border-radius: 12px;
     margin-top: 1rem;
 }
-.playlist .others .playlistsss .box .image{
+.createplaylist .others .playlistsss .box .image{
     width:100%;
     height:70%;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
-.playlist .others .playlistsss .box .image img{
+.createplaylist .others .playlistsss .box .image img{
     width: 100%;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 100%;
     object-fit: cover;
 }
-.playlist .others .playlistsss .box .names{
+.createplaylist .others .playlistsss .box .names{
     width: 100%;
     height: 30%;
     display: flex;
@@ -163,13 +110,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     align-items:flex-start;
     margin-left: 0.7rem;
 }
-.playlist .others .playlistsss .box .names h1{
+.createplaylist .others .playlistsss .box .names h1{
     font-size: 0.9rem;
     font-weight: 400;
     text-transform: capitalize;
     margin-bottom: 0rem;
 }
-.playlist .others .playlistsss .box .names p{
+.createplaylist .others .playlistsss .box .names p{
     font-size: 0.9rem;
     font-weight: 400;
     opacity: 0.5;
@@ -181,7 +128,16 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 
 @media screen and (max-width:913px) {
-    .playlist .others{
+    .createplaylist .spin{
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0%;
+    }
+    .createplaylist .others{
         top: 10%;
         left: 0%;
         width: 100vw;
@@ -192,41 +148,33 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         flex-direction: column;
         align-items: center;
     }
-    .playlist .others .spin{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        /* position: absolute; */
-        justify-content: center;
-        align-items: center;
-    }
-    .playlist .others .heading{
+    .createplaylist .others .heading{
         width: 90%;
-        max-height:15vh;
-        height: 15vh;
+        max-height:16vh;
+        height: 16vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
     }
-    .playlist .others .heading h1{
-        font-size: 1.34rem;
+    .createplaylist .others .heading h1{
+        font-size: 1.3rem;
         font-weight: 400;
         margin-bottom: 0rem;
     }
-    .playlist .others .heading p{
+    .createplaylist .others .heading p{
         font-size:1.13rem;
         opacity: 0.6;
         font-weight: 400;
         text-transform: capitalize;
     }
-    .playlist .others .lineyyyyyyy{
+    .createplaylist .others .lineey{
         width: 90%;
         height: 3px;
         margin-top:0rem;
         background-color: #343434;
     }
-    .playlist .others .sub{
+    .createplaylist .others .sub{
         width: 90%;
         height: 40vh;
         min-height: 40vh;
@@ -236,7 +184,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         align-items:flex-start;
         grid-gap: 2rem;
     }
-    .playlist .others .sub .noplay{
+    .createplaylist .others .sub .noplay{
         font-size: 1rem;
         font-weight: 500;
         margin-top: 1rem;
@@ -248,43 +196,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         color: #EE4950;
         text-transform: capitalize;
     }    
-    .playlist .others .sub .addplay{
-        width: 47%;
-        height: 60%;
-        background-color: #272729;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border-radius: 6px;
-        /* From https://css.glass */
-background: rgba(255, 255, 255, 0.17);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-text-transform: capitalize;
-    }
-
-    .playlist .others .sub .addplay:hover{
-        cursor: pointer;
-    }
-    .playlist .others .sub .addplay .adddd{
-        min-width: 3.5rem;
-        min-height: 3.5rem;
-        color: #E3E3E3;
-    }
-    .playlist .others .sub .addplay .adddd  .css-i4bv87-MuiSvgIcon-root{
-        width: 100%;
-        height: 100%;
-    }
-    .playlist .others .sub .addplay p{
-        font-size: 1.2rem;
-        font-weight: 500;
-        text-align: center;
-    }
-    .playlist .others .playlistsss{
+    .createplaylist .others .playlistsss{
         width: 94%;
         height: auto;
         min-height: 40vh;
@@ -294,7 +206,7 @@ text-transform: capitalize;
         grid-column-gap: 3%;
         margin-left: 0.52rem;
     }
-    .playlist .others .playlistsss .addplay{
+    .createplaylist .others .playlistsss .addplay{
         width: 45%;
         height: 30vh;
         background-color: #272729;
@@ -312,38 +224,38 @@ text-transform: capitalize;
         text-transform: capitalize;
         margin-top: 1rem;
     } 
-    .playlist .others .playlistsss .addplay .adddd{
+    .createplaylist .others .playlistsss .addplay .adddd{
         width: 40%;
         height: 40%;
     }
-    .playlist .others .playlistsss .addplay p{
-        font-size: 1.2rem;
+    .createplaylist .others .playlistsss .addplay p{
+        font-size: 1.1rem;
         font-weight: 400;
         text-transform: capitalize;
         text-align: center;
         margin-top: 0rem;
     }
-    .playlist .others .playlistsss .box{
+    .createplaylist .others .playlistsss .box{
         width: 47%;
         height: 30vh;
         background-color: #18181a;
         border-radius: 16px;
         margin-top: 1rem;
     }
-    .playlist .others .playlistsss .box .image{
+    .createplaylist .others .playlistsss .box .image{
         width:100%;
         height:70%;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
     }
-    .playlist .others .playlistsss .box .image img{
+    .createplaylist .others .playlistsss .box .image img{
         width: 100%;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
         height: 100%;
         object-fit: cover;
     }
-    .playlist .others .playlistsss .box .names{
+    .createplaylist .others .playlistsss .box .names{
         width: 100%;
         height: 30%;
         display: flex;
@@ -352,13 +264,13 @@ text-transform: capitalize;
         align-items:flex-start;
         margin-left: 0.7rem;
     }
-    .playlist .others .playlistsss .box .names h1{
+    .createplaylist .others .playlistsss .box .names h1{
         font-size: 0.9rem;
         font-weight: 400;
         text-transform: capitalize;
         margin-bottom: 0rem;
     }
-    .playlist .others .playlistsss .box .names p{
+    .createplaylist .others .playlistsss .box .names p{
         font-size: 0.9rem;
         font-weight: 400;
         opacity: 0.5;
@@ -367,3 +279,6 @@ text-transform: capitalize;
     }
 
 }
+
+
+

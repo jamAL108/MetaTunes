@@ -1,0 +1,481 @@
+.Viewplaylist{
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.Viewplaylist .others{
+    background-color:inherit;
+    position: absolute;
+    top: 5%;
+    left: 22.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    color: #E3E3E3;
+    width: 77.6vw;
+    height: auto;
+    min-height: 100vh;
+}
+
+.Viewplaylist .others .heading{
+    width: 90%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 2rem;
+}
+.Viewplaylist .others .heading .image{
+    height: 37%;
+    width: 46%;
+border-radius: 16px;
+
+}
+.Viewplaylist .others .heading .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+.Viewplaylist .others .heading .names{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 32%;
+}
+.Viewplaylist .others .heading .names p{
+    font-size: 1.2rem;
+    margin-bottom: 0rem;
+    text-transform: capitalize;
+}
+.Viewplaylist .others .heading .names span{
+    color: #EE4950;
+}
+.Viewplaylist .others .heading .names h1{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    font-weight: 530;
+    margin-bottom: 0rem;
+}
+.Viewplaylist .others .heading .names .desc{
+    opacity: 0.7;
+    margin-top: 0.4rem;
+}
+.Viewplaylist .others .heading .below{
+    margin-top: 1rem;
+    width: 30%;
+    min-height: 13vh;
+    height: 13vh;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    grid-gap: 1rem;
+}
+
+.Viewplaylist .others .heading .below button{
+    width:27%;
+    height: 40%;
+    border: 3px solid #E3E3E3;
+    background-color: inherit;
+    color: #E3E3E3;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Viewplaylist .others .heading .below button .icon{
+    width: 35%;
+    height: 65%;
+}
+.Viewplaylist .others .heading .below .likes{
+    opacity: 0.6;
+    margin-left: 0.4rem;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+.Viewplaylist .others .down{
+    width: 90%;
+    height: auto;
+    min-height: 9rem;
+}
+.Viewplaylist  .others .down .up{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    grid-gap: 3rem;
+    width: 100%;
+    height: 3rem;
+}
+.Viewplaylist  .others .down .up h1{
+    font-size: 1.5rem;
+}
+.Viewplaylist  .others .down .dash{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 3px;
+    background-color: #323234;
+}
+.Viewplaylist  .others .down .up .play{
+    background-color: #EE4950;
+    display: flex;
+    width: 13%;
+    max-height: 80%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+.Viewplaylist  .others .down .up .play:hover{
+    cursor: pointer;
+}
+.Viewplaylist  .others .down .up .play h1{
+    font-size: 1.1rem;
+    margin-left: -0.2rem;
+}
+.Viewplaylist  .others .down .dash{
+    width: 98%;
+    height: 3px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #323234;
+}
+.Viewplaylist  .others .down .songlist{
+    width: 98%;
+    min-height: 30vh;
+    height: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+}
+.Viewplaylist  .others .down .songlist .box{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #18181a;
+    border-radius: 14px;
+    margin-bottom: 0.7rem;
+
+}
+.Viewplaylist  .others .down .songlist .box .left{
+    width: 60%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+}
+.Viewplaylist .others .down .songlist .box .left .image{
+    width: 13%;
+    height: 85%;
+    border-radius: 10px;
+    margin-left: 1rem;
+}
+.Viewplaylist  .others .down .songlist .box .left .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.Viewplaylist  .others .down .songlist .box .left .main{
+    max-width: 70%;
+    min-width: 60%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Viewplaylist  .others .down .songlist .box .left .main .names {
+    width: 100%;
+    height: 50%;
+}
+.Viewplaylist  .others .down .songlist .box .left .main .names h2{
+    margin: 0;
+    font-size: 1.07rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: "Baloo bhai 2",sans-serif;
+    margin: 0.5rem;
+}
+.Viewplaylist  .others .down .songlist .box .left .main .names p{
+    margin-left: 0.5rem;
+    opacity: 0.6;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+}
+.Viewplaylist  .others .down .songlist .box  .right{
+    width: 30%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Viewplaylist  .others .down .songlist .box  .right .play{
+    width: 37%;
+    height: 37%;
+    color: #EE4950;
+}
+.Viewplaylist  .others .down .songlist .box  .right .play , .art .others .down .songlist .box  .right .nolike , .Viewplaylist  .others .down .songlist .box  .right .like{
+    cursor: pointer;
+}
+.Viewplaylist  .others .down .songlist .box  .right .nolike{
+    width: 35%;
+    height: 35%;
+}
+.Viewplaylist  .others .down .songlist .box  .right .like{
+    width: 35%;
+    height: 35%;
+    color: #EE4950;
+}
+
+
+
+@media screen and (max-width:913px) {
+    .Viewplaylist .others{
+        top: 10%;
+        left: 0%;
+        width: 100vw;
+        height:auto;
+        min-height: 90vh;
+        display: flex;
+        overflow-y: scroll;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Viewplaylist .others .heading{
+        width: 90%;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+    .Viewplaylist .others .heading .image{
+        min-height: 30vh;
+        height: 30vh;
+        width: 90%;
+    border-radius: 16px;
+    
+    }
+    .Viewplaylist .others .heading .image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+    .Viewplaylist .others .heading .names{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 25%;
+    }
+    .Viewplaylist .others .heading .names p{
+        font-size: 1.2rem;
+        margin-bottom: 0rem;
+        text-transform: capitalize;
+    }
+    .Viewplaylist .others .heading .names span{
+        color: #EE4950;
+    }
+    .Viewplaylist .others .heading .names h1{
+        font-size: 1.4rem;
+        text-transform: capitalize;
+        font-weight: 530;
+        margin-bottom: 0rem;
+    }
+    .Viewplaylist .others .heading .names .desc{
+        opacity: 0.7;
+        margin-top: 0.7rem;
+    }
+    .Viewplaylist .others .heading .below{
+        margin-top: 1rem;
+        width: 70%;
+        min-height: 10vh;
+        height: 10vh;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: flex-start;
+        grid-gap: 1rem;
+    }
+    
+    .Viewplaylist .others .heading .below button{
+        width:37%;
+        height: 50%;
+        border: 3px solid #E3E3E3;
+        background-color: inherit;
+        color: #E3E3E3;
+        font-size: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .Viewplaylist .others .heading .below button .icon{
+        width: 35%;
+        height: 65%;
+    }
+    .Viewplaylist .others .heading .below .likes{
+        opacity: 0.6;
+        margin-left: 0.4rem;
+        font-size: 1.2rem;
+    }
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+    .Viewplaylist .others .down{
+        width: 90%;
+        height: auto;
+        min-height: 9rem;
+    }
+    .Viewplaylist .others .down .up{
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        grid-gap: 1rem;
+        width: 100%;
+        height: 3rem;
+    }
+    .Viewplaylist .others .down .up h1{
+        font-size: 1.2rem;
+    }
+    .Viewplaylist .others .down .up .play{
+        background-color: #EE4950;
+        display: flex;
+        max-width: 38%;
+        width: 36%;
+        max-height: 80%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+    }
+    .Viewplaylist .others .down .up .play h1{
+        font-size: 1.1rem;
+        margin-left: -0.2rem;
+    }
+    .Viewplaylist .others .down .dash{
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        height: 3px;
+        background-color: #323234;
+    }
+    .Viewplaylist .others .down .songlist{
+        width: 100%;
+        min-height: 16vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   
+        margin-top: 1rem;
+    }
+    .Viewplaylist .others .down .songlist .box{
+        width: 100%;
+        height: 4.8rem;
+        background-color: #18181a;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        border-radius: 15px;
+        font-family: 'Roboto' , sans-serif;
+        margin-bottom:0.6rem;
+    }
+    .Viewplaylist .others .down .songlist .box .left{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+
+    .Viewplaylist .others .down .songlist .box .left .image{
+        min-width: 28% !important;
+        height: 80%;
+        margin-left: 0.4rem;
+        border-radius: 8px;
+    }
+    .Viewplaylist .others .down .songlist .box .left .image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .Viewplaylist .others .down .songlist .box .left .names{
+         height: 70%;
+         min-width: 60%;
+         margin-top: 0.4rem;
+         display: flex;
+         flex-direction: column;
+         justify-content:center;
+         align-items:flex-start;
+    }
+    .Viewplaylist .others .down .songlist .box .left .names h2{
+        font-size: 0.90rem;
+        font-weight: 370;
+        margin-top: 0rem;
+        margin-left: -1rem;
+        text-transform: capitalize;
+    }
+    .Viewplaylist .others .down .songlist .box .left .names p{
+        font-size: 0.85rem;
+        font-weight: 200;
+        margin-top: 0rem;
+        margin-left: -1rem;
+    }
+    .Viewplaylist .others .down .songlist .box .right{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0.5rem;
+    }
+    .Viewplaylist .others .down .songlist .box .right .play{
+        color: #EE4950;
+        width: 30%;
+        height: 30%;
+    }
+    .Viewplaylist .others .down .songlist .box .right .nolike{
+        color: #E3E3E3;
+        width: 30%;
+        height: 30%;
+    }
+    .Viewplaylist .others .down .songlist .box .right .like{
+        color: #EE4950;
+        width: 30%;
+        height: 30%;
+    }
+}

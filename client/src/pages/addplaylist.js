@@ -89,7 +89,9 @@ const Addplaylist = () => {
       let array=[];
       for(var i=1;i<=5;i++){
       const randomsong = songs[(Math.floor(Math.random() * (songs.length)))];
-         array.push(randomsong);
+      if(array.indexOf(randomsong)===-1){
+        array.push(randomsong);
+      }
          console.log("hey");
       }
       setsonglist(array);

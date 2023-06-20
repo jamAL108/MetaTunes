@@ -103,13 +103,14 @@
     align-items: center;
 }
 .songs .items .boxzzy .below .right .like{
-    width: 40%;
-    height: 40%;
+    width: 36%;
+    height: 36%;
     color: #EE4950;
 }
 .songs .items .boxzzy .below .right .nolike{
-    height: 40%;
-    height: 40%;
+    width: 36%;
+    height: 36%;
+    transition: 0.5s ease;
 }
 
 .songs .items .boxzzy .below .right .like:hover , .songs .items .boxzzy .below .right .nolike:hover{
@@ -158,7 +159,9 @@
 
 
 
-
+.songs .items .boxzzy .below .right .nolike:hover{
+    color: #EE4950;
+}
 
 
 
@@ -264,13 +267,13 @@
         align-items: center;
     }
     .songs .items .boxzzy .below .right .like{
-        width: 50%;
-        height: 50%;
+        width: 45%;
+        height: 45%;
         color: #EE4950;
     }
     .songs .items .boxzzy .below .right .nolike{
-        height: 50%;
-        height: 50%;
+        height: 45%;
+        height: 45%;
     }
     .songs .items .boxzzy .below .left h2{
         width: 110%;

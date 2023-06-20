@@ -7,9 +7,11 @@ import '../css/home.css';
 import SearchIcon from '@mui/icons-material/Search';
 import {  getallsong } from '../redux/action/useraction';
 import Allartist from '../components/allartist';
+import { useNavigate } from 'react-router-dom';
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   
   useEffect(()=>{
     const data = JSON.parse(localStorage.getItem("sidebar"));
@@ -64,7 +66,10 @@ const Landing = () => {
       <div className="item">
       <h2>Awesome Playlists</h2>
       <p>Created by out Team and other users</p>
-      <button>Listen now</button>
+      <button onClick={(e)=>{
+        e.preventDefault();
+        navigate("/commonplaylist");
+      }} >Listen now</button>
       </div>
     </div>
     <div className="lineyy"></div>
