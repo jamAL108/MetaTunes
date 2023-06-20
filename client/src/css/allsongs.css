@@ -1,4 +1,4 @@
-.songs{
+/* .songs{
     width: 100%;
     min-height: 100vh;
     height: 100vh;
@@ -20,7 +20,7 @@
     min-height: 100vh;
     overflow-x: hidden;
     /* overflow-y: scroll; */
-}
+/* }
 .songs .heading{
     width: 85%;
     height: 15%;
@@ -28,8 +28,8 @@
     display: flex;
     flex-direction: column;
 
-}
-.songs .heading h1{
+} */
+/* .songs .heading h1{
 font-size: 1.8rem;
 margin-bottom:0rem ;
 }
@@ -41,7 +41,7 @@ margin-bottom:0rem ;
 .songs .heading p:hover{
     cursor: pointer;
     text-decoration: dashed;
-}
+} */
 
 
 
@@ -63,7 +63,7 @@ margin-bottom:0rem ;
 
 
 
-@media screen and (max-width:913px) {
+/* @media screen and (max-width:913px) {
     .songs .other{
         top: 10%;
         left: 0%;
@@ -121,5 +121,4 @@ margin-bottom:0rem ;
     opacity: 0.5;
     text-transform: capitalize;
     margin-top: 0.5rem;
-}
-}
+} */
