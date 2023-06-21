@@ -147,15 +147,15 @@
         text-transform: capitalize;
     }
     .music .left .names h1{
-        font-size: 1rem;
-        font-weight: 200;
+        font-size: 0.8rem;
+        font-weight: 400;
         margin-bottom: 0rem;
     }
     .music .left .names p{
         margin-top: 0.3rem;
         opacity: 0.5;
         font-size:0.8rem;
-        font-weight: 100;
+        font-weight: 200;
     }
 
     .music .middle{
