@@ -12,8 +12,15 @@ import {removefavourites , addfavourites} from '../redux/action/useraction';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import { useSelector } from 'react-redux';
+import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import {
+  SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
+} from '../redux/playertypes';
 const Viewplaylist = () => {
     const { id } = useParams();
+    const { currentTrack } = useSelector((state) => state.player);
+    const store = useSelector((state)=>state);
     const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem("user"));
     const [playlist , setplaylist]=useState({});
@@ -77,6 +84,27 @@ const Viewplaylist = () => {
          // eslint-disable-next-line react-hooks/exhaustive-deps
     },[temp])
 
+    const playsong = (item) => {
+      // dispatch({type:SETPLAYING , payload:false})
+      console.log(store.player.currentTrack);
+      let j=0;
+      for(var i=0;i<playlist.songs.length;i++){
+        if(playlist.songs[i]._id=== item._id){
+           j=i;
+           break;
+        }
+      }
+
+    dispatch({type:SETCURRENTTRACK , payload:item})
+    let list =playlist.songs;
+    const data ={
+      list:list,
+      index:j
+    }
+    dispatch({type:SETTRACKLIST , payload:data})
+    dispatch({type:SETPLAYING , payload:true})
+    console.log("done");
+  };
   return (
     <div className="Viewplaylist">
         <Nav/>
@@ -119,7 +147,10 @@ const Viewplaylist = () => {
               <div className="dash"></div>
                 <div className="songlist">
                      {playlist.songs.map((item,idx)=>(
-                                            <div className="box" key={idx} >
+                                            <div className="box" onClick={(e)=>{
+                                              e.preventDefault();
+                                              playsong(item);
+                                            }} key={idx} >
                                             <div className="left">
                                             <div className="image">
                                             <img src={item.imageURL} alt="pic" />
@@ -132,7 +163,11 @@ const Viewplaylist = () => {
                                             </div>
                                           </div>
                                           <div className="right">
-                                            <PlayCircleIcon className='play' />
+                                            {currentTrack?._id ===item._id ? (
+                                                   <h1 className='playing'><GraphicEqIcon className='icon'/>playing</h1>
+                                            ): (
+                                              <PlayCircleIcon className='play' />
+                                            )}
                                             {array[idx]===false && user && (
                                             <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                                               e.preventDefault();

@@ -7,7 +7,7 @@ dotenv.config({path:"./config.env"});
 import Commonrouter from './router/common.js';
 import Userrouter from "./router/userrouter.js";
 import bodyParser from "body-parser";
-app.use(express.json({limit: '50mb'}));
+app.use(express.json({limit: '20mb'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());

@@ -6,7 +6,7 @@ nav{
    position: fixed;
    background-color: #18181c;
    border-right: 3px solid #323234 ;
-   z-index: 5;
+   z-index: 9999;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */

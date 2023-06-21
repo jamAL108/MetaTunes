@@ -203,6 +203,21 @@
     height: 37%;
     color: #EE4950;
 }
+
+.art .others .down .songlist .box  .right .playing {
+    font-size: 0.8rem;
+    color: #EE4950;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -2rem;
+}
+.art .others .down .songlist .box  .right .playing .icon{
+    width: 45%;
+    height: 45%;
+}
+
+.art .others .down .songlist .box  .right .playing
 .art .others .down .songlist .box  .right .play , .art .others .down .songlist .box  .right .nolike , .art .others .down .songlist .box  .right .like{
     cursor: pointer;
 }

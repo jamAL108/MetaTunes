@@ -1,4 +1,4 @@
-import React, { useEffect , useState } from 'react'
+import React, { useEffect , useState  } from 'react'
 import '../css/artistdetail.css';
 
 import Loading from '../components/loading';
@@ -15,9 +15,14 @@ import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import {
+  SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
+} from '../redux/playertypes';
 const Artistdetail = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
+  const { currentTrack } = useSelector((state) => state.player);
   const store = useSelector((state)=>state);
   const user = JSON.parse(localStorage.getItem("user"));
   const [array , setarray]=useState([]);
@@ -85,7 +90,30 @@ useEffect(()=>{
       setarray(iddx);
       setshow(true);
     }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },[artist])
+
+    const playsong = (item) => {
+      // dispatch({type:SETPLAYING , payload:false})
+      console.log(store.player.currentTrack);
+      let j=0;
+      for(var i=0;i<artist.songs.length;i++){
+        if(artist.songs[i]._id=== item._id){
+           j=i;
+           break;
+        }
+      }
+
+    dispatch({type:SETCURRENTTRACK , payload:item})
+    let list =artist.songs;
+    const data ={
+      list:list,
+      index:j
+    }
+    dispatch({type:SETTRACKLIST , payload:data})
+    dispatch({type:SETPLAYING , payload:true})
+    console.log("done");
+  };
 
       return (
 <div className="art">
@@ -117,7 +145,10 @@ useEffect(()=>{
               <div className="dash"></div>
               <div className="songlist">
                 {artist.songs.map((item,idx)=>(
-                    <div className="box" key={idx} >
+                    <div className="box" onClick={(e)=>{
+                      e.preventDefault();
+                      playsong(item)}
+                      }  key={idx} >
                       <div className="left">
                       <div className="image">
                       <img src={item.imageURL} alt="pic" />
@@ -137,7 +168,10 @@ useEffect(()=>{
                       </div>
                     </div>
                     <div className="right">
-                      <PlayCircleIcon className='play' />
+                      { currentTrack?._id === item._id ?  (
+                       <h1 className='playing'><GraphicEqIcon className='icon'/>playing</h1>
+                        ) : (
+                      <PlayCircleIcon className='play' />)}
                       {array[idx]===false && user && (
                       <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                         e.preventDefault();

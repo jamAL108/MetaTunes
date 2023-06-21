@@ -12,12 +12,17 @@ import FAVLOADING from '../components/favloading';
 import { EMPTYFAVS, FAVOURITES } from '../redux/actiontypes';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import {
+  SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
+} from '../redux/playertypes';
 const Favourities = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
   const [favourite,setfavourite] = useState([]);
   const [spin,setspin] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
+  const { currentTrack } = useSelector((state) => state.player);
   useEffect(()=>{
     const data = JSON.parse(localStorage.getItem("sidebar"));
     console.log(data);
@@ -92,6 +97,29 @@ const Favourities = () => {
     }
           // eslint-disable-next-line react-hooks/exhaustive-deps
   },[store.user.emptyfav])
+
+  const playsong = (item) => {
+    // dispatch({type:SETPLAYING , payload:false})
+    console.log(store.player.currentTrack);
+    let j=0;
+    for(var i=0;i<favourite.length;i++){
+      if(favourite[i]._id=== item._id){
+         j=i;
+         break;
+      }
+    }
+
+  dispatch({type:SETCURRENTTRACK , payload:item})
+  let list =favourite;
+  const data ={
+    list:list,
+    index:j
+  }
+  dispatch({type:SETTRACKLIST , payload:data})
+  dispatch({type:SETPLAYING , payload:true})
+  console.log("done");
+};
+
   return (
      <div className="favourites">
          <Nav/>
@@ -117,7 +145,10 @@ const Favourities = () => {
               {favourite.length!==0 && spin===false &&(
   <div className="songlistyy">
   {favourite.map((item,idx)=>(
-      <div className="box" key={idx} >
+      <div className="box" onClick={(e)=>{
+        e.preventDefault();
+        playsong(item);
+      }} key={idx} >
         <div className="left">
         <div className="image">
         <img src={item.imageURL} alt="pic" />
@@ -128,7 +159,11 @@ const Favourities = () => {
         </div>
       </div>
       <div className="right">
-        <PlayCircleIcon className='play' />
+        {currentTrack?._id === item._id ? (
+          <h1 className='playing'><GraphicEqIcon className='icon'/>playing</h1>
+        ) : (
+          <PlayCircleIcon className='play' /> 
+        )}
         { user &&(
         <FavoriteIcon className='like' onClick={(e)=>{
           e.preventDefault();

@@ -1,17 +1,27 @@
 import React, { useEffect } from 'react'
 import Nav from '../components/nav';
 import { LOGINCOLOR } from '../redux/propsaction';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector  } from 'react-redux';
 import Song from '../components/songs';
 import '../css/home.css';
 import SearchIcon from '@mui/icons-material/Search';
 import Allartist from '../components/allartist';
 import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+   
+  const dat={};
+  const arrrr=[];
+  const play = JSON.parse(localStorage.getItem("play"));
+  if(!play){
+    localStorage.setItem("play",JSON.stringify(dat));
+    localStorage.setItem("tracks",JSON.stringify(arrrr));
+  }
+
+
   useEffect(()=>{
     const data = JSON.parse(localStorage.getItem("sidebar"));
     data.index=0;

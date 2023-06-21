@@ -132,6 +132,7 @@ export const getallsong = async(req,res)=>{
         }
       }
     }
+    console.log("nuhvbkeuvnkesvv");
     return res.status(200).send({response:songs});
   }catch(err){
    console.log(err);

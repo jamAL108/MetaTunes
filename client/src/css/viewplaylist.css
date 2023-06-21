@@ -468,6 +468,19 @@ border-radius: 16px;
         width: 30%;
         height: 30%;
     }
+    .Viewplaylist .others .down .songlist .box  .right .playing {
+        font-size: 0.8rem;
+        color: #EE4950;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -2rem;
+    }
+    .Viewplaylist .others.down .songlist .box  .right .playing .icon{
+        width: 45%;
+        height: 45%;
+    }
+    
     .Viewplaylist .others .down .songlist .box .right .nolike{
         color: #E3E3E3;
         width: 30%;

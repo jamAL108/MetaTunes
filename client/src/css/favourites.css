@@ -147,7 +147,18 @@
     cursor: pointer;
 }
 
-
+.favourites .others .songlistyy .box .right .playinggg {
+    font-size: 0.8rem;
+    color: #EE4950;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -2rem;
+}
+.favourites .others .songlistyy .box .right .playinggg .icon{
+    width: 45%;
+    height: 45%;
+}
 
 
 @media screen and (max-width:913px) {
@@ -263,11 +274,24 @@
         align-items: center;
         grid-gap: 0.5rem;
     }
+    .favourites .others .songlistyy .box .right .playing {
+        font-size: 0.8rem;
+        color: #EE4950;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -2rem;
+    }
+    .favourites .others .songlistyy .box .right .playing .icon{
+        width: 45%;
+        height: 2rem;
+    }
     .favourites .others .songlistyy .box .right .play{
         color: #EE4950;
         width: 30%;
         height: 30%;
     }
+    
     .favourites .others .songlistyy .box .right .like{
         color: #EE4950;
         width: 30%;

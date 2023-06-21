@@ -1,0 +1,95 @@
+.music{
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    bottom: -3px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    box-sizing: border-box;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    }
+    .music .left{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 0.6rem;
+        grid-gap: 0.1rem;
+    }    
+    .music .left .image{
+    width: 40%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .music .left .image img{
+        width: 75%;
+        height: 75%;
+    }
+    .music .left .names{
+        width: 60%;
+        color: #E4E4E6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-transform: capitalize;
+    }
+    .music .left .names h1{
+        font-size: 1rem;
+        font-weight: 100;
+        margin-bottom: 0rem;
+    }
+    .music .left .names p{
+        margin-top: 0.3rem;
+        opacity: 0.5;
+    }
+
+    .music .middle{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        grid-gap: 0.3rem;
+    }
+    .music .middle button{
+        background-color: inherit;
+        border: none;
+        width: 32%;
+        height: 60%;
+    }
+    .music .middle button .icon{
+        color: #EE4950;
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+    }
+    .music .middle button .iconey{
+        color: #E4E4E6;
+    }
+    .music .right{
+        width: 15%;
+        height: 100%;
+        color: #E4E4E6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .music .right .nolike{
+        color: #E4E4E6;
+    }
+    .music .right .like{
+        color: #EE4950;
+    }
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        .music {
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+        }
+      }

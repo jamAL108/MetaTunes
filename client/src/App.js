@@ -11,8 +11,12 @@ import Addplaylist from './pages/addplaylist';
 import Commonplaylist from './pages/commonplaylist';
 import Viewplaylist from './pages/viewplaylist';
 import Song from './pages/allsongs';
+import MusicPlayer from './components/music/index';
+import { useSelector } from 'react-redux';
 function App() {
+const player = useSelector((state) => state.player);
   return (
+    <>
      <Routes>
       <Route path='/' element={<Landing/>}/>
       <Route path='/playlist' element={<Playlist/>}/>
@@ -26,6 +30,11 @@ function App() {
       <Route path='/playlist/:id' element={<Viewplaylist/>}/>
       <Route path='Songs' element={<Song/>}/>
      </Routes>
+     {player.currentTrack && (
+         <MusicPlayer/>
+    )}
+     </>
+
   );
 }
 

@@ -10,6 +10,9 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { getallsong } from '../redux/action/useraction';
+import {
+  SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
+} from '../redux/playertypes';
 const Song = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -20,6 +23,9 @@ const Song = () => {
     const [array , setarray]=useState([]);
     const [random , setrandom]=useState([]);
 
+    // const { currentTrack, isPlaying } = useSelector((state) => state.player);
+
+    
     useEffect(()=>{
       const user = JSON.parse(localStorage.getItem("user"));
       let username="";
@@ -33,6 +39,7 @@ const Song = () => {
     },[])
     useEffect(()=>{
       if(store.user.allsong.length!==0){
+        console.log(store.user.allsong);
         let dat = store.user.allsong;
         for(var i=0;i<dat.length;i++){
           dat[i].idx=i;
@@ -87,6 +94,22 @@ const Song = () => {
     }
                 // eslint-disable-next-line react-hooks/exhaustive-deps
     },[random])
+
+      const playsong = (item) => {
+        // dispatch({type:SETPLAYING , payload:false})
+        console.log(store.player.currentTrack);
+      dispatch({type:SETCURRENTTRACK , payload:item})
+      let list =[];
+      list.push(item);
+      const data ={
+        list:list,
+        index:0
+      }
+      dispatch({type:SETTRACKLIST , payload:data})
+      dispatch({type:SETPLAYING , payload:true})
+      console.log("done");
+    };
+
   return (
     <div className="songs">
        <ToastContainer />
@@ -114,9 +137,11 @@ const Song = () => {
         <>
             <div className="items">
             {songs.map((item,idx)=>(
-              <div className="boxzzy" key={idx}>
-              <div className="image">
-                                <img src={item.imageURL}
+              <div className="boxzzy" key={idx}   onClick={(e)=>{
+                playsong(item);
+              }} >
+              <div className="image" >
+       <img src={item.imageURL}
  alt={item.name} />
    </div>       
    <div className="below">
