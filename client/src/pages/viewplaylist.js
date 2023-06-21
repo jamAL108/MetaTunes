@@ -20,7 +20,6 @@ import {
 const Viewplaylist = () => {
     const { id } = useParams();
     const { currentTrack , isPlaying } = useSelector((state) => state.player);
-    const store = useSelector((state)=>state);
     const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem("user"));
     const [playlist , setplaylist]=useState({});
@@ -85,8 +84,6 @@ const Viewplaylist = () => {
     },[temp])
 
     const playsong = (item) => {
-      // dispatch({type:SETPLAYING , payload:false})
-      console.log(store.player.currentTrack);
       let j=0;
       for(var i=0;i<playlist.songs.length;i++){
         if(playlist.songs[i]._id=== item._id){
@@ -103,7 +100,6 @@ const Viewplaylist = () => {
     }
     dispatch({type:SETTRACKLIST , payload:data})
     dispatch({type:SETPLAYING , payload:true})
-    console.log("done");
   };
   return (
     <div className="Viewplaylist">

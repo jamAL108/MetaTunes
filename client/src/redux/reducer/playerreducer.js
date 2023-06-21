@@ -11,9 +11,10 @@ import {
 
 const track = JSON.parse(localStorage.getItem("play"));
 const tracks = JSON.parse(localStorage.getItem("tracks"));
+const playing = JSON.parse(localStorage.getItem("playing"));
 const initialState = {
 	currentTrack:track,
-	isPlaying: false,
+	isPlaying: playing,
 	currentIndex: 0,
 	trackList: tracks,
 	repeatStatus: "OFF",
@@ -32,6 +33,8 @@ const player =(state=initialState , action) =>{
                 repeatStatus: "OFF",
             }
         case  SETPLAYING:
+            const daata = action.payload
+            localStorage.setItem("playing",JSON.stringify(daata));
             return{
                 ...state , isPlaying:action.payload
             }
@@ -40,6 +43,8 @@ const player =(state=initialState , action) =>{
                 ...state , currentIndex:action.payload
             }
         case PLAYTRACK:
+            const daataa = true;
+            localStorage.setItem("playing",JSON.stringify(daataa));
             return{ ...state ,
                 currentTrack:action.payload,
                 isPlaying:true

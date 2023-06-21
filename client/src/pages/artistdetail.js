@@ -94,8 +94,6 @@ useEffect(()=>{
     },[artist])
 
     const playsong = (item) => {
-      // dispatch({type:SETPLAYING , payload:false})
-      console.log(store.player.currentTrack);
       let j=0;
       for(var i=0;i<artist.songs.length;i++){
         if(artist.songs[i]._id=== item._id){
@@ -112,7 +110,6 @@ useEffect(()=>{
     }
     dispatch({type:SETTRACKLIST , payload:data})
     dispatch({type:SETPLAYING , payload:true})
-    console.log("done");
   };
 
       return (

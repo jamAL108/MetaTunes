@@ -15,11 +15,20 @@ const Landing = () => {
    
   const dat={};
   const arrrr=[];
+  const dataaa = false;
   const play = JSON.parse(localStorage.getItem("play"));
-  if(!play){
+  const playing = JSON.parse(localStorage.getItem("playing"));
+  useEffect(()=>{
+  if(!play && !playing){
+    console.log("nerkb");
     localStorage.setItem("play",JSON.stringify(dat));
     localStorage.setItem("tracks",JSON.stringify(arrrr));
+    localStorage.setItem("playing",JSON.stringify(dataaa));
+  }else{
+    console.log("hello");
   }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+},[])
 
 
   useEffect(()=>{

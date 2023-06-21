@@ -17,11 +17,11 @@ import {
 	TbPlayerTrackPrevFilled
 } from "react-icons/tb";
 import { AiFillPauseCircle, AiFillPlayCircle } from "react-icons/ai";
-import { addfavourites , removefavourites } from "../../redux/action/useraction";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { toast} from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+// import { addfavourites , removefavourites } from "../../redux/action/useraction";
+// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import { toast} from 'react-toastify';
+// import "react-toastify/dist/ReactToastify.css";
 const MusicPlayer = () => {
 	const audioref = useRef(null);
 	const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const MusicPlayer = () => {
 	const isEndOfTracklist = store.player.currentIndex === store.player.trackList.length - 1;
 	//eslint-disable-next-line
 	const [audioPlaying, setAudioPlaying] = useState(
-		audioref?.current && audioref.current?.playing
+		audioref?.current && !audioref?.current?.paused
 	);
 	const [helper,sethelper]=useState(false);
 	useEffect(()=>{
@@ -44,11 +44,11 @@ const MusicPlayer = () => {
 	},[])
     const [like,setlike]=useState(false);
 	useEffect(()=>{
-        console.log(audioref.current?.playing);
-	},[audioref.current?.playing])
+        console.log("nissssssssss");
+	},[audioref?.current?.playing])
 
-    const user = JSON.parse(localStorage.getItem("user"));
-
+    // const user = JSON.parse(localStorage.getItem("user"));
+    console.log(audioPlaying)
 	useEffect(()=>{
          if(audioPlaying){
 			console.log("nkjerbvwui3rhi73folfi");
@@ -58,6 +58,7 @@ const MusicPlayer = () => {
 		 }
 		   // eslint-disable-next-line react-hooks/exhaustive-deps
 	},[audioPlaying])
+
 
 	useEffect(()=>{
        if(store.player.isPlaying===true){
@@ -133,19 +134,29 @@ const MusicPlayer = () => {
 		}
 	};
 	const TruncateText=(text,length)=>{
+		const widh = window.screen.width;
+		if(widh<940){
          if(text.length>length){
 			return text.slice(0,length)+"...";
 		 }else{
 			return text;
 		 }
+		}else{
+			return text;
+		}
 	}
 	const Truncatearr=(text,length)=>{
+		const widh = window.screen.width;
+		if(widh<940){
 		let bigtext = text.join(",");
 		if(bigtext.length>length){
 			return bigtext.slice(0,length)+"...";
 		 }else{
 			return bigtext;
 		 }
+		}else{
+			return text;
+		}
 	}
 	return (
 		<>   
@@ -176,7 +187,7 @@ const MusicPlayer = () => {
 				<TbPlayerTrackNextFilled onClick={handleNextSong}  className="iconey" size={16} />
 			</button>
 				</div>
-				<div className="right">
+				{/* <div className="right">
                   {like===false && user &&(
                   <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                      e.preventDefault();
@@ -219,12 +230,12 @@ const MusicPlayer = () => {
                    dispatch(removefavourites(obj))
                     }}/>
                   )}
-                </div>
+                </div> */}
 				<audio
 				     ref={audioref}
 					 src={store.player.currentTrack?.songURL} 
 					 onEnded={handleEnded}
-					 autoPlay={false}
+					//  autoPlay={false}
 					 >
 				</audio>
 				</div>

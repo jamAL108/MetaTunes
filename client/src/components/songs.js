@@ -39,7 +39,6 @@ const Song = () => {
     },[])
     useEffect(()=>{
       if(store.user.allsong.length!==0){
-        console.log(store.user.allsong);
         let dat = store.user.allsong;
         for(var i=0;i<dat.length;i++){
           dat[i].idx=i;
@@ -51,14 +50,11 @@ const Song = () => {
         let randoms=[];
         let j=0;
         while(randoms.length!==8){
-         console.log("eiobv");
          const randomsong = data[(Math.floor(Math.random() * (data.length)))];
-         console.log(randomsong);
          if(randoms.indexOf(randomsong) === -1){
            randoms.push(randomsong);
          iddx[j]=randomsong.like;
          j++;
-         console.log("heyeyeye");
          }
         }
         setrandom(randoms);
@@ -69,7 +65,6 @@ const Song = () => {
 
     useEffect(()=>{
       if(random.length!==0){
-        console.log("heyyy");
       let temp = [...random];
        for(var i=0;i<temp.length;i++){
         if(temp[i].name.length>14){
@@ -96,8 +91,6 @@ const Song = () => {
     },[random])
 
       const playsong = (item) => {
-        // dispatch({type:SETPLAYING , payload:false})
-        console.log(store.player.currentTrack);
       dispatch({type:SETCURRENTTRACK , payload:item})
       let list =[];
       list.push(item);
@@ -107,7 +100,6 @@ const Song = () => {
       }
       dispatch({type:SETTRACKLIST , payload:data})
       dispatch({type:SETPLAYING , payload:true})
-      console.log("done");
     };
 
   return (
