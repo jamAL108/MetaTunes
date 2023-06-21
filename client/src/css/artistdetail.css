@@ -205,7 +205,7 @@
 }
 
 .art .others .down .songlist .box  .right .playing {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #EE4950;
     display: flex;
     justify-content: center;
@@ -213,8 +213,8 @@
     margin-left: -2rem;
 }
 .art .others .down .songlist .box  .right .playing .icon{
-    width: 45%;
-    height: 45%;
+    width: 25%;
+    height: 25%;
 }
 
 .art .others .down .songlist .box  .right .playing

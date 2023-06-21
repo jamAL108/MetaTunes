@@ -30,12 +30,28 @@ const MusicPlayer = () => {
 	const isEndOfTracklist = store.player.currentIndex === store.player.trackList.length - 1;
 	//eslint-disable-next-line
 	const [audioPlaying, setAudioPlaying] = useState(
-		audioref.current && audioref.current.playing
+		audioref?.current && audioref.current?.playing
 	);
-	console.log(audioPlaying);
+	const [helper,sethelper]=useState(false);
+	useEffect(()=>{
+      const play = JSON.parse(localStorage.getItem("play"));
+	  if(play){
+		console.log("nkwrwbekrsvb");
+		sethelper(true);
+		console.log(helper);
+	  }
+	    // eslint-disable-next-line react-hooks/exhaustive-deps
+	},[])
+    const [like,setlike]=useState(false);
+	useEffect(()=>{
+        console.log(audioref.current?.playing);
+	},[audioref.current?.playing])
+
     const user = JSON.parse(localStorage.getItem("user"));
+
 	useEffect(()=>{
          if(audioPlaying){
+			console.log("nkjerbvwui3rhi73folfi");
 			dispatch({type:SETPLAYING , payload:true});
 		 }else{
 			dispatch({type:SETPLAYING , payload:false});
@@ -50,9 +66,13 @@ const MusicPlayer = () => {
 		    // eslint-disable-next-line react-hooks/exhaustive-deps
 	   }
 	},[store.player.isPlaying])
+
 	useEffect(()=>{
         audioref.current.currentTime=0;
+		setlike(store.player.currentTrack?.like);
+		console.log(like);
 		Play();
+		console.log(store.player.currentTrack.artist);
 		  // eslint-disable-next-line react-hooks/exhaustive-deps
 	},[store.player.currentTrack?._id])
 
@@ -119,6 +139,14 @@ const MusicPlayer = () => {
 			return text;
 		 }
 	}
+	const Truncatearr=(text,length)=>{
+		let bigtext = text.join(",");
+		if(bigtext.length>length){
+			return bigtext.slice(0,length)+"...";
+		 }else{
+			return bigtext;
+		 }
+	}
 	return (
 		<>   
 			<div className="music">
@@ -127,8 +155,8 @@ const MusicPlayer = () => {
 						<img src={store.player.currentTrack?.imageURL} alt="piccy" />
 					</div>
 					<div className="names">
-						<h1>{TruncateText(store.player.currentTrack?.name,7)}</h1>
-						<p>{TruncateText(store.player.currentTrack?.artist,7)}</p>
+						<h1>{TruncateText(store.player.currentTrack?.name,9)}</h1>
+						<p>{Truncatearr(store.player.currentTrack?.artist,9)}</p>
 					</div>
 				</div>
 				<div className="middle">
@@ -136,7 +164,7 @@ const MusicPlayer = () => {
 				<TbPlayerTrackPrevFilled onClick={handlePreviousSong} className="iconey" />
 			</button>
 			<button>
-				{!store.player.isPlaying ? <AiFillPlayCircle className="icon" onClick={(e)=>{
+				{!store.player.isPlaying  ? <AiFillPlayCircle className="icon" onClick={(e)=>{
 					e.preventDefault();
                      handlepalypause();
 				}} /> : <AiFillPauseCircle className="icon" onClick={(e)=>{
@@ -149,7 +177,7 @@ const MusicPlayer = () => {
 			</button>
 				</div>
 				<div className="right">
-                  {store.player.currentTrack?.like===false && user &&(
+                  {like===false && user &&(
                   <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                      e.preventDefault();
                      toast.success("Your favourites have been updated", {
@@ -158,10 +186,10 @@ const MusicPlayer = () => {
                       autoClose:500,
                       hideProgressBar:true
                     });
-                    //  currentTrack.like=true;            
+                     setlike(true);           
                      const temp = JSON.parse(localStorage.getItem("song"));
-                    //  temp[currentTrack.idx].like=true;
-                    //  temp[currentTrack.idx].totallikes++;
+                     temp[store.player.currentTrack.idx].like=true;
+                     temp[store.player.currentTrack.idx].totallikes++;
                      localStorage.setItem("song",JSON.stringify(temp));
                      const obj={
                         person:user.username,
@@ -170,7 +198,7 @@ const MusicPlayer = () => {
                      dispatch(addfavourites(obj))
                   }} />
                   )}
-                  {store.player.currentTrack?.like===true && user &&(
+                  {like===true && user &&(
                     <FavoriteIcon className='like'  onClick={(e)=>{
                     e.preventDefault();
                     toast.success("Your favourites updated", {
@@ -179,10 +207,10 @@ const MusicPlayer = () => {
                       autoClose:500,
                       hideProgressBar:true
                     });
-					// currentTrack.like=false;  
+					setlike(false);
                     const temp = JSON.parse(localStorage.getItem("song"));
-                    // temp[currentTrack.idx].like=false;
-                    // temp[currentTrack.idx].totallikes--;
+                    temp[store.player.currentTrack.idx].like=false;
+                    temp[store.player.currentTrack.idx].totallikes--;
                     localStorage.setItem("song",JSON.stringify(temp));
                     const obj={
                       person:user.username,
@@ -196,6 +224,7 @@ const MusicPlayer = () => {
 				     ref={audioref}
 					 src={store.player.currentTrack?.songURL} 
 					 onEnded={handleEnded}
+					 autoPlay={false}
 					 >
 				</audio>
 				</div>

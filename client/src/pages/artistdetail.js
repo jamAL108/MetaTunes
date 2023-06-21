@@ -22,7 +22,7 @@ import {
 const Artistdetail = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
-  const { currentTrack } = useSelector((state) => state.player);
+  const { currentTrack , isPlaying } = useSelector((state) => state.player);
   const store = useSelector((state)=>state);
   const user = JSON.parse(localStorage.getItem("user"));
   const [array , setarray]=useState([]);
@@ -145,10 +145,7 @@ useEffect(()=>{
               <div className="dash"></div>
               <div className="songlist">
                 {artist.songs.map((item,idx)=>(
-                    <div className="box" onClick={(e)=>{
-                      e.preventDefault();
-                      playsong(item)}
-                      }  key={idx} >
+                    <div className="box"   key={idx} >
                       <div className="left">
                       <div className="image">
                       <img src={item.imageURL} alt="pic" />
@@ -168,10 +165,13 @@ useEffect(()=>{
                       </div>
                     </div>
                     <div className="right">
-                      { currentTrack?._id === item._id ?  (
+                      { ( currentTrack?._id === item._id && isPlaying )  ?  (
                        <h1 className='playing'><GraphicEqIcon className='icon'/>playing</h1>
                         ) : (
-                      <PlayCircleIcon className='play' />)}
+                      <PlayCircleIcon className='play' onClick={(e)=>{
+                        e.preventDefault();
+                        playsong(item)}
+                        } />)}
                       {array[idx]===false && user && (
                       <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                         e.preventDefault();
