@@ -7,5 +7,5 @@ By offering the option for public playlists, my app fosters a vibrant community 
 Powered by the MERN stack (MongoDB, Express.js, React.js, and Node.js), my app ensures a seamless and efficient music streaming experience. From robust data management to real-time updates, this full-stack approach guarantees top-notch performance and scalability.</br>
 </br>
 </br>
-[✨ Live demo](https://meta-tunes.vercel.app/)
+# [✨ Live demo](https://meta-tunes.vercel.app/)
  
