@@ -30,7 +30,7 @@ const player = useSelector((state) => state.player);
       <Route path='/playlist/:id' element={<Viewplaylist/>}/>
       <Route path='Songs' element={<Song/>}/>
      </Routes>
-     {player.currentTrack && (
+     {player.currentTrack?._id && (
          <MusicPlayer/>
     )}
      </>

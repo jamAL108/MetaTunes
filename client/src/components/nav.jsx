@@ -29,7 +29,7 @@ const Nav = () => {
   const data = JSON.parse(localStorage.getItem("user"));
   useEffect(()=>{
     if(data){
-      if(data.username.length!==0){
+      if(data?.username?.length!==0){
       setlogin(true);
       }
    }else{
@@ -231,7 +231,7 @@ useEffect(()=>{
           <div className="user">
             <div className="box" id='coolor' >
             <AccountCircleOutlinedIcon className='icon' />
-             <h1>{data.username}</h1>
+             <h1>{data?.username}</h1>
             </div>
             <div className="box" onClick={(e)=>{
               e.preventDefault();
