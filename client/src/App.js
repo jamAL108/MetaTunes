@@ -13,6 +13,7 @@ import Viewplaylist from './pages/viewplaylist';
 import Song from './pages/allsongs';
 import MusicPlayer from './components/music/index';
 import { useSelector } from 'react-redux';
+import Categories from './pages/categories';
 function App() {
 const player = useSelector((state) => state.player);
   return (
@@ -28,6 +29,7 @@ const player = useSelector((state) => state.player);
       <Route path='/addplaylist' element={<Addplaylist/>}/>
       <Route path='/commonplaylist' element={<Commonplaylist/>}/>
       <Route path='/playlist/:id' element={<Viewplaylist/>}/>
+      <Route path='/categories/:id' element={<Categories/>}/>
       <Route path='Songs' element={<Song/>}/>
      </Routes>
      {player.currentTrack?._id && (

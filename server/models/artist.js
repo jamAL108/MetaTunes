@@ -9,6 +9,9 @@ const Artist = new mongoose.Schema({
     },
     note:{
         type:String
+    },
+    language:{
+        type:String
     }
 });
 

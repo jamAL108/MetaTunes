@@ -137,7 +137,12 @@ const Viewplaylist = () => {
                 <h1>Songs</h1>
                 <div className="play">
                   <PlayArrowIcon/>
-                <h1 > Play All</h1>
+                <h1 onClick={(e)=>{
+                  e.preventDefault();
+                  if(playlist.songs.length!==0){
+                  playsong(playlist.osngs[0]);
+                  }
+                }} > Play All</h1>
                 </div>
               </div>
               <div className="dash"></div>
@@ -219,6 +224,8 @@ const Viewplaylist = () => {
             </div>
             </>
             )}
+             <div className="lineyyyyyy"></div>
+             <div className="lineyyyyyy"></div>
         </div>
     </div>
   )

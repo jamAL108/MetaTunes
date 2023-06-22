@@ -126,6 +126,8 @@ useEffect(()=>{
                 )}
                 </>
             )}
+             <div className="lineyyyyyy"></div>
+             <div className="lineyyyyyy"></div>
           </div>
          )}
      </div>

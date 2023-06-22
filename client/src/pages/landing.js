@@ -72,7 +72,7 @@ const Landing = () => {
     <div className="allplaylist">
       <div className="item">
       <h2>Awesome Playlists</h2>
-      <p>Created by out Team and other users</p>
+      <p>Created by our Team and other users</p>
       <button onClick={(e)=>{
         e.preventDefault();
         navigate("/commonplaylist");

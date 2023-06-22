@@ -9,7 +9,7 @@ import{
  FAVOURITES,
  EMPTYFAVS,
  EMPTYPLAYS,
- PLAYLISTS,PLAYLISTCREATED,COMMONPLAYLIST , ALLSONG
+ PLAYLISTS,PLAYLISTCREATED,COMMONPLAYLIST , ALLSONG , CATEGORIES
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
@@ -251,3 +251,26 @@ export const commonplaylist = ()=>async(dispatch)=>{
     console.log(err);
   }
 }
+
+export const categories = (formdata)=>async(dispatch)=>{
+try{
+  const api =`${URL}/common/categories`;
+  const res = await fetch(api,{
+   method: "POST",
+   headers: {
+     "Content-Type":"application/json"
+    },
+    body:JSON.stringify(formdata)
+   });
+  const msg = await res.json();
+  console.log(msg);
+  if(res.status === 200 ){
+     console.log("good");
+     dispatch({type:CATEGORIES  , payload:msg.response});
+  }
+}catch(err){
+  console.log(err);
+}
+}
+
+
