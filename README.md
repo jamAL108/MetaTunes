@@ -1,3 +1,3 @@
 # MetaTunes
-helo
+A music player app created using MERN STACK 
  
