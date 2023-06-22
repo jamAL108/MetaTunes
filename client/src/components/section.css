@@ -99,7 +99,7 @@
     justify-content: center;
     align-items: center;
     grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    grid-row-gap: 0.6rem;
 }
 .section .boxes .box{
     min-width: 100%;
