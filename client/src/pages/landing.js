@@ -7,7 +7,7 @@ import '../css/home.css';
 import SearchIcon from '@mui/icons-material/Search';
 import Allartist from '../components/allartist';
 import { useNavigate } from 'react-router-dom';
-
+import Section from '../components/section';
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
@@ -83,7 +83,11 @@ const Landing = () => {
     <Allartist/>
     <div className="liney"></div>
     <Song/>
-    <div className="lineyy"></div>
+    <div className="lineyyyyyy"></div>
+    <Section/>
+    <div className="lineyyyyyy"></div>
+    <div className="lineyyyyyy"></div>
+    <div className="lineyyyyyy"></div>
     </div>
     </div>
   )
