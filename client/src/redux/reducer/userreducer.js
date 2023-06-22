@@ -50,6 +50,7 @@ const User =(state=initialstate , action) =>{
             localStorage.setItem("user",JSON.stringify(data))
             return state;   
         case LOGOUT:
+            localStorage.clear();
             return{
                 ...state , logout:action.payload
             }

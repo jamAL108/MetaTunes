@@ -1,10 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-// import {
-// 	Button,
-// 	Flex,
-// 	Hide,
-// 	SimpleGrid
-// } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import './index.css';
 import {
@@ -12,22 +6,22 @@ import {
 	PREVTRACK,
 	SETPLAYING,
 } from '../../redux/playertypes';
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 import {
 	TbPlayerTrackNextFilled,
 	TbPlayerTrackPrevFilled
 } from "react-icons/tb";
 import { AiFillPauseCircle, AiFillPlayCircle } from "react-icons/ai";
-// import { addfavourites , removefavourites } from "../../redux/action/useraction";
-// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import { toast} from 'react-toastify';
-// import "react-toastify/dist/ReactToastify.css";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const MusicPlayer = () => {
 	const audioref = useRef(null);
 	const dispatch = useDispatch();
 	const store =
 		useSelector((state) => state);
 	const isEndOfTracklist = store.player.currentIndex === store.player.trackList.length - 1;
+	
+	const [songDetails, setSongDetails] = useState(null);
 	//eslint-disable-next-line
 	const [audioPlaying, setAudioPlaying] = useState(
 		audioref?.current && !audioref?.current?.paused
@@ -48,10 +42,8 @@ const MusicPlayer = () => {
 	},[audioref?.current?.playing])
 
     // const user = JSON.parse(localStorage.getItem("user"));
-    console.log(audioPlaying)
 	useEffect(()=>{
          if(audioPlaying){
-			console.log("nkjerbvwui3rhi73folfi");
 			dispatch({type:SETPLAYING , payload:true});
 		 }else{
 			dispatch({type:SETPLAYING , payload:false});
@@ -69,6 +61,9 @@ const MusicPlayer = () => {
 	},[store.player.isPlaying])
 
 	useEffect(()=>{
+		setSongDetails((prev) => {
+			return { ...prev, time: 0 };
+		});
         audioref.current.currentTime=0;
 		setlike(store.player.currentTrack?.like);
 		console.log(like);
@@ -83,7 +78,33 @@ const MusicPlayer = () => {
 	const Pause =async()=>{
 		await audioref.current?.pause();
 	}
-   
+
+	useEffect(() => {
+		setSongDetails({
+			volume: 1,
+			time: audioref?.current
+				? Math.round(
+						(audioref?.current.currentTime / audioref?.current.duration) * 100
+				  ) // eslint-disable-line no-mixed-spaces-and-tabs
+				: 0,
+			shuffle: false,
+			repeat: false,
+		});
+	 // eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [audioref.current]);
+
+	const seekPoint = (e) => {
+		audioref.current.currentTime = (e.target.value / 100) * audioref.current.duration;
+
+		setSongDetails((prev) => ({
+			...prev,
+			time: Math.round(
+				(audioref.current.currentTime / audioref.current.duration) * 100
+			),
+		}));
+	};
+
+
 	const handlepalypause = ()=>{
 		if(store.player.isPlaying){
 			Pause();
@@ -158,33 +179,100 @@ const MusicPlayer = () => {
 			return text;
 		}
 	}
+	const convertToMins = (value) => {
+		const mins = Math.floor(value / 60);
+		const secs = Math.round(value - mins * 60, 2);
+		const formattedSeconds = secs < 10 ? "0" + secs : secs;
+		return `${mins}:${formattedSeconds}`;
+	};
+	const [show,setshow]=useState(false);
+	const bigscreeen=()=>{
+			const music = document.querySelector(".music");
+			music.classList.add("up");
+				setshow(true);
+	};
+	useEffect(()=>{
+       if(show===false){
+		const music = document.querySelector(".music");
+		if(music.classList.contains("up")){
+		music.classList.remove("up");
+		}
+		// music.style.animation="TransitionOut 1.5s";
+		// music.style.bottom="0";
+		// if(music.offsetHeight<900){
+		// music.style.top="90vh";
+		// }else{
+		// 	music.style.top="85vh";
+		// }
+	   }
+	},[show])
 	return (
-		<>   
-			<div className="music">
+			<div className="music" onClick={(e)=>{
+				e.preventDefault();
+				console.log(audioref.current.currentTime);
+				console.log(audioref.current?.duration);
+				bigscreeen();
+			}} >
+				{show === true && (
+					<div className="iconss">
+                    <KeyboardArrowDownIcon className="iconeeyy" onClick={(e)=>{
+					    e.preventDefault();
+						e.stopPropagation();
+						console.log("nwuegfi3ufhowf");
+						setshow(false);
+					}} />
+					</div>
+				)}
 				<div className="left">
 					<div className="image">
 						<img src={store.player.currentTrack?.imageURL} alt="piccy" />
 					</div>
 					<div className="names">
-						<h1>{TruncateText(store.player.currentTrack?.name,9)}</h1>
-						<p>{Truncatearr(store.player.currentTrack?.artist,9)}</p>
+						<h1>{show===false ? TruncateText(store.player.currentTrack?.name,9) : store.player.currentTrack?.name }</h1>
+						<p>{show===false ? Truncatearr(store.player.currentTrack?.artist,9) : store.player.currentTrack?.artist }</p>
 					</div>
 				</div>
+				{show === true &&(
+				     <div className="plain">
+					 <Box className='slide' width={300}>
+					 <Slider defaultValue={0} onChange={seekPoint}
+				value={!isNaN(songDetails?.time) ? songDetails?.time : 0} aria-label="Default" valueLabelDisplay="off" sx={{ color: "#EE4950" }} />
+				   </Box>
+				   <div className="down">
+				   <h1>
+				{audioref.current ? convertToMins(audioref.current?.currentTime) : "0:00"}
+			</h1>
+			<h1>
+					{audioref.current ? convertToMins(audioref.current?.duration) : "0:00"}
+					</h1>
+				   </div>
+				   </div>
+				)}
 				<div className="middle">
 				<button>
-				<TbPlayerTrackPrevFilled onClick={handlePreviousSong} className="iconey" />
+				<TbPlayerTrackPrevFilled onClick={(e)=>{
+					e.preventDefault();
+					e.stopPropagation();
+					handlePreviousSong();
+				}} className="iconey" />
 			</button>
 			<button>
 				{!store.player.isPlaying  ? <AiFillPlayCircle className="icon" onClick={(e)=>{
 					e.preventDefault();
+					e.stopPropagation();
                      handlepalypause();
 				}} /> : <AiFillPauseCircle className="icon" onClick={(e)=>{
 					e.preventDefault();
+					e.stopPropagation();
 					handlepalypause();
 				}} />}
 			</button>
 			<button>
-				<TbPlayerTrackNextFilled onClick={handleNextSong}  className="iconey" size={16} />
+				<TbPlayerTrackNextFilled onClick={(e)=>{
+					e.preventDefault();
+					e.stopPropagation();
+					handleNextSong();
+				}}  className="iconey" size={16} />
 			</button>
 				</div>
 				{/* <div className="right">
@@ -235,11 +323,20 @@ const MusicPlayer = () => {
 				     ref={audioref}
 					 src={store.player.currentTrack?.songURL} 
 					 onEnded={handleEnded}
-					//  autoPlay={false}
+					 onPause={() => setAudioPlaying(false)}
+					 onPlay={() => setAudioPlaying(true)}
+					 onTimeUpdate={() => {
+						setSongDetails((prev) => ({
+							...prev,
+							time: Math.round(
+								(audioref.current.currentTime / audioref.current.duration) *
+									100
+							),
+						}));
+					}}
 					 >
 				</audio>
 				</div>
-		</>
 	);
 };
 export default MusicPlayer;
