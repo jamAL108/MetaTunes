@@ -221,6 +221,7 @@ const MusicPlayer = () => {
 						console.log("nwuegfi3ufhowf");
 						setshow(false);
 					}} />
+					<h1>now playing</h1>
 					</div>
 					<div className="boxie"></div>
 					</>

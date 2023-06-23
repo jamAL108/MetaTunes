@@ -386,7 +386,7 @@
         display: flex;
         justify-content:center;
         align-items: center;
-        margin-top: -9rem;
+        margin-top: -10rem;
         margin-right: -0.5rem;
     }
     .music.up .left .image img{
@@ -472,20 +472,32 @@
 
    .music.up .iconss{
     width: 100vw;
-    height: 7.7vh;
+    height: 8.7vh;
     background-color: #141416;
     color: #E4E4E6;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
    }
+   .music.up .iconss h1{
+      text-align: left;
+      font-size: 1.3rem;
+      width: 80%;
+      text-transform: capitalize;
+      font-weight: 500;
+      opacity: 0.67;
+      margin-left: 3rem;
+   }
+
+
 
    .music.up .boxie{
     width: 35%;
-    height: 13.4vh;
-    background: radial-gradient(180% 180% at right -65% bottom -65%, transparent 99%,  #141416);
-    margin-left: -65%;
+    height: 13.9vh;
+    background: radial-gradient(180% 180% at right -66% bottom -65%, transparent 99%,  #141416);
     transform: translate(-180deg);
+    margin-top: -0.3rem;
+    margin-left: -65%;
    }
 
    .music.up .iconss .iconeeyy{
