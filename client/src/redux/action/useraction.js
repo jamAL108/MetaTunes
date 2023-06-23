@@ -13,7 +13,9 @@ import{
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
-const URL= "https://meta-tunes.onrender.com";
+const URL= "http://localhost:8000";
+
+
 export const getallartist = ()=>async(dispatch)=>{
   try{
     const api =`${URL}/common/getallartist`;
@@ -41,7 +43,7 @@ export const getallsong=(username)=>async(dispatch)=>{
         const obj={
           username:username
         }
-       const res = await fetch("https://meta-tunes.onrender.com/common/getsongs",{
+       const res = await fetch("http://localhost:8000/common/getsongs",{
         method: "POST",
         headers: {
           "Content-Type":"application/json"

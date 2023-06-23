@@ -8,12 +8,11 @@ import {
 } from '../../redux/playertypes';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import {
-	TbPlayerTrackNextFilled,
-	TbPlayerTrackPrevFilled
-} from "react-icons/tb";
-import { AiFillPauseCircle, AiFillPlayCircle } from "react-icons/ai";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import  SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayCircleFilledSharpIcon from '@mui/icons-material/PlayCircleFilledSharp';
+import PauseCircleFilledSharpIcon from '@mui/icons-material/PauseCircleFilledSharp';
 const MusicPlayer = () => {
 	const audioref = useRef(null);
 	const dispatch = useDispatch();
@@ -214,6 +213,7 @@ const MusicPlayer = () => {
 				bigscreeen();
 			}} >
 				{show === true && (
+					<>
 					<div className="iconss">
                     <KeyboardArrowDownIcon className="iconeeyy" onClick={(e)=>{
 					    e.preventDefault();
@@ -222,6 +222,8 @@ const MusicPlayer = () => {
 						setshow(false);
 					}} />
 					</div>
+					<div className="boxie"></div>
+					</>
 				)}
 				<div className="left">
 					<div className="image">
@@ -236,7 +238,7 @@ const MusicPlayer = () => {
 				     <div className="plain">
 					 <Box className='slide' width={300}>
 					 <Slider defaultValue={0} onChange={seekPoint}
-				value={!isNaN(songDetails?.time) ? songDetails?.time : 0} aria-label="Default" valueLabelDisplay="off" sx={{ color: "#EE4950" }} />
+				value={!isNaN(songDetails?.time) ? songDetails?.time : 0} aria-label="Default" valueLabelDisplay="off" sx={{ color: "#EE4950" , height:"4px" }} />
 				   </Box>
 				   <div className="down">
 				   <h1>
@@ -250,25 +252,25 @@ const MusicPlayer = () => {
 				)}
 				<div className="middle">
 				<button>
-				<TbPlayerTrackPrevFilled onClick={(e)=>{
+				<SkipPreviousIcon onClick={(e)=>{
 					e.preventDefault();
 					e.stopPropagation();
 					handlePreviousSong();
 				}} className="iconey" />
 			</button>
 			<button>
-				{!store.player.isPlaying  ? <AiFillPlayCircle className="icon" onClick={(e)=>{
+				{!store.player.isPlaying  ? <PlayCircleFilledSharpIcon  className="icon" onClick={(e)=>{
 					e.preventDefault();
 					e.stopPropagation();
                      handlepalypause();
-				}} /> : <AiFillPauseCircle className="icon" onClick={(e)=>{
+				}} /> : <PauseCircleFilledSharpIcon className="icon" onClick={(e)=>{
 					e.preventDefault();
 					e.stopPropagation();
 					handlepalypause();
 				}} />}
 			</button>
 			<button>
-				<TbPlayerTrackNextFilled onClick={(e)=>{
+				<SkipNextIcon  onClick={(e)=>{
 					e.preventDefault();
 					e.stopPropagation();
 					handleNextSong();
