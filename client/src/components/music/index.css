@@ -382,7 +382,7 @@
     }
     .music.up .left .image{
         width: 86%;
-        height: 86%;
+        height: 88%;
         display: flex;
         justify-content:center;
         align-items: center;
@@ -407,11 +407,13 @@
     .music.up .left .names h1{
         font-size: 1.4rem;
         margin-top: 1.8rem;
+        margin-bottom:0;
         font-weight: 500;
     }
     .music.up .left .names p{
         font-size: 1.3rem;
         opacity: 0.5;
+        margin-top:0.4rem;
         font-weight: 400;
     }
     .music.up .plain{
@@ -480,7 +482,7 @@
 
    .music.up .boxie{
     width: 35%;
-    height: 13vh;
+    height: 13.4vh;
     background: radial-gradient(180% 180% at right -65% bottom -65%, transparent 99%,  #141416);
     margin-left: -65%;
     transform: translate(-180deg);
