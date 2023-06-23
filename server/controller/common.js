@@ -168,10 +168,11 @@ export const categories = async(req,res)=>{
         const songey = await song.findOne({_id:playlistey[i].songs[j]})
         if(songey.language===id){
            count++;
+           if(count>=playlistey[i].songs.length/2){
+            play.push(playlistey[i]);
+            break;
+          }
         }
-        }
-        if(count>=playlistey[i].songs.length/2){
-          play.push(playlistey[i]);
         }
       }
       const obj ={

@@ -111,7 +111,7 @@
     }
     .categories .others .artistsection .box{
     min-width: 40%;
-    width: 4%;
+    width: 40%;
     max-height: 80%;
     height:80% ;
     border-radius: 10px !important;
@@ -188,8 +188,8 @@
     .categories .others .songsection .box{
     min-width: 40%;
     width: 40%;
-    max-height: 80%;
-    height:80% ;
+    max-height: 77%;
+    height:77% ;
     border-radius: 10px !important;
 }
 .categories .others .songsection .boxes .box .image{

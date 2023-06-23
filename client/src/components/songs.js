@@ -51,7 +51,7 @@ const Song = () => {
         let j=0;
         while(randoms.length!==8){
          const randomsong = data[(Math.floor(Math.random() * (data.length)))];
-         if(randoms.indexOf(randomsong) === -1){
+         if(randoms.indexOf(randomsong) === -1 && (randomsong.language==="english" || randomsong.language==="hindi")){
            randoms.push(randomsong);
          iddx[j]=randomsong.like;
          j++;

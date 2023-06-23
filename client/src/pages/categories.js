@@ -1,7 +1,6 @@
 import React, { useEffect , useState } from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useParams } from 'react-router-dom';
-import Favloading from '../components/favloading';
 import { useNavigate } from 'react-router-dom';
 import '../css/categories.css';
 import {
@@ -77,7 +76,31 @@ const Categories = () => {
   dispatch({type:SETTRACKLIST , payload:data})
   dispatch({type:SETPLAYING , payload:true})
 };
-
+const Truncatearr=(text,length)=>{
+    const widh = window.screen.width;
+    if(widh<940){
+    let bigtext = text.join(",");
+    if(bigtext.length>length){
+        return bigtext.slice(0,length)+"...";
+     }else{
+        return bigtext;
+     }
+    }else{
+        return text;
+    }
+}
+const TruncateText=(text,length)=>{
+    const widh = window.screen.width;
+    if(widh<940){
+     if(text.length>length){
+        return text.slice(0,length)+"...";
+     }else{
+        return text;
+     }
+    }else{
+        return text;
+    }
+}
   return (
     <div className="categories">
         {show===false && (
@@ -128,8 +151,8 @@ const Categories = () => {
                             <img src={item.imageURL} alt="fed" />
                         </div>
                         <div className="names">
-                            <h1>{item.name}</h1>
-                            <h1 className='fade'>{item.artist}</h1>
+                            <h1>{TruncateText(item.name,9)}</h1>
+                            <h1 className='fade'>{Truncatearr(item.artist,9)}</h1>
                         </div>
                     </div>
                 ))}
