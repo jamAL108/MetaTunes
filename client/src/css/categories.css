@@ -83,7 +83,7 @@
     font-size: 1.3rem;
     font-weight: 500;
     margin-left: 0.5rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0rem;
 }
 
 .categories .others .artistsection .boxes{
@@ -105,15 +105,15 @@
 
     width: 40%;
 
-    max-height: 80%;
+    max-height: 77%;
 
-    height:80% 
+    height:77% 
     }
     .categories .others .artistsection .box{
     min-width: 40%;
     width: 40%;
-    max-height: 80%;
-    height:80% ;
+    max-height: 77%;
+    height:77% ;
     border-radius: 10px !important;
 }
 .categories .others .artistsection .boxes .box .image{
@@ -159,7 +159,7 @@
     font-size: 1.3rem;
     font-weight: 500;
     margin-left: 0.5rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0rem;
 }
 
 .categories .others .songsection .boxes{
@@ -181,9 +181,9 @@
 
     width: 40%;
 
-    max-height: 80%;
+    max-height: 77%;
 
-    height:80% 
+    height:77% 
     }
     .categories .others .songsection .box{
     min-width: 40%;
@@ -246,7 +246,6 @@
     font-size: 1.3rem;
     font-weight: 500;
     margin-left: 0.5rem;
-    margin-bottom: 0.4rem;
 }
 
 .categories .others .playlistsection .boxes{
