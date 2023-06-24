@@ -238,7 +238,7 @@ const MusicPlayer = () => {
 				{show === true &&(
 				     <div className="plain">
 					 <Box className='slide' width={300}>
-					 <Slider defaultValue={0} onChange={seekPoint}
+					 <Slider className="dabba" defaultValue={0} onChange={seekPoint}
 				value={!isNaN(songDetails?.time) ? songDetails?.time : 0} aria-label="Default" valueLabelDisplay="off" sx={{ color: "#EE4950" , height:"4px" }} />
 				   </Box>
 				   <div className="down">

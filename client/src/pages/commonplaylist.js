@@ -89,6 +89,8 @@ const CreatePlaylist = () => {
                       </div>
                     ))}
                    </div>
+                   <div className="lineyyyyyy"></div>
+    <div className="lineyyyyyy"></div>
             </div>
          )}
      </div>
