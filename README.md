@@ -8,7 +8,7 @@ Powered by the MERN stack (MongoDB, Express.js, React.js, and Node.js), my app e
 
 # [✨ Live demo](https://meta-tunes.vercel.app/)
 
-# TechStack
+# TechStack 
  
  1. Reactjs
  2. Redux
