@@ -15,8 +15,9 @@ Powered by the MERN stack (MongoDB, Express.js, React.js, and Node.js), my app e
  3. Thunk
  4. css
  5. Material UI
- 6. Node
- 7. expressjs
- 8. mongoose
- 9. mongoDB atlas 
+ 6. Nodejs
+ 7. firebase storage 
+ 8. expressjs
+ 9. mongoose
+ 10. mongoDB atlas 
  
