@@ -24,6 +24,9 @@ const playlists = new mongoose.Schema({
     ],
     likes:{
         type:Number
+    },
+    language:{
+        type:String
     }
 });
 

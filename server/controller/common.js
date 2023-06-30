@@ -160,25 +160,11 @@ export const categories = async(req,res)=>{
       const { id } = req.params;
       const songs = await song.find({language:id});
       const artistey = await artist.find({language:id});
-      const playlistey = await playlist.find({Type:false});
-      let play=[];
-      for(var i=0;i<playlistey.length;i++){
-        let count=0;
-        for(var j=0;j<playlistey[i].songs.length;j++){
-        const songey = await song.findOne({_id:playlistey[i].songs[j]})
-        if(songey.language===id){
-           count++;
-           if(count>=playlistey[i].songs.length/2){
-            play.push(playlistey[i]);
-            break;
-          }
-        }
-        }
-      }
+      const playlistey = await playlist.find({Type:false , language:id});
       const obj ={
         song:songs,
         artist:artistey,
-        playlist:play
+        playlist:playlistey
       }
       return res.status(200).send({response:obj});
   }catch{

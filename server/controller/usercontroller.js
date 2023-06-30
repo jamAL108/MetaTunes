@@ -73,6 +73,31 @@ export const addfavourites = async(req,res)=>{
       for(var i=0;i<data.songs.length;i++){
          array.push(data.songs[i]._id);
       }
+      let tamil=0;
+      let english=0;
+      let kpop=0;
+      let hindi=0;
+      let language="";
+      for(var j=0;j<data.songs.length;j++){
+         if(data.songs[j].language==="tamil"){
+            tamil++;
+         }else if(data.songs[j].language==="english"){
+            english++;
+         }else if(data.songs[j].language==="hindi"){
+            hindi++;
+         }else if(data.songs[j].language==="kpop"){
+            kpop++;
+         }
+      }
+      if(tamil>=data.songs.length/2){
+            language="tamil";
+      } else if(hindi>=data.songs.length/2){
+         language="hindi";
+      } else if(kpop>=data.songs.length/2){
+         language="kpop";
+      } else{
+         language="english";
+      }
       const newplaylist = new playlist({
          Type:data.info.toggle,
          author:data.username,
@@ -80,7 +105,8 @@ export const addfavourites = async(req,res)=>{
          description:data.info.description,
          image:data.coverpic,
          likes:0,
-         songs:array
+         songs:array,
+         language:language
       })
       await newplaylist.save();
       usser.playlist.push(newplaylist._id);
