@@ -192,6 +192,9 @@ const Favourities = () => {
   ))}
 </div>
               )}
+                <div className="lineyyyyyy"></div>
+    <div className="lineyyyyyy"></div>
+    <div className="lineyyyyyy"></div>
               </>
               )}
                <div className="lineyyyyyy"></div>
