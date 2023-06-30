@@ -427,7 +427,7 @@
         align-items: center;
     }
     .music.up .plain .slide{
-        width: 300px;
+        width: 90%;
     }
     .music.up .plain .slide .dabba{
         height: 2px !important;
@@ -441,7 +441,7 @@
         color: #E4E4E6;
     }
     .music.up .plain .down h1{
-        margin-top: -0.5rem;
+        margin-top: -0.8rem;
         font-size: 0.9rem;
         font-weight: 200;
     }

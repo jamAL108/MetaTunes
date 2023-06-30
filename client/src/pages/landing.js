@@ -81,9 +81,7 @@ const Landing = () => {
     </div>
     <div className="lineyy"></div>
     <Allartist/>
-    <div className="liney"></div>
     <Song/>
-    <div className="lineyyyyyy"></div>
     <Section/>
     <div className="lineyyyyyy"></div>
     <div className="lineyyyyyy"></div>

@@ -23,7 +23,7 @@
     justify-content:space-between;
 }
 .artists .heading h1{
-font-size: 130%;
+font-size: 150%;
  margin-left: 0.5rem;
 }
 .artists .heading p{
@@ -46,7 +46,13 @@ font-size: 130%;
     grid-gap: 3rem;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
 }
+.artists .items::-webkit-scrollbar {
+    display: none;
+}
+
 
 .artists .items .boxbuzz:first-child{
     width: 60%;

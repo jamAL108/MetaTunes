@@ -206,7 +206,14 @@
         margin-top: 0rem;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
 }
+.songs .items::-webkit-scrollbar {
+    display: none;
+}
+
+
 .songs .items .boxzzy:first-child{
     margin-left:0.5rem;
     min-width: 46%;

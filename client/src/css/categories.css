@@ -97,8 +97,12 @@
     margin-top: 0rem;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
 }
-
+.categories .others .artistsection .boxes::-webkit-scrollbar {
+    display: none;
+}
 .categories .others .artistsection .boxes .box:first-child{
     margin-left:1rem;
     min-width: 40%;
@@ -173,7 +177,13 @@
     margin-top: -0.5rem;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
 }
+.categories .others .songsection .boxes::-webkit-scrollbar {
+    display: none;
+}
+
 
 .categories .others .songsection .boxes .box:first-child{
     margin-left:0.8rem;
@@ -213,6 +223,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    margin-left: -0.4rem;
 }
 .categories .others .songsection .names h1{
     font-size: 0.9rem;
@@ -259,6 +270,11 @@
     margin-top: -0.5rem;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+}
+.categories .others .playlistsection .boxes::-webkit-scrollbar {
+    display: none;
 }
 
 .categories .others .playlistsection .boxes .box:first-child{
