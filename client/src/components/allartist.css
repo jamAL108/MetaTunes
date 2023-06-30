@@ -23,13 +23,13 @@
     justify-content:space-between;
 }
 .artists .heading h1{
-font-size: 1.4rem;
+font-size: 1.55rem;
  margin-left: 0.5rem;
 }
 .artists .heading p{
     font-size: 1.1rem;
     color:  #EE4950;
-    margin-right: 0.5rem;
+    margin-right: 0rem;
 }
 .artists .heading p:hover{
     cursor: pointer;
