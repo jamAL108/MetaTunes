@@ -423,9 +423,10 @@ border-radius: 16px;
     }
 
     .Viewplaylist .others .down .songlist .box .left .image{
-        min-width: 25% !important;
-        height: 70%;
-        margin-left: 0.4rem;
+        min-width: 22.5% !important;
+        width: 22.5%;
+        height: 68%;
+        margin-left: 0.8rem;
         border-radius: 8px;
     }
     .Viewplaylist .others .down .songlist .box .left .image img{
@@ -442,12 +443,12 @@ border-radius: 16px;
          flex-direction: column;
          justify-content:center;
          align-items:flex-start;
-margin-left:-1rem;
+         margin-left:-0.7rem;
 
     }
     .Viewplaylist .others .down .songlist .box .left .names h2{
-        font-size: 0.75rem;
-        font-weight: 250;
+        font-size: 0.70rem;
+        font-weight: 500;
         margin-top: 0rem;
         margin-left: -1rem;
         text-transform: capitalize;

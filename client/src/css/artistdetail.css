@@ -332,7 +332,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-   
         margin-top: 1rem;
     }
     .art .others .down .songlist .box{
@@ -344,7 +343,7 @@
         align-items: center;
         border-radius: 15px;
         font-family: 'Roboto' , sans-serif;
-        margin-bottom:0.6rem;
+        margin-bottom:0.4rem;
     }
     .art .others .down .songlist .box .left{
         width: 70%;
@@ -355,8 +354,8 @@
     }
 
     .art .others .down .songlist .box .left .image{
-        min-width: 28% !important;
-        height: 80%;
+        min-width: 25% !important;
+        height: 70%;
         margin-left: 0.4rem;
         border-radius: 8px;
     }
@@ -374,7 +373,7 @@
          flex-direction: column;
          justify-content:center;
          align-items:flex-start;
-         margin-left: 0.2rem;
+         margin-left: -0.5rem;
     }
     .art .others .down .songlist .box .left .main .names h2{
         font-size: 1rem;
@@ -418,8 +417,8 @@
         max-width: 100%;
         max-height: 30%;
         grid-gap: 1rem;
-        margin-left: 0.5rem;
         opacity: 0.8;
+        margin-left: -0.5rem;
     }
     .art .others .down .songlist .box .left .main .downery .items{
         width: 25%;
