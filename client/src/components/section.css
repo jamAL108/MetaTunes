@@ -98,7 +98,7 @@
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
-    grid-column-gap: 0.75rem;
+    grid-column-gap: 0.55rem;
     grid-row-gap: 0.4rem;
 }
 .section .boxes .box{
