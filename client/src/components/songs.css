@@ -202,7 +202,7 @@
     justify-content:flex-start;
     align-items: center;
     overflow-x:scroll;
-    grid-gap: 1.3rem;
+    grid-gap: 0.8rem;
         margin-top: 0rem;
     overflow-y: hidden;
     scroll-behavior: smooth;
