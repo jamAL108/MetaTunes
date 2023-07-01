@@ -285,9 +285,9 @@
     .songs .items .boxzzy .below .left h2{
         width: 110%;
         height: 50%;
-        font-size: 80%; 
+        font-size: 90%; 
         text-transform: capitalize;
-        font-weight: 400;
+        font-weight: 500;
         margin: 0;
     }
     .songs .spin{
@@ -298,9 +298,9 @@
         align-items: center;
     }
     .songs .items .boxzzy .below .left  .ppp{
-        font-size: 0.66rem;
+        font-size: 0.723rem;
         opacity: 0.5;
-        font-weight: 300;
+        font-weight: 350;
         margin: 0;
         text-transform: capitalize;
     
