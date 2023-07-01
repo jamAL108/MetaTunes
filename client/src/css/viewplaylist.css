@@ -411,7 +411,8 @@ border-radius: 16px;
         align-items: center;
         border-radius: 15px;
         font-family: 'Roboto' , sans-serif;
-        margin-bottom:0.6rem;
+        margin-bottom:0.4rem;
+      
     }
     .Viewplaylist .others .down .songlist .box .left{
         width: 70%;
