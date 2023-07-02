@@ -170,7 +170,7 @@
     width: 90%;
     min-height: 35vh;
     max-height: 40vh;
-    height: 35vh;
+    height: 40vh;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -216,17 +216,17 @@
 
 .songs .items .boxzzy:first-child{
     margin-left:0.5rem;
-    min-width: 46%;
+    min-width: 43.5%;
 
-    width: 46%;
+    width: 43.5%;
 
     max-height: 100%;
 
     height:100% 
     }
 .songs .items .boxzzy{
-    min-width: 46%;
-    width: 46%;
+    min-width: 43.5%;
+    width: 43.5%;
     max-height: 100%;
     height:100% ;
     border-radius: 10px !important;
