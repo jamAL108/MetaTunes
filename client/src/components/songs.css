@@ -203,7 +203,8 @@
     align-items: center;
     overflow-x:scroll;
     grid-gap: 0.8rem;
-        margin-top: 2rem;
+        margin-top: 0rem;
+            
     overflow-y: hidden;
     scroll-behavior: smooth;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
