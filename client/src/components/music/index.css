@@ -405,13 +405,20 @@
         justify-content: center;
         align-items: center;
         font-family: "Poppins" , sans-serif;
-    }
+        overflow: hidden;
+        white-space: nowrap;
+    }           
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+          }
     .music.up .left .names h1{
         font-size: 1.4rem;
         margin-top: 1.8rem;
         margin-bottom:0;
         font-weight: 500;
         filter: brightness(2.5);
+         /* animation: scroll 2s linear infinite; */
     }
     .music.up .left .names p{
         font-size: 1.3rem;
@@ -419,6 +426,7 @@
         margin-top:0rem;
         font-weight: 400;
         filter: brightness(2.5);
+        /* animation: scroll 2s linear infinite; */
     }
     .music.up .plain{
         width: 90%;

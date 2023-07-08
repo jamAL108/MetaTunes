@@ -174,7 +174,7 @@ const MusicPlayer = () => {
 			return bigtext;
 		 }
 		}else{
-			return text;
+			return text.join(",");
 		}
 	}
 	const convertToMins = (value) => {
@@ -200,6 +200,10 @@ const MusicPlayer = () => {
 		}
 	   }
 	},[show])
+    const addcomma= (name)=>{
+         return name.join(",");
+	}
+
 	return (
 			<div className="music" onClick={(e)=>{
 				e.preventDefault();
@@ -239,8 +243,8 @@ const MusicPlayer = () => {
 						<img src={store.player.currentTrack?.imageURL} alt="piccy" />
 					</div>
 					<div className="names">
-						<h1>{show===false ? TruncateText(store.player.currentTrack?.name,9) : store.player.currentTrack?.name }</h1>
-						<p>{show===false ? Truncatearr(store.player.currentTrack?.artist,9) : store.player.currentTrack?.artist }</p>
+						<h1 className="h1">{show===false ? TruncateText(store.player.currentTrack?.name,9) : store.player.currentTrack?.name }</h1>
+						<p className="p">{show===false ? Truncatearr(store.player.currentTrack?.artist,9) : addcomma(store.player.currentTrack?.artist) }</p>
 					</div>
 				</div>
 				{show === true &&(
