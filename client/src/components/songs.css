@@ -170,7 +170,7 @@
     width: 90%;
     min-height: 35vh;
     max-height: 40vh;
-    height: 35vh;
+    height: 40vh;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -197,13 +197,14 @@
 
 .songs .items{
     width: 100%;
-    height: 80%;
+    height: 85%;
     display: flex;
     justify-content:flex-start;
     align-items: center;
     overflow-x:scroll;
-    grid-gap: 1.3rem;
+    grid-gap: 0.8rem;
         margin-top: 0rem;
+            
     overflow-y: hidden;
     scroll-behavior: smooth;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -216,19 +217,19 @@
 
 .songs .items .boxzzy:first-child{
     margin-left:0.5rem;
-    min-width: 46%;
+    min-width: 43.5%;
 
-    width: 46%;
+    width: 43.5%;
 
     max-height: 95%;
 
     height:95% 
     }
 .songs .items .boxzzy{
-    min-width: 46%;
-    width: 46%;
+    min-width: 43.5%;
+    width: 43.5%;
     max-height: 95%;
-    height:95% ;
+    height:96% ;
     border-radius: 10px !important;
     background-color: #18181a;
 }
@@ -285,9 +286,9 @@
     .songs .items .boxzzy .below .left h2{
         width: 110%;
         height: 50%;
-        font-size: 80%; 
+        font-size: 90%; 
         text-transform: capitalize;
-        font-weight: 400;
+        font-weight: 450;
         margin: 0;
     }
     .songs .spin{
@@ -298,9 +299,9 @@
         align-items: center;
     }
     .songs .items .boxzzy .below .left  .ppp{
-        font-size: 0.66rem;
+        font-size: 0.723rem;
         opacity: 0.5;
-        font-weight: 300;
+        font-weight: 450;
         margin: 0;
         text-transform: capitalize;
     
