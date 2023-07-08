@@ -201,7 +201,7 @@ const MusicPlayer = () => {
 	   }
 	},[show])
     const addcomma= (name)=>{
-         return name.join(",");
+         return name.join(", ");
 	}
 
 	return (
