@@ -362,7 +362,7 @@
         border: none;
         overflow: hidden;
         z-index: 99999;
-        background-color: #24242E;
+        /* background-color: #24242E; */
         /* background-color:#09090B; */
         backdrop-filter: blur(0px);
         flex-direction: column;
@@ -379,10 +379,11 @@
         justify-content: center;
         align-items: center;
         margin-left: 0rem;
+        z-index: 100;
     }
     .music.up .left .image{
-        width: 85%;
-        height: 88%;
+        width: 90%;
+        height: 95%;
         display: flex;
         justify-content:center;
         align-items: center;
@@ -392,9 +393,9 @@
     .music.up .left .image img{
         width: 100%;
         height: 100%;
-        border-radius: 6px;
+        border-radius: 10px;
         object-fit: cover;
-        border-top-left-radius: 41%;
+        /* border-top-left-radius: 41%; */
     }
     .music.up .left .names {
         width: 80vw;
@@ -410,12 +411,14 @@
         margin-top: 1.8rem;
         margin-bottom:0;
         font-weight: 500;
+        filter: brightness(2.2);
     }
     .music.up .left .names p{
         font-size: 1.3rem;
         opacity: 0.5;
         margin-top:0rem;
         font-weight: 400;
+        filter: brightness(2.2);
     }
     .music.up .plain{
         width: 90%;
@@ -425,6 +428,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 100;
     }
     .music.up .plain .slide{
         width: 90%;
@@ -444,6 +448,7 @@
         margin-top: -0.8rem;
         font-size: 0.9rem;
         font-weight: 200;
+        filter: brightness(2.2);
     }
     .music.up .middle{
         width: 60%;
@@ -453,6 +458,7 @@
         align-items: flex-start;
         grid-gap: 0.3rem;
         margin-top: -1.7rem;
+        z-index: 100;
     }
     .music.up .middle button{
         background-color: inherit;
@@ -465,11 +471,13 @@
         width: 100%;
         height: 100%;
         background-color: transparent;
+        filter: brightness(1);
     }
     .music.up .middle button .iconey{
         color: #E4E4E6;
         width: 65%;
         height: 65%;
+        filter: brightness(2.2);
     }
 
 
@@ -477,11 +485,12 @@
    .music.up .iconss{
     width: 100vw;
     height: 8.7vh;
-    background-color: #141416;
+    /* background-color: #141416; */
     color: #E4E4E6;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
    }
    .music.up .iconss h1{
       text-align: left;
@@ -489,16 +498,25 @@
       width: 80%;
       text-transform: capitalize;
       font-weight: 500;
-      opacity: 0.67;
       margin-left: 3rem;
+      filter: brightness(2.2);
    }
-
+   .music.up .big{
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      /* bottom: -1rem; */
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+   }
 
 
    .music.up .boxie{
    width: 35%;
    height: 13.9vh;
-   background: radial-gradient(180% 180% at right -66% bottom -65%, transparent 99%,  #141416);
+   /* background: radial-gradient(180% 180% at right -66% bottom -65%, transparent 99%,  #141416); */
    transform: translate(-180deg);
     margin-top: -0.3rem;
     margin-left: -70%;
@@ -509,6 +527,7 @@
     height: 50%;
     color: #E4E4E6;
     margin-left: 0rem;
+    filter: brightness(2.2);
    }
 
 

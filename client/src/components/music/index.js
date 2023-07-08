@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import styled from 'styled-components';
 import './index.css';
 import {
 	NEXTTRACK,
@@ -58,7 +59,7 @@ const MusicPlayer = () => {
 		    // eslint-disable-next-line react-hooks/exhaustive-deps
 	   }
 	},[store.player.isPlaying])
-
+    let Content=null;
 	useEffect(()=>{
 		setSongDetails((prev) => {
 			return { ...prev, time: 0 };
@@ -186,9 +187,12 @@ const MusicPlayer = () => {
 	};
 	const [show,setshow]=useState(false);
 	const bigscreeen=()=>{
+		if(window.screen.width<900){
 			const music = document.querySelector(".music");
+			document.body.style.overflowY="hidden";
 			music.classList.add("up");
 				setshow(true);
+		}
 	};
 	useEffect(()=>{
        if(show===false){
@@ -196,13 +200,6 @@ const MusicPlayer = () => {
 		if(music.classList.contains("up")){
 		music.classList.remove("up");
 		}
-		// music.style.animation="TransitionOut 1.5s";
-		// music.style.bottom="0";
-		// if(music.offsetHeight<900){
-		// music.style.top="90vh";
-		// }else{
-		// 	music.style.top="85vh";
-		// }
 	   }
 	},[show])
 	return (
@@ -214,10 +211,20 @@ const MusicPlayer = () => {
 			}} >
 				{show === true && (
 					<>
+					<div className="big"
+					style={{
+			backgroundImage: `url(${store.player.currentTrack?.imageURL})`,
+			filter: "blur(6px)",
+			backgroundPosition: "center",
+			backgroundRepeat: "no-repeat",
+			backgroundSize: "cover"
+		}}>
+					</div>
 					<div className="iconss">
                     <KeyboardArrowDownIcon className="iconeeyy" onClick={(e)=>{
 					    e.preventDefault();
 						e.stopPropagation();
+						document.body.style.overflowY="scroll";
 						console.log("nwuegfi3ufhowf");
 						setshow(false);
 					}} />
