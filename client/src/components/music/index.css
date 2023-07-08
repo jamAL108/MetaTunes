@@ -322,7 +322,7 @@
         height: 60%;
     }
     .music .middle button .icon{
-        color: #EE4950;
+        color: #E4E4E6;
         width: 100%;
         height: 100%;
         background-color: transparent;
@@ -382,7 +382,7 @@
         z-index: 100;
     }
     .music.up .left .image{
-        width: 90%;
+        width: 87%;
         height: 95%;
         display: flex;
         justify-content:center;
@@ -411,14 +411,14 @@
         margin-top: 1.8rem;
         margin-bottom:0;
         font-weight: 500;
-        filter: brightness(2.2);
+        filter: brightness(2.5);
     }
     .music.up .left .names p{
         font-size: 1.3rem;
         opacity: 0.5;
         margin-top:0rem;
         font-weight: 400;
-        filter: brightness(2.2);
+        filter: brightness(2.5);
     }
     .music.up .plain{
         width: 90%;
@@ -448,7 +448,7 @@
         margin-top: -0.8rem;
         font-size: 0.9rem;
         font-weight: 200;
-        filter: brightness(2.2);
+        filter: brightness(2.5);
     }
     .music.up .middle{
         width: 60%;
@@ -462,22 +462,29 @@
     }
     .music.up .middle button{
         background-color: inherit;
-        border: none;
-        width:85%;
-        height: 85%;
+        border: none; 
+    }
+    .music.up .middle .bttttn{
+        width:80%;
+        height: 80%;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .music.up .middle button .icon{
-        color: #EE4950;
-        width: 100%;
-        height: 100%;
+        color: #E4E4E6;
+        width: 80%;
+        height: 80%;
         background-color: transparent;
-        filter: brightness(1);
+        filter: brightness(2.5);
     }
     .music.up .middle button .iconey{
         color: #E4E4E6;
         width: 65%;
         height: 65%;
-        filter: brightness(2.2);
+        filter: brightness(2.5);
     }
 
 
@@ -499,7 +506,7 @@
       text-transform: capitalize;
       font-weight: 500;
       margin-left: 3rem;
-      filter: brightness(2.2);
+      filter: brightness(2.5);
    }
    .music.up .big{
       position: absolute;
@@ -527,7 +534,7 @@
     height: 50%;
     color: #E4E4E6;
     margin-left: 0rem;
-    filter: brightness(2.2);
+    filter: brightness(2.5);
    }
 
 

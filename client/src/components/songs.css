@@ -197,7 +197,7 @@
 
 .songs .items{
     width: 100%;
-    height: 85%;
+    height: 80%;
     display: flex;
     justify-content:flex-start;
     align-items: center;
@@ -217,19 +217,19 @@
 
 .songs .items .boxzzy:first-child{
     margin-left:0.5rem;
-    min-width: 43.5%;
+    min-width: 45%;
 
-    width: 43.5%;
+    width: 45%;
 
-    max-height: 95%;
+    max-height: 84%;
 
-    height:95% 
+    height:84% 
     }
 .songs .items .boxzzy{
-    min-width: 43.5%;
-    width: 43.5%;
-    max-height: 95%;
-    height:96% ;
+    min-width: 45%;
+    width: 45%;
+    max-height: 84%;
+    height:84% ;
     border-radius: 10px !important;
     background-color: #18181a;
 }

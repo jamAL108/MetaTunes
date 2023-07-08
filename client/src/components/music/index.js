@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styled from 'styled-components';
 import './index.css';
 import {
 	NEXTTRACK,
@@ -12,8 +11,8 @@ import Slider from '@mui/material/Slider';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import  SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayCircleFilledSharpIcon from '@mui/icons-material/PlayCircleFilledSharp';
-import PauseCircleFilledSharpIcon from '@mui/icons-material/PauseCircleFilledSharp';
+import PauseIcon from '@mui/icons-material/Pause';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 const MusicPlayer = () => {
 	const audioref = useRef(null);
 	const dispatch = useDispatch();
@@ -59,7 +58,6 @@ const MusicPlayer = () => {
 		    // eslint-disable-next-line react-hooks/exhaustive-deps
 	   }
 	},[store.player.isPlaying])
-    let Content=null;
 	useEffect(()=>{
 		setSongDetails((prev) => {
 			return { ...prev, time: 0 };
@@ -214,10 +212,13 @@ const MusicPlayer = () => {
 					<div className="big"
 					style={{
 			backgroundImage: `url(${store.player.currentTrack?.imageURL})`,
-			filter: "blur(6px)",
+			filter: "blur(70px)",
 			backgroundPosition: "center",
 			backgroundRepeat: "no-repeat",
-			backgroundSize: "cover"
+			backgroundSize: "cover",
+			minHeight:"100vh",
+			minWidth:"100vw",
+			transform:"scale(1.2)",
 		}}>
 					</div>
 					<div className="iconss">
@@ -246,7 +247,7 @@ const MusicPlayer = () => {
 				     <div className="plain">
 					 <Box className='slide' width={300}>
 					 <Slider className="dabba" defaultValue={0} onChange={seekPoint}
-				value={!isNaN(songDetails?.time) ? songDetails?.time : 0} aria-label="Default" valueLabelDisplay="off" sx={{ color: "#EE4950" , height:"4px" }} />
+				value={!isNaN(songDetails?.time) ? songDetails?.time : 0} aria-label="Default" valueLabelDisplay="off" sx={{ color: "#E4E4E6" , height:"4px" }} />
 				   </Box>
 				   <div className="down">
 				   <h1>
@@ -266,12 +267,12 @@ const MusicPlayer = () => {
 					handlePreviousSong();
 				}} className="iconey" />
 			</button>
-			<button>
-				{!store.player.isPlaying  ? <PlayCircleFilledSharpIcon  className="icon" onClick={(e)=>{
+			<button className="bttttn">
+				{!store.player.isPlaying  ? <PlayArrowIcon  className="icon" onClick={(e)=>{
 					e.preventDefault();
 					e.stopPropagation();
                      handlepalypause();
-				}} /> : <PauseCircleFilledSharpIcon className="icon" onClick={(e)=>{
+				}} /> : <PauseIcon className="icon" onClick={(e)=>{
 					e.preventDefault();
 					e.stopPropagation();
 					handlepalypause();
