@@ -182,6 +182,8 @@
      .home .other .searching .box{
         width: 100%;
         height: 4.5rem;
+         max-height:4.5rem;
+         min-height:4.5rem;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -189,6 +191,7 @@
      .home .other .searching .box .image{
         width: 25%;
         height: 100%;
+     
         display: flex;
         justify-content: center;
         align-items: center;
@@ -216,7 +219,7 @@
         font-weight:500 ;
      }
      .home .other .searching .box .names h2{
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         margin: 0;
         margin-bottom: 0.2rem;
         font-weight:500 ;
