@@ -77,7 +77,7 @@ useEffect(()=>{
 const [artist,setartist]=useState([]);
 const [songs,setsong]=useState([]);
 const [playlist,setplaylist]=useState([]);
-const URL = "http://localhost:8000";
+const URL = "https://meta-tunes.onrender.com";
   const func1 =async()=>{
     try{
      const api =`${URL}/common/getallthree`;
