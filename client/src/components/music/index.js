@@ -261,6 +261,10 @@ const MusicPlayer = () => {
                     <KeyboardArrowDownIcon className="iconeeyy" onClick={(e)=>{
 					    e.preventDefault();
 						e.stopPropagation();
+					     	const h1 = document.querySelector(".h1");
+		                    const p = document.querySelector(".p");
+	                        h1.style.animation="none";
+			                p.style.animation="none";
 						document.body.style.overflowY="scroll";
 						console.log("nwuegfi3ufhowf");
 						setshow(false);
