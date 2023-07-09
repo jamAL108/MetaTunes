@@ -227,8 +227,8 @@ const MusicPlayer = () => {
 		   const h1 = document.querySelector(".h1");
 		   const p = document.querySelector(".p");
 		   if(h1.scrollWidth > h1.clientWidth || p.scrollWidth > p.clientWidth){
-			  h1.style.animation="scroll 7s linear infinite";
-			  p.style.animation="scroll 7s linear infinite";
+			  h1.style.animation="scroll 10s linear infinite";
+			  p.style.animation="scroll 10s linear infinite";
 		   }else{
 			h1.style.animation="none";
 			  p.style.animation="none";
