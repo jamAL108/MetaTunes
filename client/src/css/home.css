@@ -181,17 +181,17 @@
      }
      .home .other .searching .box{
         width: 100%;
-        height: 4.5rem;
-         max-height:4.5rem;
-         min-height:4.5rem;
+        height: 4.2rem;
+         max-height:4.2rem;
+         min-height:4.2rem;
         display: flex;
         justify-content: flex-start;
         align-items: center;
      }
      .home .other .searching .box .image{
         width: 25%;
-        height: 100%;
-     
+        max-height: 95%;
+         height:95%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -199,8 +199,8 @@
      .home .other .searching .box .image img{
         width: 65%;
         max-width: 65%;
-        max-height: 83%;
-        height: 83%;
+        max-height: 86%;
+        height: 86%;
         object-fit: cover;
      }
      .home .other .searching .box .names{
