@@ -115,7 +115,7 @@ const MusicPlayer = () => {
 			  }, delay);
 			};
 		  };
-	const debouncedSearch = debounce(performSeek, 300);
+	const debouncedSearch = debounce(performSeek, 50);
 	const seekPoint = (e) => {
 		debouncedSearch(e);
 	};
@@ -319,7 +319,11 @@ const MusicPlayer = () => {
 				{show === true &&(
 				     <div className="plain">
 					 <Box className='slide' width={300}>
-					 <Slider className="dabba" defaultValue={0} onChange={seekPoint}
+					 <Slider className="dabba" defaultValue={0} onChange={(e)=>{
+						 seekPoint(e);
+						 let slide = document.querySelector(".dabba");
+						 slide.value=e.target.value;
+					 }}
 				value={!isNaN(songDetails?.time) ? songDetails?.time : 0} aria-label="Default" valueLabelDisplay="off" sx={{ color: "#E4E4E6" , height:"4px" }} />
 				   </Box>
 				   <div className="down">
