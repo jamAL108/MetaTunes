@@ -14,10 +14,12 @@ import Song from './pages/allsongs';
 import MusicPlayer from './components/music/index';
 import { useSelector } from 'react-redux';
 import Categories from './pages/categories';
+import {  ToastContainer } from 'react-toastify';
 function App() {
 const player = useSelector((state) => state.player);
   return (
     <>
+    <ToastContainer/>
      <Routes>
       <Route path='/' element={<Landing/>}/>
       <Route path='/playlist' element={<Playlist/>}/>

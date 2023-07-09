@@ -13,13 +13,18 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import  SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+// import { addfavourites , removefavourites } from "../../redux/action/useraction";
 const MusicPlayer = () => {
 	const audioref = useRef(null);
 	const dispatch = useDispatch();
 	const store =
 		useSelector((state) => state);
 	const isEndOfTracklist = store.player.currentIndex === store.player.trackList.length - 1;
-	
+	const user = JSON.parse(localStorage.getItem("user"));
 	const [songDetails, setSongDetails] = useState(null);
 	//eslint-disable-next-line
 	const [audioPlaying, setAudioPlaying] = useState(
@@ -90,9 +95,9 @@ const MusicPlayer = () => {
 		});
 	 // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [audioref.current]);
-
-	const seekPoint = (e) => {
-		audioref.current.currentTime = (e.target.value / 100) * audioref.current.duration;
+    
+     const performSeek =(e)=>{
+	audioref.current.currentTime = (e.target.value / 100) * audioref.current.duration;
 
 		setSongDetails((prev) => ({
 			...prev,
@@ -100,6 +105,19 @@ const MusicPlayer = () => {
 				(audioref.current.currentTime / audioref.current.duration) * 100
 			),
 		}));
+	 }
+	const debounce = (func, delay) => {
+			let timer;
+			return function (...args) {
+			  clearTimeout(timer);
+			  timer = setTimeout(() => {
+				func.apply(this, args);
+			  }, delay);
+			};
+		  };
+	const debouncedSearch = debounce(performSeek, 300);
+	const seekPoint = (e) => {
+		debouncedSearch(e);
 	};
 
 
@@ -201,9 +219,8 @@ const MusicPlayer = () => {
 	   }
 	},[show])
     const addcomma= (name)=>{
-         return name.join(",");
+         return name.join(", ");
 	}
-
 	return (
 			<div className="music" onClick={(e)=>{
 				e.preventDefault();
@@ -211,6 +228,7 @@ const MusicPlayer = () => {
 				console.log(audioref.current?.duration);
 				bigscreeen();
 			}} >
+				 {/* <ToastContainer /> */}
 				{show === true && (
 					<>
 					<div className="big"
@@ -242,9 +260,60 @@ const MusicPlayer = () => {
 					<div className="image">
 						<img src={store.player.currentTrack?.imageURL} alt="piccy" />
 					</div>
+					<div className="below">
 					<div className="names">
 						<h1 className="h1">{show===false ? TruncateText(store.player.currentTrack?.name,9) : store.player.currentTrack?.name }</h1>
 						<p className="p">{show===false ? Truncatearr(store.player.currentTrack?.artist,9) : addcomma(store.player.currentTrack?.artist) }</p>
+					</div>
+                    {show===true &&(
+						 <div className="right">
+                  {like===false && user &&(
+                  <FavoriteBorderIcon className='nolike' onClick={(e)=>{
+                     e.preventDefault();
+                     toast.error("Feature is under work", {
+                      position: toast.POSITION.TOP_CENTER,
+                      draggablePercent: 60,
+                      autoClose:500,
+                      hideProgressBar:true
+                    });
+                     setlike(true);           
+                    //  const temp = JSON.parse(localStorage.getItem("song"));
+					//  if( temp[store.player.currentTrack.idx].like===false){
+                    //  temp[store.player.currentTrack.idx].like=true;
+                    //  temp[store.player.currentTrack.idx].totallikes++;
+                    //  localStorage.setItem("song",JSON.stringify(temp));
+                    //  const obj={
+                    //     person:user.username,
+                    //     id:store.player.currentTrack?._id
+                    //  }
+                    //  dispatch(addfavourites(obj))
+					// }
+                  }} />
+                  )}
+                  {like===true && user &&(
+                    <FavoriteIcon className='like'  onClick={(e)=>{
+                    e.preventDefault();
+                    toast.error("Feature is under work", {
+                      position: toast.POSITION.TOP_CENTER,
+                      draggablePercent: 60,
+                      autoClose:500,
+                      hideProgressBar:true
+                    });
+					setlike(false);
+                //     const temp = JSON.parse(localStorage.getItem("song"));
+				// 	if( temp[store.player.currentTrack.idx].like===true){
+                //     temp[store.player.currentTrack.idx].like=false;
+                //     temp[store.player.currentTrack.idx].totallikes--;
+                //     localStorage.setItem("song",JSON.stringify(temp));
+                //     const obj={
+                //       person:user.username,
+                //       id:store.player.currentTrack?._id
+                //    }
+                //    dispatch(removefavourites(obj))
+                    }}/>
+                  )}
+                </div> 
+					)}
 					</div>
 				</div>
 				{show === true &&(
@@ -290,50 +359,6 @@ const MusicPlayer = () => {
 				}}  className="iconey" size={16} />
 			</button>
 				</div>
-				{/* <div className="right">
-                  {like===false && user &&(
-                  <FavoriteBorderIcon className='nolike' onClick={(e)=>{
-                     e.preventDefault();
-                     toast.success("Your favourites have been updated", {
-                      position: toast.POSITION.TOP_CENTER,
-                      draggablePercent: 60,
-                      autoClose:500,
-                      hideProgressBar:true
-                    });
-                     setlike(true);           
-                     const temp = JSON.parse(localStorage.getItem("song"));
-                     temp[store.player.currentTrack.idx].like=true;
-                     temp[store.player.currentTrack.idx].totallikes++;
-                     localStorage.setItem("song",JSON.stringify(temp));
-                     const obj={
-                        person:user.username,
-                        id:store.player.currentTrack?._id
-                     }
-                     dispatch(addfavourites(obj))
-                  }} />
-                  )}
-                  {like===true && user &&(
-                    <FavoriteIcon className='like'  onClick={(e)=>{
-                    e.preventDefault();
-                    toast.success("Your favourites updated", {
-                      position: toast.POSITION.TOP_CENTER,
-                      draggablePercent: 60,
-                      autoClose:500,
-                      hideProgressBar:true
-                    });
-					setlike(false);
-                    const temp = JSON.parse(localStorage.getItem("song"));
-                    temp[store.player.currentTrack.idx].like=false;
-                    temp[store.player.currentTrack.idx].totallikes--;
-                    localStorage.setItem("song",JSON.stringify(temp));
-                    const obj={
-                      person:user.username,
-                      id:store.player.currentTrack?._id
-                   }
-                   dispatch(removefavourites(obj))
-                    }}/>
-                  )}
-                </div> */}
 				<audio
 				     ref={audioref}
 					 src={store.player.currentTrack?.songURL} 

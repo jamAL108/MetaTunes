@@ -286,8 +286,11 @@
         width: 80%;
         height: 80%;
     }
-    .music .left .names{
+    .music .left .below{
         width: 60%;
+    }
+    .music .left .names{
+        width: 100%;
         color: #E4E4E6;
         display: flex;
         flex-direction: column;
@@ -323,8 +326,8 @@
     }
     .music .middle button .icon{
         color: #E4E4E6;
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
         background-color: transparent;
     }
     .music .middle button .iconey{
@@ -397,13 +400,36 @@
         object-fit: cover;
         /* border-top-left-radius: 41%; */
     }
-    .music.up .left .names {
-        width: 80vw;
+    .music.up .left .below{
+        width: 87vw;
         height: 25%;
+        display: grid;
+        grid-template-columns: 75% 25%;
+        align-items: center;
+        justify-content: center;
+    }
+    .music.up .left .below .right{
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: fcenter;
+    }
+    .music.up .left .below .right .nolike{
+        width: 45%;
+        height: 45%;
+    }
+    .music.up .left .below .right .like{
+        width: 45%;
+        height: 45%;
+        color: #EE4950;
+    }
+    .music.up .left .below .names {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         font-family: "Poppins" , sans-serif;
         overflow: hidden;
         white-space: nowrap;
@@ -412,7 +438,7 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
           }
-    .music.up .left .names h1{
+    .music.up .left .below .names h1{
         font-size: 1.4rem;
         margin-top: 1.8rem;
         margin-bottom:0;
@@ -420,16 +446,16 @@
         filter: brightness(2.5);
          /* animation: scroll 2s linear infinite; */
     }
-    .music.up .left .names p{
-        font-size: 1.3rem;
-        opacity: 0.5;
+    .music.up .left .below .names p{
+        font-size: 1.2rem;
+        opacity: 0.6;
         margin-top:0rem;
         font-weight: 400;
         filter: brightness(2.5);
         /* animation: scroll 2s linear infinite; */
     }
     .music.up .plain{
-        width: 90%;
+        width: 85%;
         height: 15vh;
         margin-top: -2.5rem;
         display: flex;
@@ -439,13 +465,13 @@
         z-index: 100;
     }
     .music.up .plain .slide{
-        width: 90%;
+        width: 100%;
     }
     .music.up .plain .slide .dabba{
         height: 2px !important;
     }
     .music.up .plain .down{
-        width: 85%;
+        width: 100%;
         height: 50%;
         display: flex;
         justify-content: space-between;
@@ -453,7 +479,7 @@
         color: #E4E4E6;
     }
     .music.up .plain .down h1{
-        margin-top: -0.8rem;
+        margin-top: -1rem;
         font-size: 0.9rem;
         font-weight: 200;
         filter: brightness(2.5);
@@ -465,7 +491,7 @@
         justify-content:flex-start;
         align-items: flex-start;
         grid-gap: 0.3rem;
-        margin-top: -1.7rem;
+        margin-top: -1.9rem;
         z-index: 100;
     }
     .music.up .middle button{

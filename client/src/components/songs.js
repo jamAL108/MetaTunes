@@ -147,6 +147,7 @@ const Song = () => {
                   {array[idx]===false && user &&(
                   <FavoriteBorderIcon className='nolike' onClick={(e)=>{
                      e.preventDefault();
+                     e.stopPropagation();
                      toast.success("Your favourites have been updated", {
                       position: toast.POSITION.TOP_CENTER,
                       draggablePercent: 60,
@@ -170,6 +171,7 @@ const Song = () => {
                   {array[idx]===true && user &&(
                     <FavoriteIcon className='like'  onClick={(e)=>{
                     e.preventDefault();
+                    e.stopPropagation();
                     toast.success("Your favourites updated", {
                       position: toast.POSITION.TOP_CENTER,
                       draggablePercent: 60,
