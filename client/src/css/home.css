@@ -213,13 +213,13 @@
         font-size: 0.9rem;
         margin: 0;
         margin-bottom: 0.12rem;
-        font-weight:540 ;
+        font-weight:350 ;
      }
      .home .other .searching .box .names h2{
         font-size: 0.9rem;
         margin: 0;
         margin-bottom: 0.2rem;
-        font-weight:540 ;
+        font-weight:350 ;
      }
      .home .other .searching .box .names .down{
         display: flex;
@@ -234,6 +234,7 @@
         margin-bottom: 0.5rem;
         font-weight: 550;
         color:#E3E3E3;
+         opacity:0.6;
      }
     .home .other .search .inside{
          color: #EE4950;
