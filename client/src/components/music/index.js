@@ -221,6 +221,20 @@ const MusicPlayer = () => {
     const addcomma= (name)=>{
          return name.join(", ");
 	}
+	const refff = useRef(null);
+	useEffect(()=>{
+       if(show===true){
+		   const h1 = document.querySelector(".h1");
+		   const p = document.querySelector(".p");
+		   if(h1.scrollWidth > h1.clientWidth || p.scrollWidth > p.clientWidth){
+			  h1.style.animation="scroll 7s linear infinite";
+			  p.style.animation="scroll 7s linear infinite";
+		   }else{
+			h1.style.animation="none";
+			  p.style.animation="none";
+		   }
+	   }
+	},[show])
 	return (
 			<div className="music" onClick={(e)=>{
 				e.preventDefault();
@@ -261,7 +275,7 @@ const MusicPlayer = () => {
 						<img src={store.player.currentTrack?.imageURL} alt="piccy" />
 					</div>
 					<div className="below">
-					<div className="names">
+					<div className="names" ref={refff}>
 						<h1 className="h1">{show===false ? TruncateText(store.player.currentTrack?.name,9) : store.player.currentTrack?.name }</h1>
 						<p className="p">{show===false ? Truncatearr(store.player.currentTrack?.artist,9) : addcomma(store.player.currentTrack?.artist) }</p>
 					</div>
