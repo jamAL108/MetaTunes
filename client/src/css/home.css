@@ -212,13 +212,13 @@
      .home .other .searching .box .names h1{
         font-size: 0.9rem;
         margin: 0;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.12rem;
         font-weight:540 ;
      }
      .home .other .searching .box .names h2{
         font-size: 0.9rem;
         margin: 0;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
         font-weight:540 ;
      }
      .home .other .searching .box .names .down{
@@ -236,7 +236,8 @@
         color:#E3E3E3;
      }
     .home .other .search .inside{
-        display: none;
+         color: #EE4950;
+        right: 20%;
     }
     /* .home .search .inside{
         width: auto;

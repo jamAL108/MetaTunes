@@ -4,13 +4,13 @@ import { LOGINCOLOR } from '../redux/propsaction';
 import { useDispatch, useSelector  } from 'react-redux';
 import Song from '../components/songs';
 import '../css/home.css';
-import SearchIcon from '@mui/icons-material/Search';
 import Allartist from '../components/allartist';
 import { useNavigate } from 'react-router-dom';
 import Section from '../components/section';
 import {
   SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
 } from '../redux/playertypes';
+import CloseIcon from '@mui/icons-material/Close';
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
@@ -67,13 +67,12 @@ const [display,setdisplay]=useState(false);
 const refffu = useRef(null);
 useEffect(()=>{
   const inputElement=document.querySelector('.inputs');
+  console.log("hjkdfv");
   inputElement.addEventListener('focus', function() {
     setdisplay(true);
   });
-  inputElement.addEventListener('blur', function() {
-    setdisplay(false);
-  });
-},[refffu])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+},[refffu.current]);
 const [artist,setartist]=useState([]);
 const [songs,setsong]=useState([]);
 const [playlist,setplaylist]=useState([]);
@@ -140,7 +139,13 @@ const playsong = (item) => {
     <div className="other">
     <div className="search">
       <input type="text" ref={refffu} placeholder='Search' className='inputs' onChange={search}  />
-      <SearchIcon className='inside' />
+      {refffu?.current===document.activeElement && ( 
+          <CloseIcon className='inside' onClick={(e)=>{
+         e.preventDefault();
+         const inputEle=document.querySelector('.inputs');
+        inputEle.blur();
+        setdisplay(false);
+      }} />)}
     </div>
     {display===true && (
       <div className="searching" onClick={(e)=>{
@@ -151,6 +156,8 @@ const playsong = (item) => {
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
             navigate(`/artist/${item._id}`);
+            const inputEle=document.querySelector('.inputs');
+            inputEle.blur();
            }}>
               <div className="image">
                 <img src={item.imageURL} alt="artist" />
@@ -165,6 +172,10 @@ const playsong = (item) => {
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
               playsong(item);
+              const inputEle=document.querySelector('.inputs');
+              inputEle.blur();
+              setdisplay(false);
+              refffu.current.value="";
            }}>
               <div className="image">
                 <img src={item.imageURL} alt="artist" />
@@ -182,6 +193,8 @@ const playsong = (item) => {
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
             navigate(`/playlist/${item._id}`);
+            const inputEle=document.querySelector('.inputs');
+            inputEle.blur();
            }}>
               <div className="image">
                 <img src={item.image.myfile} alt="artist" />
