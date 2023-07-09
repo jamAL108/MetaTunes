@@ -439,7 +439,7 @@
             100% { transform: translateX(-100%); }
           }
     .music.up .left .below .names h1{
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         margin-top: 1.8rem;
         margin-bottom:0;
         font-weight: 500;
@@ -447,7 +447,7 @@
          /* animation: scroll 2s linear infinite; */
     }
     .music.up .left .below .names p{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         opacity: 0.6;
         margin-top:0rem;
         font-weight: 400;
