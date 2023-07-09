@@ -130,6 +130,7 @@ const Song = () => {
             <div className="items">
             {songs.map((item,idx)=>(
               <div className="boxzzy" key={idx}   onClick={(e)=>{
+                e.preventDefault();
                 playsong(item);
               }} >
               <div className="image" >

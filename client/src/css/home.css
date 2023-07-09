@@ -163,13 +163,77 @@
     }
     .home .other .searching{
         width: 92%;
-        min-height: 50vh;
-        height: auto;
+        min-height: 52vh;
+        height: 50vh;
+        overflow-y: scroll;
         position: absolute;
         top: 4.4rem;
         z-index: 9999;
         background-color: rgba(0, 0, 0, .55);  
         backdrop-filter: blur(15px);
+        display: flex;
+        flex-direction:column ;
+        justify-content: flex-start;
+        align-items: center;
+     }
+     .home .other .searching::-webkit-scrollbar{
+        display: none;
+     }
+     .home .other .searching .box{
+        width: 100%;
+        height: 4.5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+     }
+     .home .other .searching .box .image{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     .home .other .searching .box .image img{
+        width: 65%;
+        max-width: 65%;
+        max-height: 83%;
+        height: 83%;
+        object-fit: cover;
+     }
+     .home .other .searching .box .names{
+         display: flex;
+         flex-direction: column;
+         width: 75%;
+         height: 100%;
+         justify-content: flex-end;
+         align-items:flex-start;
+         text-transform: capitalize;
+     }
+     .home .other .searching .box .names h1{
+        font-size: 0.9rem;
+        margin: 0;
+        margin-bottom: 0.3rem;
+        font-weight:540 ;
+     }
+     .home .other .searching .box .names h2{
+        font-size: 0.9rem;
+        margin: 0;
+        margin-bottom: 0.3rem;
+        font-weight:540 ;
+     }
+     .home .other .searching .box .names .down{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 0.5rem;
+        /* height: 50%; */
+     }
+     .home .other .searching .box .names p{
+        margin: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 550;
+        color:#E3E3E3;
      }
     .home .other .search .inside{
         display: none;

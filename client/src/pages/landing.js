@@ -8,6 +8,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import Allartist from '../components/allartist';
 import { useNavigate } from 'react-router-dom';
 import Section from '../components/section';
+import {
+  SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
+} from '../redux/playertypes';
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
@@ -71,20 +74,127 @@ useEffect(()=>{
     setdisplay(false);
   });
 },[refffu])
-// const playlist = JSON.parse(localStorage.getItem("playlist"));
-// const song = JSON.parse(localStorage.getItem("songs"));
-// const artist= JSON.parse(localStorage.getItem("artist"));
+const [artist,setartist]=useState([]);
+const [songs,setsong]=useState([]);
+const [playlist,setplaylist]=useState([]);
+const URL = "http://localhost:8000";
+  const func1 =async()=>{
+    try{
+     const api =`${URL}/common/getallthree`;
+     const res = await fetch(api,{
+      method: "GET",
+      headers: {
+        "Content-Type":"application/json"
+       }
+      });
+     const msg = await res.json();
+     setplaylist(msg.response.playlists);
+     setsong(msg.response.songs);
+     setartist(msg.response.artists);
+  }catch(err){
+    console.log(err);
+  }
+}
+useEffect(()=>{
+  func1();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+},[])
+const [tempsong,settempsong]=useState([]);
+const [tempartist,settempartist]=useState([]);
+const [tempplaylist,settempplaylist]=useState([]);
+const search=(e)=>{
+  console.log(songs)
+  console.log(artist)
+  console.log(playlist)
+  if(!e.target.value){
+    console.log("hello");
+  }else{
+    let input = e.target.value;
+    console.log(input);
+const tempS = songs.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 3);
+    settempsong(tempS);
+    const tempA = artist.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 3);
+    settempartist(tempA);
+    const tempP = playlist.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 3);
+    settempplaylist(tempP);
+  }
+}
+const addcomma= (name)=>{
+  return name.join(", ");
+}
+const playsong = (item) => {
+  dispatch({type:SETCURRENTTRACK , payload:item})
+  let list =[];
+  list.push(item);
+  const data ={
+    list:list,
+    index:0
+  }
+  dispatch({type:SETTRACKLIST , payload:data})
+  dispatch({type:SETPLAYING , payload:true})
+};
+
   return (
     <div className='home'>
     <Nav/>
     <div className="other">
     <div className="search">
-      <input type="text" ref={refffu} placeholder='Search' className='inputs'  />
+      <input type="text" ref={refffu} placeholder='Search' className='inputs' onChange={search}  />
       <SearchIcon className='inside' />
     </div>
     {display===true && (
-      <div className="searching"> 
-         
+      <div className="searching" onClick={(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+      }}> 
+         {tempartist.map((item,idx)=>(
+           <div className="box" key={idx} onClick={(e)=>{
+            e.preventDefault();
+            navigate(`/artist/${item._id}`);
+           }}>
+              <div className="image">
+                <img src={item.imageURL} alt="artist" />
+              </div>
+              <div className="names">
+                <h1>{item.name}</h1>
+                <p>• Artist</p>
+              </div>
+           </div>
+         ))}
+         {tempsong.map((item,idx)=>(
+           <div className="box" key={idx} onClick={(e)=>{
+            e.preventDefault();
+              playsong(item);
+           }}>
+              <div className="image">
+                <img src={item.imageURL} alt="artist" />
+              </div>
+              <div className="names">
+                <h1>{item.name}</h1>
+                <div className="down">
+                <p>• Song</p>
+                <h2>{addcomma(item.artist)}</h2>
+                </div>
+              </div>
+           </div>
+         ))}
+         {tempplaylist.map((item,idx)=>(
+           <div className="box" key={idx} onClick={(e)=>{
+            e.preventDefault();
+            navigate(`/playlist/${item._id}`);
+           }}>
+              <div className="image">
+                <img src={item.image.myfile} alt="artist" />
+              </div>
+              <div className="names">
+                <h1>{item.name}</h1>
+                <div className="down">
+                <p>• Playlist</p>
+                <h2>{item.author}</h2>
+                </div>
+              </div>
+           </div>
+         ))}
       </div>
     )}
     <div className="line"></div>

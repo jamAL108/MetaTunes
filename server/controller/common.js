@@ -154,6 +154,23 @@ export const getplaylist = async(req,res)=>{
   }
 }
 
+export const getallthree = async(req,res)=>{
+  try{
+    console.log("nkjdfvnerjv");
+    const songs = await song.find({});
+    const artistey = await artist.find({});
+    const playlistey = await playlist.find({Type:false});
+    const obj ={
+      songs:songs,
+      artists:artistey,
+      playlists:playlistey
+    }
+    return res.status(200).send({response:obj});
+}catch{
+  console.log(err);
+  return res.status(404).send({error:err});
+}
+}
 
 export const categories = async(req,res)=>{
   try{

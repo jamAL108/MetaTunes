@@ -1,5 +1,5 @@
 import express from 'express';
-import { Addsong, getallartist, getallsong , getartist , commonplaylist , getplaylist , categories
+import { Addsong, getallartist, getallsong , getartist , commonplaylist , getplaylist , categories , getallthree
         } from "../controller/common.js";
 
 const router = express.Router();
@@ -10,4 +10,5 @@ router.post('/artist/:id',getartist);
 router.get("/commonplaylist",commonplaylist);
 router.get("/playlist/:id",getplaylist);
 router.get("/categories/:id",categories);
+router.get("/getallthree",getallthree);
 export default router;
