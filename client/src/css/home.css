@@ -201,7 +201,7 @@
         max-width: 65%;
         max-height: 83%;
         height: 83%;
-        object-fit: cover;
+        object-fit: fill;
      }
      .home .other .searching .box .names{
          display: flex;
