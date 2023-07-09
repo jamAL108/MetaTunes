@@ -105,6 +105,17 @@
 .home .allplaylist .item button:hover{
     cursor: pointer;
 }
+
+.home .other .searching{
+    width: 92%;
+    min-height: 50vh;
+    height: auto;
+    position: absolute;
+    top: 4.4rem;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, .55);  
+    backdrop-filter: blur(15px);
+}
 @media screen and (max-width:913px) {
     .home .other{
         top: 10%;
@@ -122,11 +133,54 @@
         height: 2.2rem;
         margin-top: 1.5rem;
         margin-right:0.5rem;
+        margin-left: 2.7%;
         margin-bottom:1rem;
     }
-    .home .other .search .inside{
-        left: 90%;
+    .home .other .search input::placeholder{
+        font-size: 1.2rem;
+        font-weight: 500;
     }
+    .home .other .search input[type="text"]{
+        
+    }
+    .home .other .search input:focus{
+        border: 2px solid #EE4950;
+    }
+    .home .other .search input{
+        font-size: 1.2rem;
+        /* padding-left: 0.7rem; */
+        font-weight: 500;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+        border: 2px solid #323234;
+        border-radius: 6px;
+        color: #E3E3E3;
+    }
+    .home .other .searching{
+        width: 92%;
+        min-height: 50vh;
+        height: auto;
+        position: absolute;
+        top: 4.4rem;
+        z-index: 9999;
+        background-color: rgba(0, 0, 0, .55);  
+        backdrop-filter: blur(15px);
+     }
+    .home .other .search .inside{
+        display: none;
+    }
+    /* .home .search .inside{
+        width: auto;
+        position: relative;
+        top: -2rem;
+        color: #323234;
+        left: 95%;
+    } */
     .home .allplaylist{
         width: 90%;
         margin-right:0.5rem;

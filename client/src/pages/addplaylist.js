@@ -225,7 +225,8 @@ const handlesearch =(e)=>{
     if(!e.target.value){
       refresh();
     }else{
-      const temp = mainsongs.filter(item=>item.name.includes(e.target.value));
+      let input = e.target.value;
+const temp = mainsongs.filter(item=>item.name.toLowerCase().includes(input.toLowerCase()));
       setsonglist(temp);
     }
 }
@@ -360,6 +361,7 @@ const handlesearch =(e)=>{
                 </>
                 )}
                  </div>
+                 <div className="lineyyyyyy"></div>
                  <div className="lineyyyyyy"></div>
             </div>
         </div>

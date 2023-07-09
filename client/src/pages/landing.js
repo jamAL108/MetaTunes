@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useRef, useState } from 'react'
 import Nav from '../components/nav';
 import { LOGINCOLOR } from '../redux/propsaction';
 import { useDispatch, useSelector  } from 'react-redux';
@@ -60,14 +60,33 @@ const Landing = () => {
   }
     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
+const [display,setdisplay]=useState(false);
+const refffu = useRef(null);
+useEffect(()=>{
+  const inputElement=document.querySelector('.inputs');
+  inputElement.addEventListener('focus', function() {
+    setdisplay(true);
+  });
+  inputElement.addEventListener('blur', function() {
+    setdisplay(false);
+  });
+},[refffu])
+// const playlist = JSON.parse(localStorage.getItem("playlist"));
+// const song = JSON.parse(localStorage.getItem("songs"));
+// const artist= JSON.parse(localStorage.getItem("artist"));
   return (
     <div className='home'>
     <Nav/>
     <div className="other">
     <div className="search">
-      <input type="text" placeholder='Search'  />
+      <input type="text" ref={refffu} placeholder='Search' className='inputs'  />
       <SearchIcon className='inside' />
     </div>
+    {display===true && (
+      <div className="searching"> 
+         
+      </div>
+    )}
     <div className="line"></div>
     <div className="allplaylist">
       <div className="item">
