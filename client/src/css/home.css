@@ -163,8 +163,8 @@
     }
     .home .other .searching{
         width: 92%;
-        min-height: 52vh;
-        height: 50vh;
+        min-height: 80vh;
+        height: 80vh;
         overflow-y: scroll;
         position: absolute;
         top: 4.4rem;
