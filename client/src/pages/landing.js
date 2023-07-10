@@ -67,11 +67,11 @@ const [display,setdisplay]=useState(false);
 const refffu = useRef(null);
 useEffect(()=>{
   const inputElement=document.querySelector('.inputs');
-  console.log("hjkdfv");
   inputElement.addEventListener('focus', function() {
-    const land = document.querySelector('.other');
-    land.style.overflowY=hidden;
     setdisplay(true);
+    const land = document.querySelector('.other');
+    console.log(land);
+    document.body.style.overflowY="hidden";
   });
   // eslint-disable-next-line react-hooks/exhaustive-deps
 },[refffu.current]);
@@ -112,11 +112,11 @@ const search=(e)=>{
   }else{
     let input = e.target.value;
     console.log(input);
-const tempS = songs.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 3);
+const tempS = songs.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 5);
     settempsong(tempS);
-    const tempA = artist.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 3);
+    const tempA = artist.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 5);
     settempartist(tempA);
-    const tempP = playlist.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 3);
+    const tempP = playlist.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 5);
     settempplaylist(tempP);
   }
 }
@@ -145,6 +145,7 @@ const playsong = (item) => {
           <CloseIcon className='inside' onClick={(e)=>{
          e.preventDefault();
          const inputEle=document.querySelector('.inputs');
+         inputEle.value="";
         inputEle.blur();
         setdisplay(false);
       }} />)}
@@ -157,8 +158,7 @@ const playsong = (item) => {
          {tempartist.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
-           const land = document.querySelector('.other');
-    land.style.overflowY=scroll;
+           document.body.style.overflowY="hidden";
             navigate(`/artist/${item._id}`);
             const inputEle=document.querySelector('.inputs');
             inputEle.blur();
@@ -175,8 +175,8 @@ const playsong = (item) => {
          {tempsong.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
-           const land = document.querySelector('.other');
-    land.style.overflowY=scroll;
+          //  const land = document.querySelector('.other');
+           document.body.style.overflowY="hidden";
               playsong(item);
               const inputEle=document.querySelector('.inputs');
               inputEle.blur();
@@ -198,8 +198,7 @@ const playsong = (item) => {
          {tempplaylist.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
-           const land = document.querySelector('.other');
-    land.style.overflowY=scroll;
+           document.body.style.overflowY="hidden";
             navigate(`/playlist/${item._id}`);
             const inputEle=document.querySelector('.inputs');
             inputEle.blur();

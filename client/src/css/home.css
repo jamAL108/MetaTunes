@@ -163,12 +163,12 @@
     }
     .home .other .searching{
         width: 92%;
-        min-height: 80vh;
-        height: 80vh;
+        min-height: 72vh;
+        height: 72vh;
         overflow-y: scroll;
         position: absolute;
         top: 4.4rem;
-        z-index: 9999;
+        z-index: 9991;
         background-color: rgba(0, 0, 0, .55);  
         backdrop-filter: blur(15px);
         display: flex;
@@ -190,8 +190,8 @@
      }
      .home .other .searching .box .image{
         width: 25%;
-        max-height: 95%;
-         height:95%;
+        max-height: 90%;
+         height:90%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -211,6 +211,7 @@
          justify-content: flex-end;
          align-items:flex-start;
          text-transform: capitalize;
+         margin-top: -1.2rem;
      }
      .home .other .searching .box .names h1{
         font-size: 0.9rem;
