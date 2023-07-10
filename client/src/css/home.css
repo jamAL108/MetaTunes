@@ -163,8 +163,8 @@
     }
     .home .other .searching{
         width: 92%;
-        min-height: 72vh;
-        height: 72vh;
+        min-height: 70.7vh;
+        height: 70.7vh;
         overflow-y: scroll;
         position: absolute;
         top: 4.4rem;
@@ -199,8 +199,8 @@
      .home .other .searching .box .image img{
         width: 65%;
         max-width: 65%;
-        max-height: 86%;
-        height: 86%;
+        max-height: 82%;
+        height: 82%;
         object-fit: cover;
      }
      .home .other .searching .box .names{
