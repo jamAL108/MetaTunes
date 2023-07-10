@@ -69,7 +69,7 @@ useEffect(()=>{
   const inputElement=document.querySelector('.inputs');
   console.log("hjkdfv");
   inputElement.addEventListener('focus', function() {
-    const land = documebt.querySelector('.other');
+    const land = document.querySelector('.other');
     land.style.overflowY=hidden;
     setdisplay(true);
   });
@@ -157,7 +157,7 @@ const playsong = (item) => {
          {tempartist.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
-           const land = documebt.querySelector('.other');
+           const land = document.querySelector('.other');
     land.style.overflowY=scroll;
             navigate(`/artist/${item._id}`);
             const inputEle=document.querySelector('.inputs');
@@ -175,7 +175,7 @@ const playsong = (item) => {
          {tempsong.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
-           const land = documebt.querySelector('.other');
+           const land = document.querySelector('.other');
     land.style.overflowY=scroll;
               playsong(item);
               const inputEle=document.querySelector('.inputs');
@@ -198,7 +198,7 @@ const playsong = (item) => {
          {tempplaylist.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
-           const land = documebt.querySelector('.other');
+           const land = document.querySelector('.other');
     land.style.overflowY=scroll;
             navigate(`/playlist/${item._id}`);
             const inputEle=document.querySelector('.inputs');
