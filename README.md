@@ -21,12 +21,20 @@ Powered by the MERN stack (MongoDB, Express.js, React.js, and Node.js), my app e
  10. mongoDB atlas
 
 # preview
- ![WhatsApp Image 2023-07-10 at 21 52 07](https://github.com/jamAL108/MetaTunes/assets/115083239/41d43f19-6aed-4325-a98a-3f9a274381c7)
-  ![WhatsApp Image 2023-07-10 at 21 54 51](https://github.com/jamAL108/MetaTunes/assets/115083239/06899514-4b63-4914-b457-4a9aad5e72ab)<br/>
- ![WhatsApp Image 2023-07-10 at 21 54 51](https://github.com/jamAL108/MetaTunes/assets/115083239/82777bb0-429d-4da3-afb7-c90023a4e9ea)
- ![WhatsApp Image 2023-07-09 at 15 14 41](https://github.com/jamAL108/MetaTunes/assets/115083239/99eb3daf-32a6-4d90-9375-aea3376c1cef)<br/>
- ![WhatsApp Image 2023-07-10 at 21 55 59](https://github.com/jamAL108/MetaTunes/assets/115083239/9ef064af-7797-4017-a53a-6af2e3c622d8)
- ![WhatsApp Image 2023-07-10 at 21 56 26](https://github.com/jamAL108/MetaTunes/assets/115083239/f939988d-8db7-40f4-a514-03b1c09711e5)
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/aec2fa4b-d097-4965-ac0e-759595f7d7c5)
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/ae6a6dd4-27cb-4609-8f45-eae612057bc2)<br/>
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/1d58918b-0920-461f-bedd-5d7428e0ad7b)
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/5e894c4a-7519-4102-b7ed-5aeb63244eb9)<br/>
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/1c167db9-4f7f-4db3-a230-0f864162514d)
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/a6339ebe-ac75-4734-9479-7b50306eb838)<br/>
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/7b756b5c-10c8-4df2-a730-fef96cd73895)
+![image](https://github.com/jamAL108/MetaTunes/assets/115083239/aaee02c3-3a0f-433f-b28b-29cd25b4b0dc)
+
+
+
+
+
+
 
 
  
