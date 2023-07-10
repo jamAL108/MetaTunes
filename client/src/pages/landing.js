@@ -69,6 +69,8 @@ useEffect(()=>{
   const inputElement=document.querySelector('.inputs');
   console.log("hjkdfv");
   inputElement.addEventListener('focus', function() {
+    const land = documebt.querySelector('.other');
+    land.style.overflowY=hidden;
     setdisplay(true);
   });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -155,6 +157,8 @@ const playsong = (item) => {
          {tempartist.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
+           const land = documebt.querySelector('.other');
+    land.style.overflowY=scroll;
             navigate(`/artist/${item._id}`);
             const inputEle=document.querySelector('.inputs');
             inputEle.blur();
@@ -171,6 +175,8 @@ const playsong = (item) => {
          {tempsong.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
+           const land = documebt.querySelector('.other');
+    land.style.overflowY=scroll;
               playsong(item);
               const inputEle=document.querySelector('.inputs');
               inputEle.blur();
@@ -192,6 +198,8 @@ const playsong = (item) => {
          {tempplaylist.map((item,idx)=>(
            <div className="box" key={idx} onClick={(e)=>{
             e.preventDefault();
+           const land = documebt.querySelector('.other');
+    land.style.overflowY=scroll;
             navigate(`/playlist/${item._id}`);
             const inputEle=document.querySelector('.inputs');
             inputEle.blur();
