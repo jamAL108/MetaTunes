@@ -1,4 +1,4 @@
-# Meta-Tunes
+# Meta-Tune
 
 A music player app created using MERN STACK </br>
 With this app, users can now enjoy a personalized music experience like never before. They have the freedom to like their favorite songs and curate their own playlists, all within a sleek and user-friendly interface. But that's not all! I have also implemented an innovative feature that allows users to choose between private and public playlists.</br>
