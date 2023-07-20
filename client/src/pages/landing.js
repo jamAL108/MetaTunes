@@ -146,6 +146,7 @@ const playsong = (item) => {
          e.preventDefault();
          const inputEle=document.querySelector('.inputs');
          inputEle.value="";
+         document.body.style.overflowY="scroll";
         inputEle.blur();
         setdisplay(false);
       }} />)}
