@@ -253,7 +253,7 @@
     .home .allplaylist{
         width: 90%;
         margin-right:0.5rem;
-        height: 50vh;
+        height: 47.5vh;
         background-color: white;
         margin-left: 2.7%;
     }
@@ -271,6 +271,7 @@
          margin: 0.3rem;
          font-size: 1.2rem;
          font-weight: 400;
+         text-transform: capitalize;
      }
     .home .allplaylist .item button{
        width: 45%;
