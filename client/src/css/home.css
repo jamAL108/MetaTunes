@@ -47,11 +47,11 @@
     color:#EE4950;
 }
 .home .other .line{
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
     width: 90%;
     margin-left: 0.7%;
-    height: 2px;
+    height: 4px;
     background-color: #323234;
 }
 .home .search .inside{
@@ -253,7 +253,7 @@
     .home .allplaylist{
         width: 90%;
         margin-right:0.5rem;
-        height: 45vh;
+        height: 50vh;
         background-color: white;
         margin-left: 2.7%;
     }
