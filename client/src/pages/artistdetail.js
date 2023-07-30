@@ -1,5 +1,5 @@
 import React, { useEffect , useState  } from 'react'
-import '../css/artistdetail.css';
+import '../scss/artistdetail.scss';
 
 import Loading from '../components/loading';
 import Nav from '../components/nav';

@@ -108,6 +108,9 @@ align-items: center;
     font-size: 0.9rem;
     text-align: center;
 }
+.artists .items::-webkit-scrollbar{
+    display: none;
+}
 
 @media screen and (max-width:913px) {
     .liney{
@@ -175,6 +178,9 @@ justify-content: center;
 align-items: center;
       background-image: linear-gradient(#E06925, #D45640);
       border-radius: 50%;
+}
+.artists .items::-webkit-scrollbar {
+    display: none;
 }
 .artists .items img{
     width: 6.85rem;

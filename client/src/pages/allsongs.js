@@ -1,5 +1,5 @@
 import React, { useEffect , useState } from 'react'
-import '../css/allsongs.css';
+import '../scss/allsongs.scss';
 import Nav from '../components/nav';
 const Allsong = () => {
     const song = JSON.parse(localStorage.getItem("song"));

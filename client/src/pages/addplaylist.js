@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Nav from '../components/nav';
 import AddIcon from '@mui/icons-material/Add';
-import '../css/addplaylist.css';
+import '../scss/addplaylist.scss';
 import $ from 'jquery';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';

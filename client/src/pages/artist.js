@@ -1,5 +1,5 @@
 import React, { useEffect , useState } from 'react'
-import '../css/allartist.css';
+import '../scss/allartist.scss';
 import Nav from '../components/nav';
 import { ARTISTID  } from '../redux/propsaction';
 import { useNavigate } from 'react-router-dom';

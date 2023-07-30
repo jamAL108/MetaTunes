@@ -2,7 +2,7 @@ import React, { useEffect , useState } from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import '../css/categories.css';
+import '../scss/categories.scss';
 import {
     SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
   } from '../redux/playertypes';

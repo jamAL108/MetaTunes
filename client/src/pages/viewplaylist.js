@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Nav from '../components/nav';
 import PlaylistLoad from '../components/playlistload';
-import '../css/viewplaylist.css';
+import '../scss/viewplaylist.scss';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';

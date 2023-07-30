@@ -2,7 +2,7 @@ import React, { useEffect , useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import BeatLoader from "react-spinners/BeatLoader";
 import Nav from '../components/nav';
-import '../css/commonplaylist.css';
+import '../scss/commonplaylist.scss';
 import { commonplaylist } from '../redux/action/useraction';
 import { COMMONPLAYLIST } from '../redux/actiontypes';
 import { useNavigate } from 'react-router-dom';

@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import Loginalert from '../components/loginalert';
-import '../css/playlist.css';
+import '../scss/playlist.scss';
 import Nav from '../components/nav';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';

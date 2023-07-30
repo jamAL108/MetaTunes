@@ -3,7 +3,7 @@ import Nav from '../components/nav';
 import { LOGINCOLOR } from '../redux/propsaction';
 import { useDispatch, useSelector  } from 'react-redux';
 import Song from '../components/songs';
-import '../css/home.css';
+import '../scss/home.scss';
 import Allartist from '../components/allartist';
 import { useNavigate } from 'react-router-dom';
 import Section from '../components/section';
