@@ -1,6 +1,6 @@
 import React from 'react'
 import CloseIcon from '@mui/icons-material/Close';
-import './popup.css';
+import '../scss/popup.scss';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { CANCEL } from '../redux/propsaction';

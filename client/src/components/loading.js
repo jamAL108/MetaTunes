@@ -1,5 +1,5 @@
 import React from 'react'
-import './loadin.css';
+import '../scss/loading.scss';
 const Loading = () => {
   return (
      <div className="loader">

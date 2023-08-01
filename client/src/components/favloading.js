@@ -1,5 +1,5 @@
 import React from 'react'
-import './favloading.css';
+import '../scss/favloading.scss';
 const Favloading = () => {
   return (
     <div className="favloading">

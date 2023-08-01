@@ -5,7 +5,7 @@ import { LOGINCOLOR, NAVCOLOR } from '../redux/propsaction';
 import Spinner from './spinner';
 import Nav from './nav';
 import { signup } from '../redux/action/useraction';
-import './login.css';
+import '../scss/login.scss';
 import ErrorOutlinedIcon from '@mui/icons-material/ErrorOutlined';
 import { SIGNUP, SIGNUPERROR } from '../redux/actiontypes';
 

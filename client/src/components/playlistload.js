@@ -1,5 +1,5 @@
 import React from 'react'
-import './playlistload.css';
+import '../scss/playlistload.scss';
 const PlaylistLoad = () => {
   return (
     <div className="loado">

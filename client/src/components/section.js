@@ -1,5 +1,5 @@
 import React from 'react'
-import './section.css';
+import '../scss/section.scss';
 import Trending from '../images/trending.jpg';
 import Chill from '../images/chill.jpg';
 import Hindi from '../images/hindi.jpg';

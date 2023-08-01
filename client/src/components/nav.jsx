@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import Icon from '../images/note-xxl.png';
-import './nav.css';
+import '../scss/nav.scss';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';

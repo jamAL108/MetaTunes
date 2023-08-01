@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import './loginalert.css';
+import '../scss/loginalert.scss';
 import { useDispatch } from 'react-redux';
 import { LOGINCOLOR } from '../redux/propsaction';
 const Loginalert = (props) => {

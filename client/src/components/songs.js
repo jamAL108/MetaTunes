@@ -1,5 +1,5 @@
 import React, { useEffect , useState } from 'react'
-import './songs.css';
+import '../scss/songs.scss';
 import { useNavigate } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';

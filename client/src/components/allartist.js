@@ -1,6 +1,5 @@
 import React, { useEffect , useState } from 'react'
-import './allartist.css';
-
+import '../scss/artist.scss';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getallartist } from '../redux/action/useraction';
