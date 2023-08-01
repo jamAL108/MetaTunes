@@ -12,7 +12,7 @@ Powered by the MERN stack (MongoDB, Express.js, React.js, and Node.js), my app e
  1. Reactjs
  2. Redux
  3. Thunk
- 4. css
+ 4. sass
  5. Material UI
  6. Nodejs
  7. firebase
