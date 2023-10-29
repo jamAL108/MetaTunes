@@ -15,7 +15,6 @@ const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-   
   const dat={};
   const arrrr=[];
   const dataaa = false;
@@ -107,10 +106,10 @@ const search=(e)=>{
   console.log(songs)
   console.log(artist)
   console.log(playlist)
-  if(!e.target.value){
+  if(!e){
     console.log("hello");
   }else{
-    let input = e.target.value;
+    let input = e;
     console.log(input);
 const tempS = songs.filter(item=>item.name.toLowerCase().includes(input.toLowerCase())).slice(0, 5);
     settempsong(tempS);
@@ -135,12 +134,24 @@ const playsong = (item) => {
   dispatch({type:SETPLAYING , payload:true})
 };
 
+function debounce(func,d){
+  let timer;
+  return function(){
+    if(timer) clearTimeout(timer);
+    setTimeout(func,d);
+  }
+}
+
+const timery = debounce(()=>{
+  search(refffu.current.value)
+},800)
+
   return (
     <div className='home'>
     <Nav/>
     <div className="other">
     <div className="search">
-      <input type="text" ref={refffu} placeholder='Search' className='inputs' onChange={search}  />
+      <input type="text" ref={refffu} placeholder='Search' className='inputs' onChange={timery}   />
       {refffu?.current===document.activeElement && ( 
           <CloseIcon className='inside' onClick={(e)=>{
          e.preventDefault();

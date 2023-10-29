@@ -78,6 +78,9 @@ const Addplaylist = () => {
             }
           })
      }
+
+
+     
      $("#profileImage").unbind("click").bind("click",function(e) {
       e.preventDefault();
       console.log("helo");

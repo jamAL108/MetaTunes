@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import playlist from '../models/playlist.js';
 
 export const Login = async(req,res)=>{
-    try{
+   try{
        const data = req.body;
        const user = await User.findOne({username:data.username});
        if(!user){
@@ -17,11 +17,11 @@ export const Login = async(req,res)=>{
         return res.status(404).send({error:passwordError});
        }
        return res.status(200).send({message:"success" , response:user});
-    }catch(err){
+   }catch(err){
         console.log(err);
         const backenderror=err;
         return res.status(404).send({error:backenderror})
-    }
+   }
 };
 
 
