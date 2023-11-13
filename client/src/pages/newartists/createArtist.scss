@@ -1,0 +1,29 @@
+
+#createartist .others form{
+    height: 110vh;
+    scroll-behavior: smooth;
+    margin-bottom: 10vh;
+}
+
+#createartist .others form .profile-pic{
+   height: 40%;
+}
+#createartist .others form .input{
+    gap: 2rem;
+}
+#createartist .others form .input .item1{
+    margin-top: -1rem;
+}
+span{
+    color: red;
+}
+@media screen and (max-width:913px){
+    #createartist .others form .profile-pic{
+        height: 30%;
+     }
+     #createartist .others form{
+        height: 110vh;
+        scroll-behavior: smooth;
+        margin-bottom: 0vh;
+    }
+}

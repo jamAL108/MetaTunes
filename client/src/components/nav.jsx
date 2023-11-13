@@ -27,6 +27,14 @@ const Nav = () => {
   const sidebar = JSON.parse(localStorage.getItem("sidebar"));
   const side = sidebar.index;
   const data = JSON.parse(localStorage.getItem("user"));
+  const [profiley,setprofile] = useState(false);
+  useEffect(()=>{
+    if(window.location.href.includes(("profile")) || window.location.href.includes(("createartist"))){
+      setprofile(true)
+    }else{
+      setprofile(false)
+    }
+  },[])
   useEffect(()=>{
     if(data){
       if(data?.username?.length!==0){
@@ -229,7 +237,16 @@ useEffect(()=>{
         )}
         {login===true &&(
           <div className="user">
-            <div className="box" id='coolor' >
+            <div className="box" id='coolor' style={profiley===true ? {backgroundColor:"#EE4950",color:"#f5f5f5"} : {backgroundColor:"transparent",color:"#EE4950"}} onClick={(e)=>{
+              e.preventDefault()
+              sethome(false);
+              setartist(false);
+              setfavourites(false);
+              setplaylist(false);
+              sidebar.index=900;
+              localStorage.setItem("sidebar",JSON.stringify(sidebar));
+              navigate("/profile")
+            }} >
             <AccountCircleOutlinedIcon className='icon' />
              <h1>{data?.username}</h1>
             </div>

@@ -97,11 +97,7 @@ nav .line{
     background-color: #323234;
 }
 
-nav .lower{
-    width: 100%;
-    height: 20%;
-    animation: transitionIn 1.5s;
-}
+
 nav .login{
     min-width: 90%;
     width: 90%;
@@ -126,12 +122,18 @@ nav .login:hover{
     cursor: pointer;
 }
 
+nav .lower{
+    width: 100%;
+    height: 30%;
+    animation: transitionIn 1.5s;
+    gap: 1rem;
+}
 nav .lower .user{
     width: 90%;
-    height: 80%;
-    padding-top: 0rem;
+    height: 100%;
+    padding-top: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     grid-gap: 0.5rem;
@@ -141,7 +143,7 @@ nav .lower .user{
 }
 nav .lower .user .box{
     width: 100%;
-    height: 2rem;
+    height: 27%;
     display: grid;
     grid-template-columns: 20% 70%;
     align-items: center;
@@ -150,6 +152,7 @@ nav .lower .user .box{
     text-transform: capitalize;
     font-weight: 400;
     color: #E3E3E3;
+    border-radius: 6px;
 }
 nav .lower .user .box:hover{
     cursor: pointer;

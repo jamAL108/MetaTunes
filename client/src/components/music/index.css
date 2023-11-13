@@ -42,7 +42,7 @@
 
 
     .music .left{
-        width: 20%;
+        width: 30%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
@@ -51,8 +51,9 @@
         grid-gap: 1rem;
     }    
     .music .left .image{
-    width: 30%;
-    height: 60%;
+        margin-left: 20px;
+    width: 16%;
+    height: 58%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +63,7 @@
         height: 100%;
     }
     .music .left .names{
-        width: 70%;
+        width: 100%;
         color: #E4E4E6;
         display: flex;
         flex-direction: column;
@@ -92,19 +93,21 @@
     .music .middle button{
         background-color: inherit;
         border: none;
-        width: 32%;
+        width: 20%;
         height: 60%;
     }
     .music .middle button .icon{
         color: #E4E4E6;
-        width: 100%;
-        height: 100%;
+        width: 50%;
+        height: 80%;
         background-color: transparent;
+        cursor: pointer;
     }
     .music .middle button .iconey{
         color: #E4E4E6;
         width: 65%;
         height: 65%;
+        cursor: pointer;
     }
 
 
@@ -276,6 +279,7 @@
         grid-gap: 0.1rem;
     }    
     .music .left .image{
+        margin-left: 0px;
     width: 40%;
     height: 70%;
     display: flex;

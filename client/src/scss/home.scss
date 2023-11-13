@@ -30,6 +30,7 @@
 .home .search{
     width: 90%;
     height:2rem;
+    margin-bottom: 0.4rem;
 }
 .home .search input{
     width: 100%;
@@ -48,10 +49,10 @@
 }
 .home .other .line{
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     width: 90%;
     margin-left: 0.7%;
-    height: 4px;
+    height: 3px;
     background-color: #323234;
 }
 .home .search .inside{
@@ -61,9 +62,124 @@
     color: #323234;
     left: 95%;
 }
+.home .other .search input::placeholder{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.home .other .search input:focus{
+    border: 2px solid #EE4950;
+}
+.home .other .search input{
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 100%;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border: 2px solid #323234;
+    border-radius: 6px;
+    color: #E3E3E3;
+}
+.home .other .searching{
+    width: 90%;
+    min-height: 70.7vh;
+    height: 70.7vh;
+    overflow-y: scroll;
+    z-index: 9991;
+    background-color: rgba(0, 0, 0, .55);  
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction:column ;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 2.5rem;
+    gap: 0.3rem;
+ }
+ .home .other .searching::-webkit-scrollbar{
+    display: none;
+ }
+ .home .other .searching .box:first-child {
+    margin-top: 1rem;
+ }
+ .home .other .searching .box:last-child{
+    margin-bottom: 1rem;
+ }
+ .home .other .searching .box{
+    width: 60%;
+    height: 5rem;
+     max-height:5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+ }
+ .home .other .searching .box .image{
+    width: 15%;
+    max-height: 100%;
+     height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .home .other .searching .box .image img{
+    width: 65%;
+    max-width: 65%;
+    max-height: 82%;
+    height: 82%;
+    object-fit: cover;
+ }
+ .home .other .searching .box .names{
+     display: flex;
+     flex-direction: column;
+     width: 75%;
+     height: 100%;
+     justify-content: flex-end;
+     align-items:flex-start;
+     text-transform: capitalize;
+     margin-top: -1.2rem;
+ }
+ .home .other .searching .box .names h1{
+    font-size: 0.9rem;
+    margin: 0;
+    margin-bottom: 0.12rem;
+    font-weight:500 ;
+ }
+ .home .other .searching .box .names h2{
+    font-size: 0.8rem;
+    margin: 0;
+    margin-bottom: 0.2rem;
+    font-weight:500 ;
+ }
+ .home .other .searching .box .names .down{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+    /* height: 50%; */
+ }
+ .home .other .searching .box .names p{
+    margin: 0;
+    margin-bottom: 0.2rem;
+    font-weight: 550;
+    color:#E3E3E3;
+     opacity:0.6;
+     font-size:0.7rem;
+ }
+.home .other .search .inside{
+     color: #EE4950;
+    right: 20%;
+    cursor: pointer;
+}
+
+
+
+
 .home .allplaylist{
     width: 90%;
-    height: 60vh;
+    height: 65vh;
     background-color: white;
     margin-left: 0.5%;
     border-radius: 12px;
@@ -75,6 +191,7 @@
     flex-direction: column;
     justify-content:center;
     position: relative;
+    margin-top: 0.4rem;
 }
 .home .allplaylist .item{
     margin-top: 16%;
@@ -106,16 +223,8 @@
     cursor: pointer;
 }
 
-.home .other .searching{
-    width: 92%;
-    min-height: 50vh;
-    height: auto;
-    position: absolute;
-    top: 4.4rem;
-    z-index: 9999;
-    background-color: rgba(0, 0, 0, .55);  
-    backdrop-filter: blur(15px);
-}
+
+
 @media screen and (max-width:913px) {
     .home .other{
         top: 10%;
@@ -134,7 +243,7 @@
         margin-top: 1.5rem;
         margin-right:0.5rem;
         margin-left: 2.7%;
-        margin-bottom:1rem;
+        margin-bottom: 0.6rem;
     }
     .home .other .search input::placeholder{
         font-size: 1.2rem;
@@ -256,6 +365,7 @@
         height: 47.5vh;
         background-color: white;
         margin-left: 2.7%;
+        margin-top: 0.6rem;
     }
     .home .allplaylist .item{
         margin-left: 5%;

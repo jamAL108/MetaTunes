@@ -10,8 +10,10 @@ import Artist from './pages/artistdetail';
 import Addplaylist from './pages/addplaylist';
 import Commonplaylist from './pages/commonplaylist';
 import Viewplaylist from './pages/viewplaylist';
+import Profile from './pages/newartists/profile'
 import Song from './pages/allsongs';
 import MusicPlayer from './components/music/index';
+import CreateArtist from './pages/newartists/createartist';
 import { useSelector } from 'react-redux';
 import Categories from './pages/categories';
 import {  ToastContainer } from 'react-toastify';
@@ -33,6 +35,8 @@ const player = useSelector((state) => state.player);
       <Route path='/playlist/:id' element={<Viewplaylist/>}/>
       <Route path='/categories/:id' element={<Categories/>}/>
       <Route path='Songs' element={<Song/>}/>
+      <Route path='/profile' element={<Profile/>}/>
+      <Route path='/createartist' element={<CreateArtist/>}/>
      </Routes>
      {player.currentTrack?._id && (
          <MusicPlayer/>

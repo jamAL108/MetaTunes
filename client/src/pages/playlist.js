@@ -44,9 +44,11 @@ const Playlist = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
 useEffect(()=>{
+  if(window.location.href.includes('playlist')){
   const data = JSON.parse(localStorage.getItem("sidebar"));
   data.index=3;
   localStorage.setItem("sidebar",JSON.stringify(data));
+  }
     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
 const [playlists,setplaylists]=useState([]);
@@ -92,7 +94,9 @@ useEffect(()=>{
                            e.preventDefault();
                            navigate('/addplaylist');
                     }} >
+                      <div className="icon">
                         <AddIcon className="adddd"/>
+                        </div>
                         <p>Create new Playlist</p>
                     </div>
                     </div>

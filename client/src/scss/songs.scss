@@ -83,6 +83,11 @@
     height:100%;
     width:100%;
     object-fit:cover;
+    transition: 0.9s ease;
+}
+.songs .items .boxzzy .image img:hover{
+    transform: scale(1.08);
+    opacity: 0.6;
 }
 
 .songs .items .boxzzy .below{

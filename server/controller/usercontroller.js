@@ -2,6 +2,7 @@ import song from '../models/song.js';
 import User from '../models/user.js';
 import bcrypt from 'bcryptjs';
 import playlist from '../models/playlist.js';
+import Newartist from '../models/newartist.js';
 
 export const Login = async(req,res)=>{
    try{
@@ -176,3 +177,52 @@ export const addfavourites = async(req,res)=>{
     return res.status(404).send({error:err});
    }
 };
+
+export const getdetails = async(req,res)=>{
+   try{
+      const data1 = req.body;
+      console.log(data1);
+      console.log("HEllo")
+      const data = await User.findOne({username:data1.person});
+      const artist = await Newartist.findOne({user:data._id})
+      let isArtist=false;
+      if(artist){
+         isArtist=true
+      }
+      const user = {
+         data:data,
+         isArtist:isArtist,
+         artist:artist
+      }
+      console.log(user)
+      return res.status(200).send({response:user});
+   }catch(err){
+    console.log(err);
+    return res.status(404).send({error:err});
+   }
+};
+
+export const becomeArtist = async(req,res)=>{
+   try{
+      const data = req.body;
+      console.log(data);
+      console.log("HEllo")
+      const user = await Newartist.findOne({user:data.id});
+      if(user){
+         return res.status(400).send({message:"Artist already exist"})
+      }
+      const newartist = new Newartist({
+         name:data.info.name,
+         user:data.id,
+         note:data.note,
+         imageURL:data.coverpic,
+         language:language
+      })
+      await newartist.save();
+      return res.status(200).send({response:newartist});
+   }catch(err){
+    console.log(err);
+    return res.status(404).send({error:err});
+   }
+};
+

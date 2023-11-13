@@ -1,0 +1,179 @@
+.Profile{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.Profile .others{
+    background-color:inherit;
+    position: absolute;
+    top: 5%;
+    left: 22.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    color: #E3E3E3;
+    width: 77.6vw;
+    height: auto;
+    min-height: 100vh;
+}
+.Profile .others .spin{
+    width: 100%;
+    height: 70vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
+.Profile .others .heading{
+    width: 90%;
+    height:20vh;
+}
+.Profile .others .lineey{
+    width: 90%;
+    height: 3px;
+    background-color: #343434;
+}
+.Profile .others .main{
+    width: 90%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Profile .others .main .left{
+    width: 50%;
+    height: 80%;
+    border-right: 2px solid #343434;
+    padding-left: 50px;
+}
+
+.Profile .others .main .right{
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.Profile .others .main .right h3{
+    font-size: 1.27rem;
+    font-weight: 450;
+    width: 90%;
+}
+.Profile .others .main .right button{
+    border: none;
+    background-color: #EE4950;
+    color: #f5f5f5;
+    padding: 10px 25px;
+    font-size: 1.06rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.6s ease;
+}
+.Profile .others .main .right button:hover{
+    transform: scale(1.06);
+}
+
+
+
+@media screen and (max-width:913px) {
+    .Profile .spin{
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0%;
+    }
+    .Profile .others{
+        top: 10%;
+        left: 0%;
+        width: 100vw;
+        height:auto;
+        min-height: 90vh;
+        display: flex;
+        overflow-y: scroll;
+        flex-direction: column;
+        align-items: center;
+    }
+    .Profile  .others .heading{
+        width: 90%;
+        max-height:16vh;
+        height: 16vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .Profile .others .heading h1{
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-bottom: 0rem;
+    }
+    .Profile  .others .heading p{
+        font-size:1.13rem;
+        opacity: 0.6;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    .Profile .others .lineey{
+        width: 96%;
+        height: 3px;
+        margin-top:0rem;
+        background-color: #343434;
+    }
+
+    .Profile .others .main{
+        width: 90%;
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .Profile .others .main .left{
+        padding-top: 10px;
+        width: 90%;
+        height: 80%;
+        border-bottom: 2px solid #343434;
+        border-right: none;
+        padding-left: 0px;
+    }
+    
+    .Profile .others .main .right{
+        width: 90%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .Profile .others .main .right h3{
+        font-size: 1.27rem;
+        font-weight: 450;
+        width: 90%;
+    }
+    .Profile .others .main .right button{
+        border: none;
+        background-color: #EE4950;
+        color: #f5f5f5;
+        padding: 10px 25px;
+        font-size: 1.06rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.6s ease;
+    }
+    .Profile .others .main .right button:hover{
+        transform: scale(1.06);
+    }
+    
+}

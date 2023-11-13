@@ -70,7 +70,7 @@
 }
 .favourites .others .songlistyy .box{
     width: 100%;
-    height: 6.7rem;
+    height: 6rem;
     background-color: #18181a;
     display: flex;
     justify-content:space-between;
@@ -85,12 +85,13 @@
     display: flex;
     justify-content:flex-start;
     align-items: center;
+    gap: 0.6rem;
 }
 
 .favourites .others .songlistyy .box .left .image{
-    min-width: 18% !important;
-    width: 18%;
-    height: 78%;
+    min-width: 14% !important;
+    width: 14%;
+    height: 72%;
     margin-left: 1rem;
     border-radius: 8px;
 }
@@ -114,13 +115,13 @@
      user-select: none; /* Standard syntax */
 }
 .favourites .others .songlistyy .box .left .names h2{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 500;
     margin-top: 0rem;
     text-transform: capitalize;
 }
 .favourites .others .songlistyy .box .left .names p{
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.5;
     margin-top: 0rem;
 }
@@ -147,17 +148,20 @@
     cursor: pointer;
 }
 
-.favourites .others .songlistyy .box .right .playinggg {
-    font-size: 0.8rem;
+.favourites .others .songlistyy .box .right .playing {
+    font-size: 1rem;
     color: #EE4950;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: -2rem;
+    width: 40%;
+    gap: 0.5rem;
+    text-transform: capitalize;
 }
-.favourites .others .songlistyy .box .right .playinggg .icon{
-    width: 45%;
-    height: 45%;
+.favourites .others .songlistyy .box .right .playing .icon{
+    width: 25%;
+    height: 20%;
 }
 
 
@@ -230,6 +234,7 @@
         display: flex;
         justify-content:flex-start;
         align-items: center;
+        gap: 0rem;
     }
 
     .favourites .others .songlistyy .box .left .image{
@@ -281,6 +286,9 @@
         justify-content: center;
         align-items: center;
         margin-left: -2rem;
+        width: 55%;
+        gap: 0.2rem;
+        text-transform: capitalize;
     }
     .favourites .others .songlistyy .box .right .playing .icon{
         width: 25%;
