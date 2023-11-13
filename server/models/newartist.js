@@ -8,8 +8,8 @@ const Newartist = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
 		ref: "users",
     },
-    imageURL:{
-        type:String
+    image:{
+        type:{}
     },
     note:{
         type:String

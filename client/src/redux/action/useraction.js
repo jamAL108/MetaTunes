@@ -9,12 +9,12 @@ import{
  FAVOURITES,
  EMPTYFAVS,
  EMPTYPLAYS,
- PLAYLISTS,PLAYLISTCREATED,COMMONPLAYLIST , ALLSONG , CATEGORIES , USERDETAILS
+ PLAYLISTS,PLAYLISTCREATED,COMMONPLAYLIST , ALLSONG , CATEGORIES , USERDETAILS  , ARTISTCREATED
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
-const URL= "https://meta-tunes.onrender.com";
-// const URL = "http://localhost:8000"
+// const URL= "https://meta-tunes.onrender.com";
+const URL = "http://localhost:8000"
 
 export const getdetails=(data)=>async(dispatch)=>{
   try{
@@ -37,6 +37,29 @@ export const getdetails=(data)=>async(dispatch)=>{
    console.log(err);
  }
 }
+
+export const createartist=(data)=>async(dispatch)=>{
+  try{
+    const api =`${URL}/user/createartist`;
+    const res = await fetch(api,{
+     method: "POST",
+     headers: {
+       "Content-Type":"application/json"
+      },
+      body:JSON.stringify(data)
+     });
+    const msg = await res.json();
+    console.log(msg);
+    if(res.status === 200 ){
+      const dat = msg.response;
+      console.log(dat);
+      dispatch({type:ARTISTCREATED,payload:true});
+    }
+ }catch(err){
+   console.log(err);
+ }
+}
+
 
 export const getallartist = ()=>async(dispatch)=>{
   try{

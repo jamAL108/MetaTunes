@@ -202,7 +202,7 @@ export const getdetails = async(req,res)=>{
    }
 };
 
-export const becomeArtist = async(req,res)=>{
+export const createartist = async(req,res)=>{
    try{
       const data = req.body;
       console.log(data);
@@ -214,9 +214,9 @@ export const becomeArtist = async(req,res)=>{
       const newartist = new Newartist({
          name:data.info.name,
          user:data.id,
-         note:data.note,
-         imageURL:data.coverpic,
-         language:language
+         note:data.info.descriptions,
+         image:data.coverpic,
+         language:data.info.language
       })
       await newartist.save();
       return res.status(200).send({response:newartist});

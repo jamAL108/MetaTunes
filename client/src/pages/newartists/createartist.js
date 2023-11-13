@@ -5,20 +5,21 @@ import "react-toastify/dist/ReactToastify.css";
 import Nav from '../..//components/nav';
 import AddIcon from '@mui/icons-material/Add';
 import '../../scss/addplaylist.scss';
-// import { useDispatch} from 'react-redux';
+import { useDispatch , useSelector} from 'react-redux';
 import $ from 'jquery'
 import './createArtist.scss'
-// import { createplaylist } from '../../redux/action/useraction';
-// import { PLAYLISTCREATED } from '../../redux/actiontypes';
+import { createartist } from '../../redux/action/useraction';
+import {ARTISTCREATED} from '../../redux/actiontypes';
 
 const Createartist = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     const navigate = useNavigate();
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [coverpic,setcoverpic] = useState({
         name:"",
         myfile:""
     })
+    const store = useSelector((state)=>state);
     useEffect(()=>{
        if(!user){
         toast.warn("PLease login to become an Artist", {
@@ -36,8 +37,7 @@ const Createartist = () => {
     const [info , setinfo] = useState({
         name:"",
         description:"",
-        language:"",
-        id:user._id
+        language:""
       })
     const handledefault=async(e)=>{
         setcoverpic({...coverpic , myfile:"https://firebasestorage.googleapis.com/v0/b/metatunes-2195e.appspot.com/o/musiccoverpic%2Fdefault_cover.jpg?alt=media&token=19ea7923-6e55-41b7-887c-3467f056aadf" , name:"default"});
@@ -84,29 +84,28 @@ const create =()=>{
     });
   }else{
     const obj ={
-      username:user.username,
       info:info,
-      coverpic:coverpic
+      coverpic:coverpic,
+      id:user._id
     }
     console.log(obj);
-    // dispatch(createplaylist(obj,navigate));
+    dispatch(createartist(obj,navigate));
   }
 }
 
-// const store = useSelector((state)=>state);
-// useEffect(()=>{
-//   if(store.user.playlistcreated===true){
-//   toast.success("Playlist Created", {
-//     position: toast.POSITION.TOP_CENTER,
-//     draggablePercent: 60,
-//     autoClose:4000,
-//     hideProgressBar:true
-//   });
-//   dispatch({type:PLAYLISTCREATED , payload:false});
-//   navigate("/playlist");
-// }
-//   // eslint-disable-next-line react-hooks/exhaustive-deps
-// },[store.user.playlistcreated])
+useEffect(()=>{
+  if(store.user.artistcreated===true){
+  toast.success("Playlist Created", {
+    position: toast.POSITION.TOP_CENTER,
+    draggablePercent: 60,
+    autoClose:4000,
+    hideProgressBar:true
+  });
+  dispatch({type:ARTISTCREATED , payload:false});
+  navigate("/profile");
+}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+},[store.user.artistcreated])
 
 
      
@@ -148,7 +147,7 @@ $("#profileImage").unbind("click").bind("click",function(e) {
                        <div className="input" style={{gap:"1.5rem"}}>
                         <div className="item1" id='team' style={{marginTop:"2rem"}}>
                           <label htmlFor="input1">Your name <span>*</span></label>
-                          <input type="text" maxLength={20} value={info.name} className='name' onChange={(e)=>{
+                          <input type="text" maxLength={90} value={info.name} className='name' onChange={(e)=>{
                             setinfo({...info , name:e.target.value})
                           }} />
                         </div>
@@ -161,7 +160,7 @@ $("#profileImage").unbind("click").bind("click",function(e) {
                         <div className="item1">
                           <label htmlFor="input1">Your preferred Language<span>*</span></label>
                           <input className='para' value={info.language} onChange={(e)=>{
-                            setinfo({...info , langauage:e.target.value})
+                            setinfo({...info , language:e.target.value})
                           }} />
                         </div>
                        </div>

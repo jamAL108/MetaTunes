@@ -6,7 +6,8 @@ import { Login ,
          removefavourites,
          getplaylists ,
          createplaylist,
-         getdetails
+         getdetails,
+         createartist
         } from "../controller/usercontroller.js";
 
 
@@ -19,5 +20,6 @@ router.post("/getfavourites",getfavourites);
 router.post("/getplaylists",getplaylists);
 router.post("/createplaylist", createplaylist);
 router.post("/getdetails",getdetails);
+router.post("/createartist",createartist)
 
 export default router;
