@@ -244,6 +244,7 @@ const timery = debounce(()=>{
     <Allartist/>
     <Song/>
     <Section/>
+    
     <div className="lineyyyyyy"></div>
     <div className="lineyyyyyy"></div>
     <div className="lineyyyyyy"></div>

@@ -203,12 +203,12 @@
     margin-bottom: 1rem;
 }
 .home .allplaylist .item h2  {
-   font-size: 1.5rem;
+   font-size: 1.9rem;
    margin: 0.4rem;
 }
 .home .allplaylist .item p{
     margin: 0.4rem;
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 .home .allplaylist .item button{
     width: 15%;
@@ -218,9 +218,12 @@
    background-color: #E3E3E3;
    color: black;
    margin: 0.4rem;
+   transition: 0.5s ease;
 }
 .home .allplaylist .item button:hover{
     cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.05);
 }
 
 
