@@ -13,6 +13,7 @@ import { getallsong } from '../redux/action/useraction';
 import {
   SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
 } from '../redux/playertypes';
+import { PROCEED } from '../redux/actiontypes';
 const Song = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -39,16 +40,17 @@ const Song = () => {
     },[])
     useEffect(()=>{
       if(store.user.allsong.length!==0){
+        console.log("Helloo form allsong")
         let dat = store.user.allsong;
         for(var i=0;i<dat.length;i++){
           dat[i].idx=i;
         }
         const data = dat;
         localStorage.setItem("song",JSON.stringify(data));
-
         let iddx =[];
         let randoms=[];
         let j=0;
+        dispatch({type:PROCEED,payload:true})
         while(randoms.length!==8){
          const randomsong = data[(Math.floor(Math.random() * (data.length)))];
          if(randoms.indexOf(randomsong) === -1 && (randomsong.language==="english" || randomsong.language==="hindi")){

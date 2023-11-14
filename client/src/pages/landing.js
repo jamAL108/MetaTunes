@@ -11,6 +11,7 @@ import {
   SETCURRENTTRACK , SETPLAYING , SETTRACKLIST
 } from '../redux/playertypes';
 import CloseIcon from '@mui/icons-material/Close';
+import Topchart from '../components/topcharts';
 const Landing = () => {
   const store= useSelector((state)=>state);
   const dispatch = useDispatch();
@@ -244,7 +245,7 @@ const timery = debounce(()=>{
     <Allartist/>
     <Song/>
     <Section/>
-    
+    <Topchart/>
     <div className="lineyyyyyy"></div>
     <div className="lineyyyyyy"></div>
     <div className="lineyyyyyy"></div>

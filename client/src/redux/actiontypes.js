@@ -16,3 +16,4 @@ export const ALLSONG = "ALLSONG";
 export const CATEGORIES = "CATEGORIES";
 export const USERDETAILS = "USERDETAILS";
 export const ARTISTCREATED = "ARTISTCREATED"
+export const PROCEED = "PROCEED"

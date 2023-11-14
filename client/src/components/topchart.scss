@@ -1,0 +1,264 @@
+.topchart{
+    width: 88%;
+    height: 85vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 10vh;
+}
+.topchart .charts{
+    width: 100%;
+    height: 100%;
+    background-color: #27272A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    border-radius: 12px;
+
+}
+.topchart .charts h1{
+    width: 90%;
+    height: 10%;
+    margin-left: 20px;
+    text-align: left;
+}
+.topchart .charts .boxyes{
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
+    // display: none;
+}
+.topchart .charts .boxyes .box{
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    cursor: pointer;
+}
+.topchart .charts .boxyes .box .small{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #18181B;
+    border-radius: 8px;
+    padding-left: 15px;
+    // display: none;
+}
+.topchart .charts .boxyes .box .small img{
+    width: 3.2rem;
+    height: 65%;
+}
+.topchart .charts .boxyes .box .small .names{
+    width: calc(100% - 3.2rem);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.7rem;
+    text-transform: capitalize;
+}
+.topchart .charts .boxyes .box .small .names h1{
+    font-size: 1rem;
+    margin: 0;
+}
+.topchart .charts .boxyes .box .small .names p{
+    font-size: 0.7rem;
+    margin: 0;
+    margin-top: 1rem;
+    opacity: 0.6;
+}
+
+@media  screen and (max-width:913px){
+    .topchart{
+        width: 88%;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 10vh;
+    }
+    .topchart .charts{
+        width: 100%;
+        height: 100%;
+        background-color: #27272A;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+        border-radius: 12px;
+    
+    }
+    .topchart .charts h1{
+        width: 90%;
+        height: 5%;
+        margin-left: 20px;
+        text-align: left;
+    }
+    .topchart .charts .boxyes{
+        width: 90%;
+        height: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        // display: none;
+    }
+    .topchart .charts .boxyes .box{
+        width: 100%;
+        height: 4.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        cursor: pointer;
+    }
+    .topchart .charts .boxyes .box h2{
+        font-size: 1.4rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .topchart .charts .boxyes .box:last-child h2{
+        margin-left: -10px;
+    }
+    .topchart .charts .boxyes .box .small{
+        width: 85%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #18181B;
+        border-radius: 8px;
+        padding-left: 15px;
+        // display: none;
+    }
+    .topchart .charts .boxyes .box .small img{
+        width: 3.2rem;
+        height: 65%;
+    }
+    .topchart .charts .boxyes .box .small .names{
+        width: calc(100% - 3.2rem);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0.7rem;
+        text-transform: capitalize;
+    }
+    .topchart .charts .boxyes .box .small .names h1{
+        font-size: 1.1rem;
+        margin: 0;
+    }
+    .topchart .charts .boxyes .box .small .names p{
+        font-size: 0.9rem;
+        margin: 0;
+        margin-top: 1rem;
+    }
+    
+}
+
+@media  screen and (max-width:413px){
+    .topchart{
+        width: 88%;
+        height: 120vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 8vh;
+        margin-bottom: 10vh;
+    }
+    .topchart .charts{
+        width: 100%;
+        height: 100%;
+        background-color: #27272A;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+        border-radius: 12px;
+    
+    }
+    .topchart .charts h1{
+        width: 90%;
+        height: 5%;
+        margin-left: 20px;
+        text-align: left;
+    }
+    .topchart .charts .boxyes{
+        width: 90%;
+        height: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25spx;
+        // display: none;
+    }
+    .topchart .charts .boxyes .box{
+        width: 100%;
+        height: 4.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        cursor: pointer;
+    }
+    .topchart .charts .boxyes .box h2{
+        font-size: 1.4rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .topchart .charts .boxyes .box:last-child h2{
+        margin-left: -10px;
+    }
+    .topchart .charts .boxyes .box .small{
+        width: 85%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #18181B;
+        border-radius: 8px;
+        padding-left: 15px;
+        // display: none;
+    }
+    .topchart .charts .boxyes .box .small img{
+        width: 3.2rem;
+        height: 65%;
+    }
+    .topchart .charts .boxyes .box .small .names{
+        width: calc(100% - 3.2rem);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0.7rem;
+        text-transform: capitalize;
+    }
+    .topchart .charts .boxyes .box .small .names h1{
+        font-size: 1rem;
+        margin: 0;
+    }
+    .topchart .charts .boxyes .box .small .names p{
+        font-size: 0.75rem;
+        margin: 0;
+        margin-top: 1rem;
+        opacity: 0.6;
+    }
+}
