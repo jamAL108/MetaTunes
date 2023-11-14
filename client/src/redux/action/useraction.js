@@ -13,8 +13,8 @@ import{
 } from '../actiontypes';
 import { LOGINCOLOR , USEREXIT } from '../propsaction';
 
-// const URL= "https://meta-tunes.onrender.com";
-const URL = "http://localhost:8000"
+const URL= "https://meta-tunes.onrender.com";
+// const URL = "http://localhost:8000"
 
 export const getdetails=(data)=>async(dispatch)=>{
   try{
