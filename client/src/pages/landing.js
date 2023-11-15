@@ -5,6 +5,7 @@ import { useDispatch, useSelector  } from 'react-redux';
 import Song from '../components/songs';
 import '../scss/home.scss';
 import Allartist from '../components/allartist';
+import Genre from '../components/genre'
 import { useNavigate } from 'react-router-dom';
 import Section from '../components/section';
 import {
@@ -248,6 +249,7 @@ const timery = debounce(()=>{
     <Song/>
     <Section/>
     <Topchart/>
+    <Genre/>
     <div className="lineyyyyyy"></div>
     <div className="lineyyyyyy"></div>
     <div className="lineyyyyyy"></div>

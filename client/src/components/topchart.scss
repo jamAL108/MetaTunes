@@ -246,9 +246,6 @@
         justify-content: center;
         align-items: flex-start;
     }
-    .topchart .charts .boxyes .box:last-child h2{
-        margin-left: -10px;
-    }
     .topchart .charts .boxyes .box .small{
         width: 85%;
         height: 100%;
@@ -278,6 +275,9 @@
         font-size: 0.85rem;
         margin: 0;
         font-weight: 550;
+    }
+    .topchart .charts .boxyes .box:last-child h2{
+        margin-left: 0px;
     }
     .topchart .charts .boxyes .box .small .names p{
         font-size: 0.74rem;

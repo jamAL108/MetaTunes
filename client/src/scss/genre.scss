@@ -1,0 +1,138 @@
+.genre{
+    width: 88%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 8vh;
+}
+.genre  h1{
+    width: 100%;
+    height: 10%;
+    text-align: left;
+    font-size: 1.8rem;
+}
+.genre .container{
+    width: 100%;
+    height: 45vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 1.6rem;
+}
+.genre .container .box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.genre .container #box1{
+    background-image: url("../images/cat_pop.png");
+    background-position:100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.genre .container #box2{
+    background-image: url("../images/cat_chill.png");
+    background-position:100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.genre .container #box3{
+    background-image: url("../images/cat_podcast.png");
+    background-position:100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.genre .container #box4{
+    background-image: url("../images/cat_romance.png");
+    background-position:100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.genre .container #box5{
+    background-image: url("../images/cat_hiphop.png");
+    background-position:100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.genre .container #box6{
+    background-image: url("../images/cat_rock.png");
+    background-position:100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.genre .container .box .item{
+    width: 100%;
+    height: 97%;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.genre .container .box .item h2{
+    font-size: 1.25rem;
+    font-weight: 550;
+    text-transform: capitalize;
+}
+
+
+@media screen and (max-width:913px) {
+    .genre{
+        width: 88%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 14vh;
+        margin-bottom: 8vh;
+    }
+    .genre  h1{
+        width: 100%;
+        height: 10%;
+        text-align: left;
+        font-size: 1.8rem;
+    }
+    .genre .container{
+        width: 100%;
+        height: 150vh !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+        gap: 0.6rem;
+    }
+    .genre .container .box{
+        width: 100%;
+        height: 5.5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 8px;
+    }
+    .genre .container .box .item{
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.45);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .genre .container .box .item h2{
+        font-size: 1.25rem;
+        font-weight: 550;
+        text-transform: capitalize;
+    }
+    
+}
