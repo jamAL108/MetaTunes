@@ -4,7 +4,8 @@ const Loading = () => {
   return (
      <div className="loader">
         <div className="header">
-            <div className="image"></div>
+            <div className="image">
+            </div>
             <div className="text">
                 <div className="text1"></div>
                 <div className="text2">

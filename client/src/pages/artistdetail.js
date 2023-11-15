@@ -29,6 +29,9 @@ const Artistdetail = () => {
     const [artist,setartist]=useState({});
     const [show,setshow]=useState(false);
     const URL= "https://meta-tunes.onrender.com";
+    useEffect(()=>{
+      document.body.style.overflowY="scroll"
+    },[])
     const func =async()=>{
     try{
       const obj={
@@ -117,7 +120,9 @@ useEffect(()=>{
   <Nav/>
   <ToastContainer />
       {show===false && Object.keys(artist).length===0 && (
+        <>
         <Loading/>
+        </>
       )}
       {show===true && Object.keys(artist).length!==0 && (
         <div className="others">
