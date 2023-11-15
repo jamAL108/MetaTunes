@@ -19,6 +19,7 @@
     width: 77.6vw;
     height: auto;
     min-height: 100vh;
+    margin-bottom: 10vh;
 }
 .art .others .headery{
     width: 90%;
@@ -155,6 +156,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 0.5rem;
 }
 .art .others .down .songlist .box .left .main .names {
     width: 100%;
@@ -162,8 +164,8 @@
 }
 .art .others .down .songlist .box .left .main .names h2{
     margin: 0;
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 530;
     text-transform: capitalize;
     font-family: "Baloo bhai 2",sans-serif;
     margin: 0.5rem;
@@ -375,11 +377,13 @@
          align-items:flex-start;
          margin-left: -0.5rem;
     }
+    .art .others .down .songlist .box .left .main{
+        gap: 0rem;
+    }
     .art .others .down .songlist .box .left .main .names h2{
-        font-size: 1rem;
-        font-weight: 370;
+        font-size: 0.9rem;
+        font-weight: 550;
         margin-top: 0rem;
-    
         text-transform: capitalize;
     }
     

@@ -6,10 +6,13 @@ import {
 import './topchart.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { PROCEED } from '../redux/actiontypes';
+import { ColorRing } from 'react-loader-spinner';
 const Topchart = () => {
   const [data,setdata] = useState([]);
   const dispatch = useDispatch()
   const store = useSelector((state)=>state)
+  const [flag,setflag]=useState(false)
+  const { currentTrack , isPlaying } = useSelector((state) => state.player);
   useEffect(()=>{
     setdata(Chart)
                 // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,6 +45,7 @@ const Topchart = () => {
           }
           console.log(arr)
           setdata(arr)
+          setflag(true)
           dispatch({type:PROCEED,payload:false})
         }
    }
@@ -73,6 +77,7 @@ const Topchart = () => {
     <div className="topchart">
       <div className="charts">
         <h1>Top chart</h1>
+        {flag===true ? (
         <div className="boxyes">
             {data.length!==0 && data.map((item,idx)=>(
                  <div className="box" onClick={(e)=>{
@@ -82,7 +87,7 @@ const Topchart = () => {
                   <h2>{idx+1}</h2>
                   <div className="small">
                     <img src={item.imageURL} alt="erg" />
-                    <div className="names">
+                    <div className="names" style={(currentTrack?._id === item._id && isPlaying) ? {color:"#EE4950"} : {color:"#f5f5f5"} }>
                       <h1>{item.name}</h1>
                       <p>{item.artist}</p>
                     </div>
@@ -90,6 +95,19 @@ const Topchart = () => {
                  </div>
               ))}
         </div>
+        ) : (
+          <div className='spin'>
+                    <ColorRing
+                      visible={true}
+                      height="90"
+                      width="90"
+                      ariaLabel="blocks-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="blocks-wrapper"
+                      colors={['#EE4950','#EE4950','#EE4950','#EE4950','#EE4950']}
+                    />
+          </div>
+        )}
         </div>
     </div>
   )
