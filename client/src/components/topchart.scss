@@ -92,6 +92,9 @@
     margin-top: 1rem;
     opacity: 0.6;
 }
+.topchart .charts .boxyes .box:focus {
+    outline: none;
+}
 
 @media  screen and (max-width:913px){
     .topchart{
@@ -231,6 +234,9 @@
         align-items: flex-start;
         gap: 1rem;
         cursor: pointer;
+    }
+    .topchart .charts .boxyes .box:focus {
+        outline: none;
     }
     .topchart .charts .boxyes .box h2{
         font-size: 1.1rem;
