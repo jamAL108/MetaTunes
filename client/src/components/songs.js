@@ -108,7 +108,7 @@ const Song = () => {
     <div className="songs">
        <ToastContainer />
        <div className="heading">
-          <h1>You may like <PlayCircleIcon className='play' /></h1>
+          <h1>Popular Around You <PlayCircleIcon className='play' /></h1>
          <p onClick={(e)=>{
             e.preventDefault();
            navigate('/artist');
