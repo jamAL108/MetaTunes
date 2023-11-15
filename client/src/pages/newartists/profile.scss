@@ -46,14 +46,27 @@
     align-items: center;
 }
 .Profile .others .main .left{
-    width: 50%;
+    background-color: #27272A;
+    width: 35%;
     height: 80%;
-    border-right: 2px solid #343434;
-    padding-left: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+    flex-direction: column;
+    border-radius: 10px;
 }
-
+.Profile .others .main .left h2{
+    margin-bottom: 0rem;
+    font-size: 1.3rem;
+}
+.Profile .others .main .left p{
+    margin-bottom: 0rem;
+    font-size: 0.98rem;
+    font-weight: 550;
+}
 .Profile .others .main .right{
-    width: 50%;
+    width: 65%;
     height: 80%;
     display: flex;
     justify-content: flex-start;

@@ -14,6 +14,7 @@ import Profile from './pages/newartists/profile'
 import Song from './pages/allsongs';
 import MusicPlayer from './components/music/index';
 import CreateArtist from './pages/newartists/createartist';
+import Newartist from './pages/newartist'
 import { useSelector } from 'react-redux';
 import Categories from './pages/categories';
 import {  ToastContainer } from 'react-toastify';
@@ -30,6 +31,7 @@ const player = useSelector((state) => state.player);
       <Route path='/Register' element={<Register/>}/>
       <Route path='/artists' element={<Allartist/>}/>
       <Route path='/artist/:id' element={<Artist/>}/>
+      <Route path='/newartist' element={<Newartist/>}/>
       <Route path='/addplaylist' element={<Addplaylist/>}/>
       <Route path='/commonplaylist' element={<Commonplaylist/>}/>
       <Route path='/playlist/:id' element={<Viewplaylist/>}/>

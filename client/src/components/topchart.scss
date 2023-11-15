@@ -4,6 +4,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    // margin: auto;
     margin-bottom: 10vh;
 }
 .topchart .charts{
@@ -31,7 +32,7 @@
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     // display: none;
 }
 .topchart .charts .spin{
@@ -56,6 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 5%;
 }
 .topchart .charts .boxyes .box .small{
     width: 85%;

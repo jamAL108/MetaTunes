@@ -39,6 +39,7 @@
     border: 4px solid #323234;
     border-radius: 6px;
     color: #E3E3E3;
+    padding-left: 10px !important;
 }
 .home .search input:focus{
     outline: none !important;
@@ -203,12 +204,12 @@
     margin-bottom: 1rem;
 }
 .home .allplaylist .item h2  {
-   font-size: 1.9rem;
+   font-size: 2rem;
    margin: 0.4rem;
 }
 .home .allplaylist .item p{
     margin: 0.4rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 .home .allplaylist .item button{
     width: 15%;

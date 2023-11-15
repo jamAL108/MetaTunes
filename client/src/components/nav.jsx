@@ -180,10 +180,11 @@ useEffect(()=>{
             setplaylist(false);
             sidebar.index=1;
             localStorage.setItem("sidebar",JSON.stringify(sidebar));
+            navigate("/newartist")
           }}>
              <div className={artist ? "active" : "notactive"}>
            <SearchIcon className='icons'/>
-           <h2>Artists</h2>
+           <h2>Our Artists</h2>
            </div>
           </div>
           <div className="item" onClick={(e)=>{

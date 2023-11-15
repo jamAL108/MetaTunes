@@ -232,13 +232,15 @@ const timery = debounce(()=>{
     )}
     <div className="line"></div>
     <div className="allplaylist">
+      <div className="support">
       <div className="item">
       <h2>Awesome Playlists</h2>
-      <p>Created by our Team and other users</p>
+      <p>Listen to the best playlists curated by us and our users.</p>
       <button onClick={(e)=>{
         e.preventDefault();
         navigate("/commonplaylist");
       }} >Listen now</button>
+      </div>
       </div>
     </div>
     <div className="lineyy"></div>
